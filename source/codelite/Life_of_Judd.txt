@@ -1,1 +1,1 @@
-./Debug/source_main.cpp.o ./Debug/source_game.cpp.o
+./Debug/main.cpp.o ./Debug/game.cpp.o ./Debug/arena.cpp.o ./Debug/utils.cpp.o ./Debug/point.cpp.o ./Debug/inkling.cpp.o ./Debug/cell.cpp.o

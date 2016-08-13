@@ -6,15 +6,14 @@
 
 using namespace std;
 
+
 int main() {
 
+    //TODO random blotches of ink and unclaimed turf
+    
     Game game;
     game.init();
-    
-    while(game.running) {
-        al_wait_for_event(game.queue, &game.ev);
-        
-    }
+    game.loop();
     
     return 0;
     
