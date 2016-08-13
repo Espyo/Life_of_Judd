@@ -1,5 +1,6 @@
 #include "const.h"
 #include "game.h"
+#include "gameplay.h"
 #include "utils.h"
 
 
@@ -7,12 +8,9 @@ Game::Game() :
     running(true),
     display(nullptr),
     queue(nullptr),
-    timer(nullptr) {
+    timer(nullptr),
+    state_mgr() {
     
-}
-
-
-void Game::init() {
     srand(time(NULL));
     
     al_init();
@@ -29,40 +27,45 @@ void Game::init() {
     al_register_event_source(queue, al_get_display_event_source(display));
     
     al_set_window_title(display, GAME_TITLE.c_str());
+    font = al_create_builtin_font(); //TODO;
+    
+    bmp_mgr.load_bitmap(BMP_BUTTON_1);
+    bmp_mgr.load_bitmap(BMP_BUTTON_2);
+    bmp_mgr.load_bitmap(BMP_PICKER_1);
+    bmp_mgr.load_bitmap(BMP_PICKER_2);
+    bmp_mgr.load_bitmap(BMP_PICKER_3);
+    bmp_mgr.load_bitmap(BMP_INK_EFFECT);
+    
+    state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));
+    state_mgr.change_state(GAME_STATE_GAMEPLAY);
+    
+    al_start_timer(timer);
 }
 
 
 void Game::loop() {
-    cur_arena.load();
-    cur_arena.do_match();
-    cur_arena.calculate_real_percentages();
-    cur_arena.render();
-    
     al_start_timer(timer);
-    
-    ALLEGRO_FONT* font = al_create_builtin_font(); //TODO;
     
     while(running) {
         al_wait_for_event(queue, &ev);
         
         if(ev.type == ALLEGRO_EVENT_TIMER) {
-            al_set_target_backbuffer(display);
-            al_clear_to_color(al_map_rgb(16, 32, 16));
+            time_spent += 1.0 / GAME_FPS;
+            state_mgr.get_current_state()->do_drawing();
+            state_mgr.get_current_state()->do_logic();
             
-            al_draw_bitmap(cur_arena.background_bmp, 0, 0, 0);
-            al_draw_bitmap(cur_arena.result_bmp, 0, 0, 0);
             
-            al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, f2s(cur_arena.real_percentages[0]).c_str());
-            al_draw_text(font, al_map_rgb(255, 255, 255), 0, 8, 0, f2s(cur_arena.real_percentages[1]).c_str());
-            al_draw_text(font, al_map_rgb(255, 255, 255), 0, 16, 0, f2s(cur_arena.real_percentages[2]).c_str());
+        } else if(
+            ev.type == ALLEGRO_EVENT_MOUSE_AXES ||
+            ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN ||
+            ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP
+        ) {
+            state_mgr.get_current_state()->handle_mouse(ev);
             
-            al_flip_display();
             
         } else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             running = false;
             
         }
     }
-    
-    al_save_bitmap("bmp.png", cur_arena.background_bmp);
 }

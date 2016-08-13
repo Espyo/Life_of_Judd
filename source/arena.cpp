@@ -4,9 +4,8 @@
 
 
 Arena::Arena() :
-    game_mode(GAME_MODE_BEGINNER),
-    height(0),
     width(0),
+    height(0),
     n_simulation_iterations(0),
     result_bmp(nullptr) {
     
@@ -16,8 +15,8 @@ Arena::Arena() :
 
 void Arena::load() {
 
-    ALLEGRO_BITMAP* data_bmp = al_load_bitmap("arena_graphics/1_data.png"); //TODO
-    background_bmp = al_load_bitmap("arena_graphics/1.jpg"); //TODO
+    ALLEGRO_BITMAP* data_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/1_data.png").c_str()); //TODO
+    background_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/1.jpg").c_str()); //TODO
     
     get_data_from_bmp(data_bmp);
     al_destroy_bitmap(data_bmp);

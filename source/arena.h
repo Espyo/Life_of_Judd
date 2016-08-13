@@ -14,13 +14,6 @@
 using namespace std;
 
 
-enum GAME_MODES {
-    GAME_MODE_BEGINNER,
-    GAME_MODE_INTERMEDIATE,
-    GAME_MODE_EXPERT,
-};
-
-
 struct Arena {
 private:
     void get_data_from_bmp(ALLEGRO_BITMAP* data_bmp);
@@ -35,7 +28,6 @@ public:
     Point spawns[N_TEAMS];
     ALLEGRO_COLOR ink_colors[N_TEAMS];
     
-    unsigned char game_mode;
     float real_percentages[N_TEAMS + 1]; //+1 for unclaimed turf.
     
     ALLEGRO_BITMAP* background_bmp;

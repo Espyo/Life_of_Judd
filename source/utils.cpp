@@ -4,6 +4,14 @@
 #include "utils.h"
 
 
+ALLEGRO_COLOR darken_color(ALLEGRO_COLOR color, const float ratio) {
+    color.r *= ratio;
+    color.g *= ratio;
+    color.b *= ratio;
+    return color;
+}
+
+
 string f2s(const float f) {
     std::stringstream s;
     s << std::fixed << ::setprecision(2) << f;
