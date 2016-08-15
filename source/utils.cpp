@@ -12,9 +12,23 @@ ALLEGRO_COLOR darken_color(ALLEGRO_COLOR color, const float ratio) {
 }
 
 
+void draw_shadowed_text(
+    ALLEGRO_FONT* font, ALLEGRO_COLOR color,
+    const int x, const int y, const int flags, const string &text
+) {
+    int shifted_y = y - (al_get_font_line_height(font) - al_get_font_ascent(font));
+    al_draw_text(
+        font, darken_color(color, 0.25), x + 2, shifted_y + 2, flags, text.c_str()
+    );
+    al_draw_text(
+        font, color, x, shifted_y, flags, text.c_str()
+    );
+}
+
+
 string f2s(const float f) {
     std::stringstream s;
-    s << std::fixed << ::setprecision(2) << f;
+    s << std::fixed << ::setprecision(1) << f;
     return s.str();
 }
 

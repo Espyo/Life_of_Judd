@@ -14,12 +14,16 @@ const float GAME_FPS = 30.0;
 const string GAME_TITLE = "A Day in the Life of Judd";
 
 const string GRAPHICS_FOLDER = "graphics";
+const string FONT_FILE_NAME = "Waree-Bold.ttf";
+const int FONT_SIZE = 40;
+
 const string BMP_BUTTON_1 = "button_1.png";
 const string BMP_BUTTON_2 = "button_2.png";
 const string BMP_PICKER_1 = "picker_1.png";
 const string BMP_PICKER_2 = "picker_2.png";
 const string BMP_PICKER_3 = "picker_3.png";
 const string BMP_INK_EFFECT = "ink_effect.png";
+const string BMP_CHECKERBOARD = "checkerboard.png";
 
 enum GAME_STATES {
     GAME_STATE_MAIN_MENU,

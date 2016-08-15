@@ -1,3 +1,5 @@
+#include <allegro5/allegro_primitives.h>
+
 #include "game.h"
 #include "gameplay.h"
 #include "utils.h"
@@ -29,12 +31,15 @@ void Gameplay::load() {
     cur_arena.calculate_real_percentages();
     cur_arena.render();
     
+    game_mode = GAME_MODE_EXPERT; //TODO
+    
     bmp_button_1 = game->bmp_mgr.get_bitmap(BMP_BUTTON_1);
     bmp_button_2 = game->bmp_mgr.get_bitmap(BMP_BUTTON_2);
     bmp_picker_1 = game->bmp_mgr.get_bitmap(BMP_PICKER_1);
     bmp_picker_2 = game->bmp_mgr.get_bitmap(BMP_PICKER_2);
     bmp_picker_3 = game->bmp_mgr.get_bitmap(BMP_PICKER_3);
     bmp_ink_effect = game->bmp_mgr.get_bitmap(BMP_INK_EFFECT);
+    bmp_checkerboard = game->bmp_mgr.get_bitmap(BMP_CHECKERBOARD);
     
     if(game_mode == GAME_MODE_INTERMEDIATE) {
         picker_team_x = PICKER_I_BAR_W / 2.0;
@@ -170,14 +175,18 @@ void Gameplay::do_drawing() {
     al_draw_bitmap(cur_arena.result_bmp, 0, 0, 0);
     
     //TODO remove these debugging values
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 0, 0, f2s(cur_arena.real_percentages[TEAM_1]).c_str());
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 8, 0, f2s(cur_arena.real_percentages[TEAM_2]).c_str());
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 16, 0, f2s(cur_arena.real_percentages[TEAM_NONE]).c_str());
+    draw_shadowed_text(
+        game->font, al_map_rgb(255, 255, 255), 0, 0, 0,
+        f2s(cur_arena.real_percentages[TEAM_1]) + ";" +
+        f2s(cur_arena.real_percentages[TEAM_2]) + ";" +
+        f2s(cur_arena.real_percentages[TEAM_NONE])
+    );
     
     if(game_mode == GAME_MODE_BEGINNER) {
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_B_TEAM_1_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
             PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
+            bmp_ink_effect,
             (
                 chosen_team == TEAM_1 ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -186,9 +195,10 @@ void Gameplay::do_drawing() {
             (chosen_team == TEAM_1)
         );
         
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_B_TEAM_2_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
             PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
+            bmp_ink_effect,
             (
                 chosen_team == TEAM_2 ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -209,9 +219,10 @@ void Gameplay::do_drawing() {
         );
         
     } else if(game_mode == GAME_MODE_INTERMEDIATE) {
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_I_BAR_X, PICKER_I_BAR_Y,
             picker_team_x, PICKER_I_BAR_H,
+            bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -220,9 +231,10 @@ void Gameplay::do_drawing() {
             chosen_team != TEAM_NONE
         );
         
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_I_BAR_X + picker_team_x, PICKER_I_BAR_Y,
             PICKER_I_BAR_W - picker_team_x, PICKER_I_BAR_H,
+            bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -232,6 +244,18 @@ void Gameplay::do_drawing() {
         );
         
         al_draw_bitmap(bmp_picker_2, PICKER_I_X, PICKER_I_Y, 0);
+        
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_I_BAR_X + 8, PICKER_I_BAR_Y + 8, 0,
+            f2s((picker_team_x / (float) PICKER_I_BAR_W) * 100) + "%"
+        );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_I_BAR_X + PICKER_I_BAR_W - 8, PICKER_I_BAR_Y + 8,
+            ALLEGRO_ALIGN_RIGHT,
+            f2s((1 - picker_team_x / (float) PICKER_I_BAR_W) * 100) + "%"
+        );
         
         ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
         if(chosen_team != TEAM_NONE) {
@@ -243,9 +267,10 @@ void Gameplay::do_drawing() {
         );
         
     } else if(game_mode == GAME_MODE_EXPERT) {
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_Y,
             picker_team_x, PICKER_E_TEAM_BAR_H,
+            bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -254,9 +279,10 @@ void Gameplay::do_drawing() {
             chosen_team != TEAM_NONE
         );
         
-        draw_ink_button(
+        draw_textured_rectangle(
             PICKER_E_TEAM_BAR_X + picker_team_x, PICKER_E_TEAM_BAR_Y,
             PICKER_E_TEAM_BAR_W - picker_team_x, PICKER_E_TEAM_BAR_H,
+            bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -265,14 +291,31 @@ void Gameplay::do_drawing() {
             chosen_team != TEAM_NONE
         );
         
-        al_draw_filled_rectangle(
+        draw_textured_rectangle(
             PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_Y,
-            PICKER_E_NONE_BAR_X + picker_unclaimed_x,
-            PICKER_E_NONE_BAR_Y + PICKER_E_NONE_BAR_H,
-            al_map_rgb(128, 128, 128)
+            picker_unclaimed_x, PICKER_E_NONE_BAR_H,
+            bmp_checkerboard, al_map_rgb(128, 128, 128), false
         );
         
         al_draw_bitmap(bmp_picker_3, PICKER_E_X, PICKER_E_Y, 0);
+        
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_E_TEAM_BAR_X + 8, PICKER_E_TEAM_BAR_Y + 8, 0,
+            f2s((picker_team_x / (float) PICKER_E_TEAM_BAR_W) * 100) + "%"
+        );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_E_TEAM_BAR_X + PICKER_E_TEAM_BAR_W - 8,
+            PICKER_E_TEAM_BAR_Y + 8,
+            ALLEGRO_ALIGN_RIGHT,
+            f2s((1 - picker_team_x / (float) PICKER_E_TEAM_BAR_W) * 100) + "%"
+        );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_E_NONE_BAR_X + 8, PICKER_E_NONE_BAR_Y + 8, 0,
+            f2s((picker_unclaimed_x / (float) PICKER_E_NONE_BAR_W) * 100) + "%"
+        );
         
         ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
         if(chosen_team != TEAM_NONE) {
@@ -294,9 +337,9 @@ void Gameplay::unload() {
 }
 
 
-void Gameplay::draw_ink_button(
+void Gameplay::draw_textured_rectangle(
     const int x, const int y, const int w, const int h,
-    ALLEGRO_COLOR color, const bool moving
+    ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
 ) {
     ALLEGRO_VERTEX vertexes[4];
     
@@ -326,7 +369,7 @@ void Gameplay::draw_ink_button(
     vertexes[3].v = vertexes[0].v + h;
     
     al_draw_prim(
-        vertexes, NULL, bmp_ink_effect, 0, 4, ALLEGRO_PRIM_TRIANGLE_FAN
+        vertexes, NULL, bmp, 0, 4, ALLEGRO_PRIM_TRIANGLE_FAN
     );
 }
 
@@ -339,6 +382,13 @@ void Gameplay::update_picker_x(
     *var = max(0, *var);
     *var = min(*var, bar_w);
     if(update_chosen_team) {
-        chosen_team = *var < bar_w / 2.0 ? 1 : 0;
+        float p = *var / (float) bar_w;
+        if(p == 0.5) {
+            chosen_team = 2;
+        } else if(p < 0.5) {
+            chosen_team = 1;
+        } else {
+            chosen_team = 0;
+        }
     }
 }

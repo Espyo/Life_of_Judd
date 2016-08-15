@@ -1,3 +1,7 @@
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_primitives.h>
+
 #include "const.h"
 #include "game.h"
 #include "gameplay.h"
@@ -17,6 +21,8 @@ Game::Game() :
     al_install_mouse();
     al_init_image_addon();
     al_init_primitives_addon();
+    al_init_font_addon();
+    al_init_ttf_addon();
     
     display = al_create_display(WINDOW_WIDTH, WINDOW_HEIGHT);
     timer = al_create_timer(1.0 / GAME_FPS);
@@ -27,14 +33,19 @@ Game::Game() :
     al_register_event_source(queue, al_get_display_event_source(display));
     
     al_set_window_title(display, GAME_TITLE.c_str());
-    font = al_create_builtin_font(); //TODO;
-    
+    font =
+        al_load_ttf_font(
+               (GRAPHICS_FOLDER + "/" + FONT_FILE_NAME).c_str(),
+               FONT_SIZE, 0
+           );
+           
     bmp_mgr.load_bitmap(BMP_BUTTON_1);
     bmp_mgr.load_bitmap(BMP_BUTTON_2);
     bmp_mgr.load_bitmap(BMP_PICKER_1);
     bmp_mgr.load_bitmap(BMP_PICKER_2);
     bmp_mgr.load_bitmap(BMP_PICKER_3);
     bmp_mgr.load_bitmap(BMP_INK_EFFECT);
+    bmp_mgr.load_bitmap(BMP_CHECKERBOARD);
     
     state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));
     state_mgr.change_state(GAME_STATE_GAMEPLAY);

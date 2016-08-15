@@ -23,6 +23,7 @@ private:
     ALLEGRO_BITMAP* bmp_picker_2;
     ALLEGRO_BITMAP* bmp_picker_3;
     ALLEGRO_BITMAP* bmp_ink_effect;
+    ALLEGRO_BITMAP* bmp_checkerboard;
     
     const int OK_BUTTON_W = 128;
     const int OK_BUTTON_H = 128;
@@ -65,9 +66,9 @@ private:
     const int PICKER_E_NONE_BAR_X = PICKER_E_TEAM_BAR_X;
     const int PICKER_E_NONE_BAR_Y = PICKER_E_Y + 94;
     
-    void draw_ink_button(
+    void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,
-        ALLEGRO_COLOR color, const bool moving
+        ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
     );
     void update_picker_x(
         int* var, const int mouse_x,
