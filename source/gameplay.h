@@ -71,8 +71,9 @@ private:
         ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
     );
     void update_picker_x(
-        int* var, const int mouse_x,
-        const int bar_x, const int bar_w, const bool update_chosen_team
+        int* var, const int mouse_value,
+        const int bar_x, const int bar_w, const bool update_chosen_team,
+        const bool mouse_value_is_delta
     );
     
 public:

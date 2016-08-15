@@ -31,7 +31,7 @@ void Gameplay::load() {
     cur_arena.calculate_real_percentages();
     cur_arena.render();
     
-    game_mode = GAME_MODE_EXPERT; //TODO
+    game_mode = GAME_MODE_BEGINNER; //TODO
     
     bmp_button_1 = game->bmp_mgr.get_bitmap(BMP_BUTTON_1);
     bmp_button_2 = game->bmp_mgr.get_bitmap(BMP_BUTTON_2);
@@ -65,7 +65,8 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
     
     if(game_mode == GAME_MODE_BEGINNER) {
     
-        bool hand_cursor = false;
+        bool mouse_on_button_1 = false;
+        bool mouse_on_button_2 = false;
         
         if(
             ev.mouse.y >= PICKER_B_TEAM_BUTTON_Y &&
@@ -76,42 +77,43 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
                 ev.mouse.x <= PICKER_B_TEAM_1_BUTTON_X +
                 PICKER_B_TEAM_BUTTON_W
             ) {
-                if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-                    chosen_team = TEAM_1;
-                } else if(ev.type == ALLEGRO_EVENT_MOUSE_AXES) {
-                    hand_cursor = true;
-                }
+                mouse_on_button_1 = true;
                 
             } else if(
                 ev.mouse.x >= PICKER_B_TEAM_2_BUTTON_X &&
                 ev.mouse.x <= PICKER_B_TEAM_2_BUTTON_X +
                 PICKER_B_TEAM_BUTTON_W
             ) {
-                if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-                    chosen_team = TEAM_2;
-                } else if(ev.type == ALLEGRO_EVENT_MOUSE_AXES) {
-                    hand_cursor = true;
-                }
+                mouse_on_button_2 = true;
                 
             }
         }
         
-        if(hand_cursor) {
+        if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+            if(mouse_on_button_1) {
+                chosen_team = TEAM_1;
+            } else if(mouse_on_button_2) {
+                chosen_team = TEAM_2;
+            }
+        }
+        
+        if(mouse_on_button_1 || mouse_on_button_2) {
             cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK;
         }
         
     } else if(game_mode == GAME_MODE_INTERMEDIATE) {
     
+        bool mouse_on_bar =
+            ev.mouse.x >= PICKER_I_X && ev.mouse.y >= PICKER_I_BAR_Y &&
+            ev.mouse.x <= PICKER_I_X + PICKER_I_W &&
+            ev.mouse.y <= PICKER_I_BAR_Y + PICKER_I_BAR_H;
+            
         if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-            if(
-                ev.mouse.x >= PICKER_I_X && ev.mouse.y >= PICKER_I_BAR_Y &&
-                ev.mouse.x <= PICKER_I_X + PICKER_I_W &&
-                ev.mouse.y <= PICKER_I_BAR_Y + PICKER_I_BAR_H
-            ) {
+            if(mouse_on_bar) {
                 mouse_down_on_team_picker = true;
                 update_picker_x(
                     &picker_team_x, ev.mouse.x,
-                    PICKER_I_BAR_X, PICKER_I_BAR_W, true
+                    PICKER_I_BAR_X, PICKER_I_BAR_W, true, false
                 );
             }
             
@@ -122,45 +124,48 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
             if(mouse_down_on_team_picker) {
                 update_picker_x(
                     &picker_team_x, ev.mouse.x,
-                    PICKER_I_BAR_X, PICKER_I_BAR_W, true
+                    PICKER_I_BAR_X, PICKER_I_BAR_W, true, false
                 );
             }
             
-            if(
-                ev.mouse.x >= PICKER_I_X && ev.mouse.y >= PICKER_I_BAR_Y &&
-                ev.mouse.x <= PICKER_I_X + PICKER_I_W &&
-                ev.mouse.y <= PICKER_I_BAR_Y + PICKER_I_BAR_H
-            ) {
+            if(mouse_on_bar) {
                 cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_MOVE;
+                if(ev.mouse.dz != 0 && !mouse_down_on_team_picker) {
+                    update_picker_x(
+                        &picker_team_x, ev.mouse.dz,
+                        PICKER_I_BAR_X, PICKER_I_BAR_W, true, true
+                    );
+                }
             }
             
         }
         
     } else {
     
+        bool mouse_on_team_bar =
+            ev.mouse.x >= PICKER_E_X &&
+            ev.mouse.y >= PICKER_E_TEAM_BAR_Y &&
+            ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
+            ev.mouse.y <= PICKER_E_TEAM_BAR_Y + PICKER_E_TEAM_BAR_H;
+        bool mouse_on_unclaimed_bar =
+            ev.mouse.x >= PICKER_E_X &&
+            ev.mouse.y >= PICKER_E_NONE_BAR_Y &&
+            ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
+            ev.mouse.y <= PICKER_E_NONE_BAR_Y + PICKER_E_NONE_BAR_H;
+            
         if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-            if(
-                ev.mouse.x >= PICKER_E_X &&
-                ev.mouse.y >= PICKER_E_TEAM_BAR_Y &&
-                ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
-                ev.mouse.y <= PICKER_E_TEAM_BAR_Y + PICKER_E_TEAM_BAR_H
-            ) {
+            if(mouse_on_team_bar) {
                 mouse_down_on_team_picker = true;
                 update_picker_x(
                     &picker_team_x, ev.mouse.x,
-                    PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_W, true
+                    PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_W, true, false
                 );
                 
-            } else if(
-                ev.mouse.x >= PICKER_E_X &&
-                ev.mouse.y >= PICKER_E_NONE_BAR_Y &&
-                ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
-                ev.mouse.y <= PICKER_E_NONE_BAR_Y + PICKER_E_NONE_BAR_H
-            ) {
+            } else if(mouse_on_unclaimed_bar) {
                 mouse_down_on_unclaimed_picker = true;
                 update_picker_x(
                     &picker_unclaimed_x, ev.mouse.x,
-                    PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_W, false
+                    PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_W, false, false
                 );
                 
             }
@@ -173,29 +178,32 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
             if(mouse_down_on_team_picker) {
                 update_picker_x(
                     &picker_team_x, ev.mouse.x,
-                    PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_W, true
+                    PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_W, true, false
                 );
             } else if(mouse_down_on_unclaimed_picker) {
                 update_picker_x(
                     &picker_unclaimed_x, ev.mouse.x,
-                    PICKER_E_NONE_BAR_X, PICKER_E_TEAM_BAR_W, false
+                    PICKER_E_NONE_BAR_X, PICKER_E_TEAM_BAR_W, false, false
                 );
             }
             
-            if(
-                ev.mouse.x >= PICKER_E_X &&
-                ev.mouse.y >= PICKER_E_TEAM_BAR_Y &&
-                ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
-                ev.mouse.y <= PICKER_E_TEAM_BAR_Y + PICKER_E_TEAM_BAR_H
-            ) {
+            if(mouse_on_team_bar) {
                 cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_MOVE;
-            } else if(
-                ev.mouse.x >= PICKER_E_X &&
-                ev.mouse.y >= PICKER_E_NONE_BAR_Y &&
-                ev.mouse.x <= PICKER_E_X + PICKER_E_W &&
-                ev.mouse.y <= PICKER_E_NONE_BAR_Y + PICKER_E_NONE_BAR_H
-            ) {
+                if(ev.mouse.dz != 0 && !mouse_down_on_team_picker) {
+                    update_picker_x(
+                        &picker_team_x, ev.mouse.dz,
+                        PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_W, true, true
+                    );
+                }
+                
+            } else if(mouse_on_unclaimed_bar) {
                 cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_MOVE;
+                if(ev.mouse.dz != 0 && !mouse_down_on_unclaimed_picker) {
+                    update_picker_x(
+                        &picker_unclaimed_x, ev.mouse.dz,
+                        PICKER_E_NONE_BAR_X, PICKER_E_TEAM_BAR_W, false, true
+                    );
+                }
             }
             
         }
@@ -355,22 +363,31 @@ void Gameplay::do_drawing() {
         
         al_draw_bitmap(bmp_picker_3, PICKER_E_X, PICKER_E_Y, 0);
         
+        float unclaimed_ratio =
+            picker_unclaimed_x / (float) PICKER_E_NONE_BAR_W;
+        float team_1_ratio =
+            (picker_team_x / (float) PICKER_E_TEAM_BAR_W) *
+            (1 - unclaimed_ratio);
+        float team_2_ratio =
+            (1 - picker_team_x / (float) PICKER_E_TEAM_BAR_W) *
+            (1 - unclaimed_ratio);
+            
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
             PICKER_E_TEAM_BAR_X + 8, PICKER_E_TEAM_BAR_Y + 8, 0,
-            f2s((picker_team_x / (float) PICKER_E_TEAM_BAR_W) * 100) + "%"
+            f2s(team_1_ratio * 100) + "%"
         );
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
             PICKER_E_TEAM_BAR_X + PICKER_E_TEAM_BAR_W - 8,
             PICKER_E_TEAM_BAR_Y + 8,
             ALLEGRO_ALIGN_RIGHT,
-            f2s((1 - picker_team_x / (float) PICKER_E_TEAM_BAR_W) * 100) + "%"
+            f2s(team_2_ratio * 100) + "%"
         );
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
             PICKER_E_NONE_BAR_X + 8, PICKER_E_NONE_BAR_Y + 8, 0,
-            f2s((picker_unclaimed_x / (float) PICKER_E_NONE_BAR_W) * 100) + "%"
+            f2s(unclaimed_ratio * 100) + "%"
         );
         
         ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
@@ -431,9 +448,17 @@ void Gameplay::draw_textured_rectangle(
 
 
 void Gameplay::update_picker_x(
-    int* var, const int mouse_x,
-    const int bar_x, const int bar_w, const bool update_chosen_team
+    int* var, const int mouse_value,
+    const int bar_x, const int bar_w, const bool update_chosen_team,
+    const bool mouse_value_is_delta
 ) {
+    int mouse_x;
+    if(mouse_value_is_delta) {
+        mouse_x = bar_x + *var + mouse_value;
+    } else {
+        mouse_x = mouse_value;
+    }
+    
     *var = mouse_x - bar_x;
     *var = max(0, *var);
     *var = min(*var, bar_w);

@@ -204,9 +204,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="18.762901"
-     inkscape:cy="-5.3277317"
+     inkscape:zoom="1"
+     inkscape:cx="1553.4203"
+     inkscape:cy="95.624602"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -23289,5 +23289,51 @@ HNfJ5fx/qEngj+3I0mf+/wyaNgAN/wltfta+JthzgQAAAABJRU5ErkJggg==
        inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/picker_1.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
+    <path
+       style="fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1575,971.3622 c 0,0 0.2083,-2.87657 1,-4 0.6923,-0.98241 3,-2 3,-2 l -8,0 c 0,0 2.3077,1.01759 3,2 0.7917,1.12343 1,4 1,4 z"
+       id="path6772"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="caccac" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path6772"
+       id="use6783"
+       transform="matrix(1,0,0,-1,0,2010.7244)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path6772"
+       id="use6785"
+       transform="translate(800,-56.999995)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path6772"
+       id="use6787"
+       transform="matrix(1,0,0,-1,800,1953.7244)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use6787"
+       id="use6789"
+       transform="matrix(1,0,0,-1,0,1977.7244)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use6787"
+       id="use6791"
+       transform="translate(0,57.000005)"
+       width="100%"
+       height="100%" />
   </g>
 </svg>
