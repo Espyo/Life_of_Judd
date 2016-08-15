@@ -4,18 +4,19 @@
 #include <cstddef>
 
 
-enum CELL_CONTENTS {
-    CELL_CONTENT_CLEAR,
-    CELL_CONTENT_VOID,
-    CELL_CONTENT_TEAM_BASE,
+enum CELL_TYPE {
+    CELL_TYPE_NORMAL,
+    CELL_TYPE_UNINKABLE,
+    CELL_TYPE_VOID,
 };
 
 
 struct Cell {
-    unsigned char content;
+    unsigned char type;
+    unsigned char team;
     
     Cell();
-    void ink(const size_t team_nr);
+    void ink(const unsigned char team_nr);
     
 };
 

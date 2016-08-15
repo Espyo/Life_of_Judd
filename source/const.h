@@ -32,7 +32,12 @@ enum GAME_MODES {
     GAME_MODE_EXPERT,
 };
 
-const size_t N_TEAMS = 2;
+enum TEAMS {
+    TEAM_1,
+    TEAM_2,
+    TEAM_NONE,
+};
+
 const size_t N_INKLINGS = 4;
 const float SPAWN_RADIUS = 4.0;
 

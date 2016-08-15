@@ -7,7 +7,7 @@ Gameplay::Gameplay(Game* game) :
     Game_State(game),
     game_mode(GAME_MODE_BEGINNER),
     mouse_on_ok_button(false),
-    chosen_team(2) ,
+    chosen_team(TEAM_NONE) ,
     bmp_button_1(nullptr),
     bmp_button_2(nullptr),
     bmp_picker_1(nullptr),
@@ -53,14 +53,14 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
                     ev.mouse.x <= PICKER_1_TEAM_1_BUTTON_X +
                     PICKER_1_TEAM_BUTTON_W
                 ) {
-                    chosen_team = 0;
+                    chosen_team = TEAM_1;
                     
                 } else if(
                     ev.mouse.x >= PICKER_1_TEAM_2_BUTTON_X &&
                     ev.mouse.x <= PICKER_1_TEAM_2_BUTTON_X +
                     PICKER_1_TEAM_BUTTON_W
                 ) {
-                    chosen_team = 1;
+                    chosen_team = TEAM_2;
                     
                 }
             }
@@ -82,31 +82,32 @@ void Gameplay::do_drawing() {
     al_draw_bitmap(cur_arena.background_bmp, 0, 0, 0);
     al_draw_bitmap(cur_arena.result_bmp, 0, 0, 0);
     
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 0, 0, f2s(cur_arena.real_percentages[0]).c_str());
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 8, 0, f2s(cur_arena.real_percentages[1]).c_str());
-    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 16, 0, f2s(cur_arena.real_percentages[2]).c_str());
+    //TODO remove these debugging values
+    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 0, 0, f2s(cur_arena.real_percentages[TEAM_1]).c_str());
+    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 8, 0, f2s(cur_arena.real_percentages[TEAM_2]).c_str());
+    al_draw_text(game->font, al_map_rgb(255, 255, 255), 0, 16, 0, f2s(cur_arena.real_percentages[TEAM_NONE]).c_str());
     
     if(game_mode == GAME_MODE_BEGINNER) {
         draw_ink_button(
             PICKER_1_TEAM_1_BUTTON_X, PICKER_1_TEAM_BUTTON_Y,
             PICKER_1_TEAM_BUTTON_W, PICKER_1_TEAM_BUTTON_H,
             (
-                chosen_team == 0 ?
-                cur_arena.ink_colors[0] :
-                darken_color(cur_arena.ink_colors[0], 0.5)
+                chosen_team == TEAM_1 ?
+                cur_arena.ink_colors[TEAM_1] :
+                darken_color(cur_arena.ink_colors[TEAM_1], 0.5)
             ),
-            (chosen_team == 0)
+            (chosen_team == TEAM_1)
         );
         
         draw_ink_button(
             PICKER_1_TEAM_2_BUTTON_X, PICKER_1_TEAM_BUTTON_Y,
             PICKER_1_TEAM_BUTTON_W, PICKER_1_TEAM_BUTTON_H,
             (
-                chosen_team == 1 ?
-                cur_arena.ink_colors[1] :
-                darken_color(cur_arena.ink_colors[1], 0.5)
+                chosen_team == TEAM_2 ?
+                cur_arena.ink_colors[TEAM_2] :
+                darken_color(cur_arena.ink_colors[TEAM_2], 0.5)
             ),
-            (chosen_team == 1)
+            (chosen_team == TEAM_2)
         );
         
         al_draw_bitmap(bmp_picker_1, PICKER_1_X, PICKER_1_Y, 0);

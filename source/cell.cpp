@@ -1,13 +1,15 @@
 #include "cell.h"
+#include "const.h"
 
 
 Cell::Cell() :
-    content(CELL_CONTENT_VOID) {
+    type(CELL_TYPE_NORMAL),
+    team(TEAM_NONE) {
     
     
 }
 
 
-void Cell::ink(const size_t team_nr) {
-    content = CELL_CONTENT_TEAM_BASE + team_nr;
+void Cell::ink(const unsigned char team_nr) {
+    team = team_nr;
 }

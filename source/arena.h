@@ -6,6 +6,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+#include "blotch_generator.h"
 #include "cell.h"
 #include "const.h"
 #include "inkling.h"
@@ -22,13 +23,15 @@ public:
     size_t width;
     size_t height;
     vector<vector<Cell> > grid;
+    
     unsigned long n_simulation_iterations;
+    Blotch_Generator blotch_gen[3];
     
-    Inkling inklings[N_TEAMS][N_INKLINGS];
-    Point spawns[N_TEAMS];
-    ALLEGRO_COLOR ink_colors[N_TEAMS];
+    Inkling inklings[2][N_INKLINGS];
+    Point spawns[2];
+    ALLEGRO_COLOR ink_colors[2];
     
-    float real_percentages[N_TEAMS + 1]; //+1 for unclaimed turf.
+    float real_percentages[3];
     
     ALLEGRO_BITMAP* background_bmp;
     ALLEGRO_BITMAP* result_bmp;
@@ -42,7 +45,7 @@ public:
     
     void ink(const Point where, const float radius, const size_t team);
     void ink(const Point where, const size_t team);
-    bool is_valid(const Point where);
+    bool is_valid(const Point where, const bool for_inking);
 };
 
 

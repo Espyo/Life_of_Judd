@@ -56,7 +56,7 @@ void Inkling::move() {
     new_pos.x += cos(intended_angle) * speed;
     new_pos.y += sin(intended_angle) * speed;
     
-    if(arena->is_valid(new_pos)) {
+    if(arena->is_valid(new_pos, false)) {
         pos = new_pos;
     }
 }

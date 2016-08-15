@@ -40,6 +40,8 @@
     <File Name="../game_state.h"/>
     <File Name="../bitmap_manager.cpp"/>
     <File Name="../bitmap_manager.h"/>
+    <File Name="../blotch_generator.h"/>
+    <File Name="../blotch_generator.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

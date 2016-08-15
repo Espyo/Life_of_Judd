@@ -8,6 +8,11 @@ Point::Point(const float x, const float y) :
 }
 
 
-const Point Point::operator+(const Point &p) const {
+const Point Point::operator +(const Point &p) const {
     return Point(x + p.x, y + p.y);
+}
+
+
+const bool Point::operator ==(const Point &p) const {
+    return x == p.x && y == p.y;
 }
