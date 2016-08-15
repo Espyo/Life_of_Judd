@@ -25,15 +25,10 @@ private:
     ALLEGRO_BITMAP* bmp_ink_effect;
     ALLEGRO_BITMAP* bmp_checkerboard;
     
-    const int OK_BUTTON_W = 128;
-    const int OK_BUTTON_H = 128;
-    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 8;
-    const int OK_BUTTON_Y = 8;
-    
     const int PICKER_B_W = 750;
     const int PICKER_B_H = 94;
     const int PICKER_B_X = 25;
-    const int PICKER_B_Y = WINDOW_HEIGHT - 8 - PICKER_B_H;
+    const int PICKER_B_Y = WINDOW_HEIGHT - 4 - PICKER_B_H;
     
     const int PICKER_B_TEAM_BUTTON_W = 328;
     const int PICKER_B_TEAM_BUTTON_H = 70;
@@ -44,7 +39,7 @@ private:
     const int PICKER_I_W = 750;
     const int PICKER_I_H = 94;
     const int PICKER_I_X = 25;
-    const int PICKER_I_Y = WINDOW_HEIGHT - 8 - PICKER_I_H;
+    const int PICKER_I_Y = WINDOW_HEIGHT - 4 - PICKER_I_H;
     
     const int PICKER_I_BAR_W = 684;
     const int PICKER_I_BAR_H = 68;
@@ -54,7 +49,7 @@ private:
     const int PICKER_E_W = 750;
     const int PICKER_E_H = 151;
     const int PICKER_E_X = 25;
-    const int PICKER_E_Y = WINDOW_HEIGHT - 8 - PICKER_E_H;
+    const int PICKER_E_Y = WINDOW_HEIGHT - 4 - PICKER_E_H;
     
     const int PICKER_E_TEAM_BAR_W = 684;
     const int PICKER_E_TEAM_BAR_H = 68;
@@ -65,6 +60,11 @@ private:
     const int PICKER_E_NONE_BAR_H = 44;
     const int PICKER_E_NONE_BAR_X = PICKER_E_TEAM_BAR_X;
     const int PICKER_E_NONE_BAR_Y = PICKER_E_Y + 94;
+    
+    const int OK_BUTTON_W = 128;
+    const int OK_BUTTON_H = 128;
+    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 4;
+    const int OK_BUTTON_Y = PICKER_E_Y - OK_BUTTON_H - 4;
     
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,

@@ -16,7 +16,8 @@ Arena::Arena() :
 void Arena::load() {
 
     ALLEGRO_BITMAP* data_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/1_data.png").c_str()); //TODO
-    background_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/1.jpg").c_str()); //TODO
+    arena_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/1.png").c_str()); //TODO
+    background_bmp = al_load_bitmap((GRAPHICS_FOLDER + "/arenas/bg_water.jpg").c_str()); //TODO
     
     get_data_from_bmp(data_bmp);
     al_destroy_bitmap(data_bmp);

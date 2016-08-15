@@ -33,6 +33,7 @@ public:
     
     float real_percentages[3];
     
+    ALLEGRO_BITMAP* arena_bmp;
     ALLEGRO_BITMAP* background_bmp;
     ALLEGRO_BITMAP* result_bmp;
     
