@@ -13,6 +13,17 @@ const Point Point::operator +(const Point &p) const {
 }
 
 
+Point Point::operator +=(const Point &p) {
+    x += p.x;
+    y += p.y;
+}
+
+
 const bool Point::operator ==(const Point &p) const {
     return x == p.x && y == p.y;
+}
+
+
+const Point Point::operator *(const float m) const {
+    return Point(x * m, y * m);
 }

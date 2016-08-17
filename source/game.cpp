@@ -33,12 +33,17 @@ Game::Game() :
     al_register_event_source(queue, al_get_display_event_source(display));
     
     al_set_window_title(display, GAME_TITLE.c_str());
+    
+    al_set_new_bitmap_flags(
+        ALLEGRO_MIN_LINEAR | ALLEGRO_MIN_LINEAR
+    );
+    
     font =
         al_load_ttf_font(
-               (GRAPHICS_FOLDER + "/" + FONT_FILE_NAME).c_str(),
-               FONT_SIZE, 0
-           );
-           
+            (GRAPHICS_FOLDER + "/" + FONT_FILE_NAME).c_str(),
+            FONT_SIZE, 0
+        );
+        
     bmp_mgr.load_bitmap(BMP_BUTTON_1);
     bmp_mgr.load_bitmap(BMP_BUTTON_2);
     bmp_mgr.load_bitmap(BMP_PICKER_1);
@@ -46,6 +51,7 @@ Game::Game() :
     bmp_mgr.load_bitmap(BMP_PICKER_3);
     bmp_mgr.load_bitmap(BMP_INK_EFFECT);
     bmp_mgr.load_bitmap(BMP_CHECKERBOARD);
+    bmp_mgr.load_bitmap(BMP_SPLASH);
     
     state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));
     state_mgr.change_state(GAME_STATE_GAMEPLAY);

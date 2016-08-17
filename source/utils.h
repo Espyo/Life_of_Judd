@@ -15,7 +15,7 @@ using namespace std;
 ALLEGRO_COLOR darken_color(ALLEGRO_COLOR, const float ratio);
 void draw_shadowed_text(
     ALLEGRO_FONT* font, ALLEGRO_COLOR color,
-    const int x, const int y, const int flags, const string &text,
+    const int x, const int cy, const int flags, const string &text,
     const float scale = 1.0
 );
 string f2s(const float f);

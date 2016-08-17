@@ -24,6 +24,7 @@ const string BMP_PICKER_2 = "picker_2.png";
 const string BMP_PICKER_3 = "picker_3.png";
 const string BMP_INK_EFFECT = "ink_effect.png";
 const string BMP_CHECKERBOARD = "checkerboard.png";
+const string BMP_SPLASH = "splash.png";
 
 enum GAME_STATES {
     GAME_STATE_MAIN_MENU,

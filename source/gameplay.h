@@ -10,12 +10,20 @@ class Gameplay : public Game_State {
 private:
     Arena cur_arena;
     unsigned char game_mode;
+    unsigned char sub_state;
+    float next_state_timer;
+    
+    unsigned char analysis_darken_opacity;
+    
     bool mouse_on_ok_button;
     unsigned char chosen_team;
     int picker_team_x;
     bool mouse_down_on_team_picker;
     int picker_unclaimed_x;
     bool mouse_down_on_unclaimed_picker;
+    
+    float player_percentages[3];
+    float player_score;
     
     ALLEGRO_BITMAP* bmp_button_1;
     ALLEGRO_BITMAP* bmp_button_2;
@@ -24,6 +32,37 @@ private:
     ALLEGRO_BITMAP* bmp_picker_3;
     ALLEGRO_BITMAP* bmp_ink_effect;
     ALLEGRO_BITMAP* bmp_checkerboard;
+    ALLEGRO_BITMAP* bmp_splash;
+    
+    enum SUB_STATES {
+        SUB_STATE_PICKING,
+        SUB_STATE_CELEBRATING,
+        SUB_STATE_ANALYSIS_FADE_IN,
+        SUB_STATE_ANALYSIS_1,
+        SUB_STATE_ANALYSIS_2,
+        SUB_STATE_ANALYSIS_FULL,
+    };
+    
+    struct Confetto {
+        Point pos;
+        Point speed;
+        ALLEGRO_COLOR color;
+        float angle;
+        float rotation_speed;
+        
+        static const int CONFETTO_SIZE = 16;
+        
+        bool tick();
+        void draw();
+    };
+    
+    vector<Confetto> confetti;
+    
+    const size_t N_CONFETTI = 150;
+    const float CELEBRATION_DURATION = 2;
+    const float ANALYSIS_DARKEN_VALUE = 160;
+    const float ANALYSIS_FADE_DURATION = 0.5;
+    const float ANALYSIS_DATA_DELAY = 0.8;
     
     const int PICKER_B_W = 750;
     const int PICKER_B_H = 94;
@@ -66,6 +105,16 @@ private:
     const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 4;
     const int OK_BUTTON_Y = PICKER_E_Y - OK_BUTTON_H - 4;
     
+    const int ANALYSIS_HEADER_ROW_Y = WINDOW_HEIGHT * 0.1;
+    const int ANALYSIS_HEADER_COLUMN_X = WINDOW_WIDTH * 0.3;
+    const int ANALYSIS_LEFT_TEAM_X = WINDOW_WIDTH * 0.4;
+    const int ANALYSIS_RIGHT_TEAM_X = WINDOW_WIDTH * 0.6;
+    const int ANALYSIS_UNCLAIMED_X = WINDOW_WIDTH * 0.8;
+    const int ANALYSIS_YOUR_DECISION_Y = WINDOW_HEIGHT * 0.2;
+    const int ANALYSIS_REAL_Y = WINDOW_HEIGHT * 0.3;
+    const int ANALYSIS_SCORE_X = WINDOW_WIDTH * 0.5;
+    const int ANALYSIS_SCORE_Y = WINDOW_HEIGHT * 0.5;
+    
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,
         ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
@@ -75,6 +124,8 @@ private:
         const int bar_x, const int bar_w, const bool update_chosen_team,
         const bool mouse_value_is_delta
     );
+    void calculate_player_percentages();
+    void calculate_player_score();
     
 public:
     virtual void load();
