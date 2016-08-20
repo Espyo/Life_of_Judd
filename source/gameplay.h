@@ -1,20 +1,22 @@
 #ifndef INCLUDED_GAMEPLAY_H
 #define INCLUDED_GAMEPLAY_H
 
-#include "arena.h"
+#include "chapter.h"
 #include "const.h"
 #include "game_state.h"
 
 
 class Gameplay : public Game_State {
 private:
-    Arena cur_arena;
+    Chapter* cur_chapter;
     unsigned char difficulty;
     unsigned char sub_state;
     float next_state_timer;
     
     unsigned char analysis_darken_opacity;
+    float judd_timer;
     
+    bool mouse_on_back_button;
     bool mouse_on_ok_button;
     unsigned char chosen_team;
     int picker_team_x;
@@ -50,10 +52,15 @@ private:
     vector<Confetto> confetti;
     
     const size_t N_CONFETTI = 150;
+    const float JUDD_HOP_DURATION = 1;
     const float CELEBRATION_DURATION = 2;
     const float ANALYSIS_DARKEN_VALUE = 160;
     const float ANALYSIS_FADE_DURATION = 0.5;
     const float ANALYSIS_DATA_DELAY = 0.8;
+    
+    const int JUDD_START_Y = WINDOW_WIDTH + 100;
+    int judd_end_y;
+    const float JUDD_SCALE = 0.3;
     
     const int PICKER_B_W = 750;
     const int PICKER_B_H = 94;
@@ -91,9 +98,13 @@ private:
     const int PICKER_E_NONE_BAR_X = PICKER_E_TEAM_BAR_X;
     const int PICKER_E_NONE_BAR_Y = PICKER_E_Y + 94;
     
+    const int BACK_BUTTON_W = 128;
+    const int BACK_BUTTON_H = 64;
+    const int BACK_BUTTON_X = 8;
+    const int BACK_BUTTON_Y = PICKER_E_Y - BACK_BUTTON_H - 4;
     const int OK_BUTTON_W = 128;
     const int OK_BUTTON_H = 64;
-    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 25;
+    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 8;
     const int OK_BUTTON_Y = PICKER_E_Y - OK_BUTTON_H - 4;
     
     const int ANALYSIS_HEADER_ROW_Y = WINDOW_HEIGHT * 0.1;
@@ -115,6 +126,7 @@ private:
         const int bar_x, const int bar_w, const bool update_chosen_team,
         const bool mouse_value_is_delta
     );
+    float ease_hop(const float n);
     void calculate_player_percentages();
     void calculate_player_score();
     

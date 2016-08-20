@@ -9,8 +9,6 @@ using namespace std;
 
 int main() {
 
-    //TODO random blotches of ink and unclaimed turf
-    
     Game game;
     game.loop();
     

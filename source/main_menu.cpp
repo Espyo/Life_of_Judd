@@ -12,6 +12,7 @@ Main_Menu::Main_Menu(Game* game) :
     mouse_on_free_play_start_button(false),
     mouse_on_next_difficulty_button(false),
     mouse_on_prev_difficulty_button(false),
+    chosen_chapter(1),
     logo_split_x(0.5) {
     
     
@@ -23,6 +24,13 @@ void Main_Menu::load() {
     //TODO dynamic ink colors.
     ink_colors[0] = al_map_rgb(255, 0, 0);
     ink_colors[1] = al_map_rgb(0, 255, 0);
+    
+    mouse_on_story_start_button = false;
+    mouse_on_next_chapter_button = false;
+    mouse_on_prev_chapter_button = false;
+    mouse_on_free_play_start_button = false;
+    mouse_on_next_difficulty_button = false;
+    mouse_on_prev_difficulty_button = false;
 }
 
 
@@ -32,7 +40,8 @@ void Main_Menu::unload() {
 
 
 void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
-    //TODO mouse cursor
+    ALLEGRO_SYSTEM_MOUSE_CURSOR cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT;
+    
     if(
         ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN ||
         ev.type == ALLEGRO_EVENT_MOUSE_AXES
@@ -70,27 +79,55 @@ void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
             ev.mouse.y <= FREE_BUTTON_Y + NEXT_BUTTON_H;
     }
     
+    if(
+        mouse_on_prev_chapter_button || mouse_on_next_chapter_button ||
+        mouse_on_prev_difficulty_button || mouse_on_next_difficulty_button ||
+        mouse_on_story_start_button || mouse_on_free_play_start_button
+    ) {
+        cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK;
+    }
+    
     if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if(mouse_on_prev_chapter_button) {
-            //TODO
+            if(chosen_chapter == 1) {
+                chosen_chapter = game->all_chapter_data.size();
+            } else {
+                chosen_chapter--;
+            }
             
         } else if(mouse_on_next_chapter_button) {
-            //TODO
+            if(chosen_chapter == game->all_chapter_data.size()) {
+                chosen_chapter = 1;
+            } else {
+                chosen_chapter++;
+            }
             
         } else if(mouse_on_prev_difficulty_button) {
-            //TODO
+            if(game->free_play_difficulty == 0) {
+                game->free_play_difficulty = 2;
+            } else {
+                game->free_play_difficulty--;
+            }
             
         } else if(mouse_on_next_difficulty_button) {
-            //TODO
+            if(game->free_play_difficulty == 2) {
+                game->free_play_difficulty = 0;
+            } else {
+                game->free_play_difficulty++;
+            }
             
         } else if(mouse_on_story_start_button) {
-            //TODO
+            game->chapter_to_load = chosen_chapter;
+            game->state_mgr.change_state(GAME_STATE_LOADING);
             
         } else if(mouse_on_free_play_start_button) {
-            //TODO
+            game->chapter_to_load = 0;
+            game->state_mgr.change_state(GAME_STATE_LOADING);
             
         }
     }
+    
+    al_set_system_mouse_cursor(game->display, cursor);
     
 }
 
@@ -157,7 +194,9 @@ void Main_Menu::do_drawing() {
     
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
-        CHAPTER_NAME_X, CHAPTER_NAME_Y, 0, "Chapter 1: A Long Sentence For Spacing Purposes", 0.5
+        CHAPTER_NAME_X, CHAPTER_NAME_Y, 0,
+        game->all_chapter_data[chosen_chapter - 1].name,
+        0.5
     );
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
@@ -165,10 +204,20 @@ void Main_Menu::do_drawing() {
     );
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
-        CHAPTER_DIFFICULTY_X, CHAPTER_DIFFICULTY_Y, 0, "Difficulty: [%, %, %]", 0.5
+        CHAPTER_DIFFICULTY_X, CHAPTER_DIFFICULTY_Y, 0, "Difficulty:", 0.5
+    );
+    ALLEGRO_BITMAP* b =
+        game->bmp_difficulty_icon[
+            game->all_chapter_data[chosen_chapter - 1].difficulty
+        ];
+    al_draw_bitmap(
+        b,
+        CHAPTER_DIFFICULTY_ICON_X - al_get_bitmap_width(b) * 0.5,
+        CHAPTER_DIFFICULTY_Y - al_get_bitmap_height(b) * 0.5,
+        0
     );
     
-    ALLEGRO_BITMAP* b =
+    b =
         mouse_on_prev_chapter_button ? game->bmp_button_l_selected :
         game->bmp_button_l_unselected;
     al_draw_scaled_bitmap(
@@ -205,7 +254,19 @@ void Main_Menu::do_drawing() {
     );
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
-        FREE_DIFFICULTY_X, FREE_DIFFICULTY_Y, 0, "Difficulty: [%, %, %]", 0.5
+        FREE_DIFFICULTY_X, FREE_DIFFICULTY_Y, 0, "Difficulty:", 0.5
+    );
+    al_draw_bitmap(
+        game->bmp_difficulty_icon[game->free_play_difficulty],
+        FREE_DIFFICULTY_ICON_X -
+        al_get_bitmap_width(
+            game->bmp_difficulty_icon[game->free_play_difficulty]
+        ) * 0.5,
+        FREE_DIFFICULTY_Y -
+        al_get_bitmap_height(
+            game->bmp_difficulty_icon[game->free_play_difficulty]
+        ) * 0.5,
+        0
     );
     
     b =

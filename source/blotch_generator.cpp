@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include "arena.h"
+#include "chapter.h"
 #include "blotch_generator.h"
 #include "utils.h"
 
@@ -112,15 +112,15 @@ vector<Point> Blotch_Generator::generate_blotch() {
 
 
 vector<Point> Blotch_Generator::pick_starting_points(
-    Arena* arena, const size_t amount
+    Chapter* chapter, const size_t amount
 ) {
 
     //First, count how many non-team cells there are.
     size_t n_valid_cells = 0;
     Cell* cell = NULL;
-    for(size_t x = 0; x < arena->width; ++x) {
-        for(size_t y = 0; y < arena->height; ++y) {
-            cell = &arena->grid[x][y];
+    for(size_t x = 0; x < chapter->width; ++x) {
+        for(size_t y = 0; y < chapter->height; ++y) {
+            cell = &chapter->grid[x][y];
             if(cell->type == CELL_TYPE_NORMAL && cell->team != team) {
                 n_valid_cells++;
             }
@@ -141,9 +141,9 @@ vector<Point> Blotch_Generator::pick_starting_points(
     size_t next_number = 0;
     size_t cur_spot = 0;
     bool done = false;
-    for(size_t x = 0; x < arena->width; ++x) {
-        for(size_t y = 0; y < arena->height; ++y) {
-            cell = &arena->grid[x][y];
+    for(size_t x = 0; x < chapter->width; ++x) {
+        for(size_t y = 0; y < chapter->height; ++y) {
+            cell = &chapter->grid[x][y];
             if(cell->type == CELL_TYPE_NORMAL && cell->team != team) {
                 next_number++;
             }
@@ -163,15 +163,16 @@ vector<Point> Blotch_Generator::pick_starting_points(
 }
 
 
-void Blotch_Generator::ink(Arena* arena) {
+void Blotch_Generator::ink(Chapter* chapter) {
     size_t n_blotches = randomi(min_blotches, max_blotches);
-    vector<Point> starting_points = pick_starting_points(arena, n_blotches);
+    if(n_blotches == 0) return;
+    vector<Point> starting_points = pick_starting_points(chapter, n_blotches);
     
     for(size_t b = 0; b < starting_points.size(); ++b) {
         vector<Point> points = generate_blotch();
         
         for(size_t p = 0; p < points.size(); ++p) {
-            arena->ink(starting_points[b] + points[p], team);
+            chapter->ink(starting_points[b] + points[p], team);
         }
     }
 }

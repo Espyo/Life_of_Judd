@@ -23,8 +23,6 @@
     <File Name="../main.cpp"/>
     <File Name="../game.h"/>
     <File Name="../game.cpp"/>
-    <File Name="../arena.cpp"/>
-    <File Name="../arena.h"/>
     <File Name="../utils.cpp"/>
     <File Name="../point.cpp"/>
     <File Name="../inkling.h"/>
@@ -38,12 +36,16 @@
     <File Name="../game_state.cpp"/>
     <File Name="../gameplay.cpp"/>
     <File Name="../game_state.h"/>
-    <File Name="../bitmap_manager.cpp"/>
-    <File Name="../bitmap_manager.h"/>
     <File Name="../blotch_generator.h"/>
     <File Name="../blotch_generator.cpp"/>
     <File Name="../main_menu.h"/>
     <File Name="../main_menu.cpp"/>
+    <File Name="../loading.cpp"/>
+    <File Name="../loading.h"/>
+    <File Name="../chapter_data.cpp"/>
+    <File Name="../chapter_data.h"/>
+    <File Name="../chapter.h"/>
+    <File Name="../chapter.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

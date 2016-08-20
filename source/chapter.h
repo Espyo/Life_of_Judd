@@ -1,5 +1,5 @@
-#ifndef INCLUDED_ARENA_H
-#define INCLUDED_ARENA_H
+#ifndef INCLUDED_CHAPTER_H
+#define INCLUDED_CHAPTER_H
 
 #include <vector>
 
@@ -8,6 +8,7 @@
 
 #include "blotch_generator.h"
 #include "cell.h"
+#include "chapter_data.h"
 #include "const.h"
 #include "inkling.h"
 #include "point.h"
@@ -15,21 +16,22 @@
 using namespace std;
 
 
-struct Arena {
+struct Chapter {
 private:
+    void generate_data();
     void get_data_from_bmp(ALLEGRO_BITMAP* data_bmp);
     
 public:
+    Chapter_Data* chapter_data;
+    
     size_t width;
     size_t height;
     vector<vector<Cell> > grid;
     
-    unsigned long n_simulation_iterations;
-    Blotch_Generator blotch_gen[3];
-    
     Inkling inklings[2][N_INKLINGS];
-    Point spawns[2];
     ALLEGRO_COLOR ink_colors[2];
+    Point spawns[2];
+    float spawn_dist;
     
     float real_percentages[3];
     
@@ -37,8 +39,11 @@ public:
     ALLEGRO_BITMAP* background_bmp;
     ALLEGRO_BITMAP* result_bmp;
     
-    Arena();
-    void load();
+    Chapter();
+    void load(
+        ALLEGRO_BITMAP* arena_bmp, ALLEGRO_BITMAP* data_bmp,
+        ALLEGRO_BITMAP* bg_bmp
+    );
     void do_match();
     void render();
     void calculate_real_percentages();
@@ -50,4 +55,4 @@ public:
 };
 
 
-#endif //ifndef INCLUDED_ARENA_H
+#endif //ifndef INCLUDED_CHAPTER_H

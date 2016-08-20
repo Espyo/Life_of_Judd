@@ -1,41 +1,44 @@
 #include <algorithm>
 
-#include "arena.h"
+#include "chapter.h"
 #include "inkling.h"
 #include "utils.h"
 
 
 Inkling::Inkling(
-    Arena* arena,
+    Chapter* chapter,
     const Point start_pos,
     const unsigned char team
 ) :
-    arena(arena),
+    chapter(chapter),
+    pos(start_pos),
     ink_radius(0),
     team(team),
     speed(0),
     aggressiveness(0),
     respawn_chance(0) {
     
-    spawn = start_pos;
-    pos = start_pos;
+    
 }
 
 
 void Inkling::ink() {
-    arena->ink(pos, ink_radius, team);
+    chapter->ink(pos, ink_radius, team);
 }
 
 
 void Inkling::check_respawn() {
-    float dx = arena->width / 2.0 - pos.x;
-    float dy = arena->height / 2.0 - pos.y;
-    float center_closeness =
-        min(1.0, sqrt(dx * dx + dy * dy) / (arena->width / 2.0)); //TODO don't use arena width; use distance to spawn or something
-    center_closeness = 1 - center_closeness;
+    Point dif =
+        team == 0 ?
+        chapter->spawns[1] - pos :
+        chapter->spawns[0] - pos;
+        
+    float other_spawn_closeness =
+        min(1.0f, sqrt(dif.x * dif.x + dif.y * dif.y) / (chapter->spawn_dist));
+    other_spawn_closeness = 1 - other_spawn_closeness;
     
-    if(randomf(0, 1) <= center_closeness * respawn_chance) {
-        pos = spawn;
+    if(randomf(0, 1) <= other_spawn_closeness * respawn_chance) {
+        pos = chapter->spawns[team];
     }
 }
 
@@ -43,8 +46,11 @@ void Inkling::check_respawn() {
 void Inkling::move() {
     Point new_pos = pos;
     
-    Point other_spawn = team == 0 ? arena->spawns[1] : arena->spawns[0];
-    
+    Point other_spawn =
+        team == 0 ?
+        chapter->spawns[1] :
+        chapter->spawns[0];
+        
     float intended_angle =
         atan2(
             other_spawn.y - new_pos.y,
@@ -56,7 +62,7 @@ void Inkling::move() {
     new_pos.x += cos(intended_angle) * speed;
     new_pos.y += sin(intended_angle) * speed;
     
-    if(arena->is_valid(new_pos, false)) {
+    if(chapter->is_valid(new_pos, false)) {
         pos = new_pos;
     }
 }

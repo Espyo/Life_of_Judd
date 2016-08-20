@@ -5,7 +5,7 @@
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_image.h>
 
-#include "bitmap_manager.h"
+#include "chapter.h"
 #include "game_state.h"
 
 
@@ -38,8 +38,17 @@ struct Game {
     ALLEGRO_BITMAP* bmp_judd_l;
     ALLEGRO_BITMAP* bmp_flag_r;
     ALLEGRO_BITMAP* bmp_flag_l;
+    ALLEGRO_BITMAP* bmp_difficulty_icon[3];
+    ALLEGRO_BITMAP* bmp_arena[N_ARENAS];
+    ALLEGRO_BITMAP* bmp_arena_data[N_ARENAS];
+    ALLEGRO_BITMAP* bmp_arena_bg[N_ARENAS];
     
     Game_State_Manager state_mgr;
+    size_t chapter_to_load;
+    unsigned char free_play_difficulty;
+    Chapter cur_chapter;
+    Chapter_Data random_chapter_data;
+    vector<Chapter_Data> all_chapter_data;
     
     Game();
     void loop();
@@ -47,7 +56,7 @@ struct Game {
         const float pivot_x, const float pivot_y, const float scale,
         const bool right, const ALLEGRO_COLOR flag_color
     );
-
+    
 };
 
 

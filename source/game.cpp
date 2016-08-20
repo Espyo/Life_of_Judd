@@ -2,9 +2,11 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_primitives.h>
 
+#include "chapter_data.h"
 #include "const.h"
 #include "game.h"
 #include "gameplay.h"
+#include "loading.h"
 #include "main_menu.h"
 #include "utils.h"
 
@@ -14,7 +16,9 @@ Game::Game() :
     display(nullptr),
     queue(nullptr),
     timer(nullptr),
-    state_mgr() {
+    state_mgr(),
+    chapter_to_load(0),
+    free_play_difficulty(DIFFICULTY_BEGINNER) {
     
     srand(time(NULL));
     
@@ -68,8 +72,29 @@ Game::Game() :
     bmp_judd_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_JUDD_L).c_str());
     bmp_flag_r = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_R).c_str());
     bmp_flag_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_L).c_str());
+    bmp_difficulty_icon[0] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BEGINNER_ICON).c_str());
+    bmp_difficulty_icon[1] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_INTERMEDIATE_ICON).c_str());
+    bmp_difficulty_icon[2] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_EXPERT_ICON).c_str());
+    
+    for(size_t a = 0; a < N_ARENAS; ++a) {
+        bmp_arena_data[a] =
+            al_load_bitmap(
+                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_data.png").c_str()
+            );
+        bmp_arena[a] =
+            al_load_bitmap(
+                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + ".png").c_str()
+            );
+        bmp_arena_bg[a] =
+            al_load_bitmap(
+                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_bg.jpg").c_str()
+            );
+    }
+    
+    all_chapter_data = get_chapters();
     
     state_mgr.register_state(GAME_STATE_MAIN_MENU, new Main_Menu(this));
+    state_mgr.register_state(GAME_STATE_LOADING, new Loading(this));
     state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));
     state_mgr.change_state(GAME_STATE_MAIN_MENU);
     
@@ -83,19 +108,19 @@ void Game::loop() {
     while(running) {
         al_wait_for_event(queue, &ev);
         
+        Game_State* cur_state = state_mgr.get_current_state();
+        
         if(ev.type == ALLEGRO_EVENT_TIMER) {
             time_spent += 1.0 / GAME_FPS;
-            state_mgr.get_current_state()->do_drawing();
-            state_mgr.get_current_state()->do_logic();
-            
+            cur_state->do_drawing();
+            cur_state->do_logic();
             
         } else if(
             ev.type == ALLEGRO_EVENT_MOUSE_AXES ||
             ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN ||
             ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP
         ) {
-            state_mgr.get_current_state()->handle_mouse(ev);
-            
+            cur_state->handle_mouse(ev);
             
         } else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             running = false;

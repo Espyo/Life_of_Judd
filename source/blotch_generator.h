@@ -9,11 +9,11 @@
 using namespace std;
 
 
-struct Arena;
+struct Chapter;
 
 struct Blotch_Generator {
 private:
-    vector<Point> pick_starting_points(Arena* arena, const size_t amount);
+    vector<Point> pick_starting_points(Chapter* chapter, const size_t amount);
     vector<Point> generate_blotch();
 
 public:
@@ -24,7 +24,7 @@ public:
     size_t max_blotches;
     
     Blotch_Generator();
-    void ink(Arena* arena);
+    void ink(Chapter* chapter);
 };
 
 

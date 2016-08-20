@@ -23,9 +23,9 @@ const string BMP_BUTTON_L_UNSELECTED = "button_l_unselected.png";
 const string BMP_BUTTON_L_SELECTED =   "button_l_selected.png";
 const string BMP_BUTTON_K_UNSELECTED = "button_k_unselected.png";
 const string BMP_BUTTON_K_SELECTED =   "button_k_selected.png";
-const string BMP_PICKER_B = "picker_1.png";
-const string BMP_PICKER_I = "picker_2.png";
-const string BMP_PICKER_E = "picker_3.png";
+const string BMP_PICKER_B = "picker_b.png";
+const string BMP_PICKER_I = "picker_i.png";
+const string BMP_PICKER_E = "picker_e.png";
 const string BMP_INK_EFFECT = "ink_effect.png";
 const string BMP_CHECKERBOARD = "checkerboard.png";
 const string BMP_SPLASH = "splash.png";
@@ -35,9 +35,13 @@ const string BMP_JUDD_R = "judd_r.png";
 const string BMP_JUDD_L = "judd_l.png";
 const string BMP_FLAG_R = "flag_r.png";
 const string BMP_FLAG_L = "flag_l.png";
+const string BMP_BEGINNER_ICON = "beginner_icon.png";
+const string BMP_INTERMEDIATE_ICON = "intermediate_icon.png";
+const string BMP_EXPERT_ICON = "expert_icon.png";
 
 enum GAME_STATES {
     GAME_STATE_MAIN_MENU,
+    GAME_STATE_LOADING,
     GAME_STATE_GAMEPLAY,
 };
 
@@ -54,6 +58,7 @@ enum TEAMS {
 };
 
 const size_t N_INKLINGS = 4;
+const size_t N_ARENAS = 1; //TODO;
 const float SPAWN_RADIUS = 4.0;
 
 const ALLEGRO_COLOR COLOR_CLEAR = { 0.12, 0.12, 0.12, 1.0 };
