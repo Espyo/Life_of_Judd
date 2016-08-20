@@ -9,7 +9,7 @@
 
 Gameplay::Gameplay(Game* game) :
     Game_State(game),
-    game_mode(GAME_MODE_BEGINNER),
+    difficulty(DIFFICULTY_BEGINNER),
     sub_state(SUB_STATE_PICKING),
     next_state_timer(0),
     mouse_on_ok_button(false),
@@ -17,13 +17,7 @@ Gameplay::Gameplay(Game* game) :
     picker_team_x(0),
     mouse_down_on_team_picker(false),
     picker_unclaimed_x(0),
-    mouse_down_on_unclaimed_picker(false),
-    bmp_button_1(nullptr),
-    bmp_button_2(nullptr),
-    bmp_picker_1(nullptr),
-    bmp_picker_2(nullptr),
-    bmp_picker_3(nullptr),
-    bmp_ink_effect(nullptr) {
+    mouse_down_on_unclaimed_picker(false) {
     
     
 }
@@ -35,20 +29,11 @@ void Gameplay::load() {
     cur_arena.calculate_real_percentages();
     cur_arena.render();
     
-    game_mode = GAME_MODE_BEGINNER; //TODO
+    difficulty = DIFFICULTY_BEGINNER; //TODO
     
-    bmp_button_1 = game->bmp_mgr.get_bitmap(BMP_BUTTON_1);
-    bmp_button_2 = game->bmp_mgr.get_bitmap(BMP_BUTTON_2);
-    bmp_picker_1 = game->bmp_mgr.get_bitmap(BMP_PICKER_1);
-    bmp_picker_2 = game->bmp_mgr.get_bitmap(BMP_PICKER_2);
-    bmp_picker_3 = game->bmp_mgr.get_bitmap(BMP_PICKER_3);
-    bmp_ink_effect = game->bmp_mgr.get_bitmap(BMP_INK_EFFECT);
-    bmp_checkerboard = game->bmp_mgr.get_bitmap(BMP_CHECKERBOARD);
-    bmp_splash = game->bmp_mgr.get_bitmap(BMP_SPLASH);
-    
-    if(game_mode == GAME_MODE_INTERMEDIATE) {
+    if(difficulty == DIFFICULTY_INTERMEDIATE) {
         picker_team_x = PICKER_I_BAR_W / 2.0;
-    } else if(game_mode == GAME_MODE_EXPERT) {
+    } else if(difficulty == DIFFICULTY_EXPERT) {
         picker_team_x = PICKER_E_TEAM_BAR_W / 2.0;
         picker_unclaimed_x = PICKER_E_NONE_BAR_W / 4.0;
     }
@@ -75,7 +60,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK;
     }
     
-    if(game_mode == GAME_MODE_BEGINNER) {
+    if(difficulty == DIFFICULTY_BEGINNER) {
     
         bool mouse_on_button_1 = false;
         bool mouse_on_button_2 = false;
@@ -113,7 +98,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
             cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK;
         }
         
-    } else if(game_mode == GAME_MODE_INTERMEDIATE) {
+    } else if(difficulty == DIFFICULTY_INTERMEDIATE) {
     
         bool mouse_on_bar =
             ev.mouse.x >= PICKER_I_X && ev.mouse.y >= PICKER_I_BAR_Y &&
@@ -346,7 +331,6 @@ void Gameplay::do_logic() {
 
 
 void Gameplay::do_drawing() {
-    al_set_target_backbuffer(game->display);
     al_clear_to_color(al_map_rgb(0, 0, 0));
     
     draw_textured_rectangle(
@@ -376,11 +360,11 @@ void Gameplay::do_drawing() {
         0.5
     );
     
-    if(game_mode == GAME_MODE_BEGINNER) {
+    if(difficulty == DIFFICULTY_BEGINNER) {
         draw_textured_rectangle(
             PICKER_B_TEAM_1_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
             PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team == TEAM_1 ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -392,7 +376,7 @@ void Gameplay::do_drawing() {
         draw_textured_rectangle(
             PICKER_B_TEAM_2_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
             PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team == TEAM_2 ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -401,22 +385,22 @@ void Gameplay::do_drawing() {
             (chosen_team == TEAM_2)
         );
         
-        al_draw_bitmap(bmp_picker_1, PICKER_B_X, PICKER_B_Y, 0);
+        al_draw_bitmap(game->bmp_picker_b, PICKER_B_X, PICKER_B_Y, 0);
         
         ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
         if(chosen_team != TEAM_NONE) {
             ok_button_tint = cur_arena.ink_colors[chosen_team];
         }
         al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? bmp_button_2 : bmp_button_1),
+            (mouse_on_ok_button ? game->bmp_button_r_selected : game->bmp_button_r_unselected),
             ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
         );
         
-    } else if(game_mode == GAME_MODE_INTERMEDIATE) {
+    } else if(difficulty == DIFFICULTY_INTERMEDIATE) {
         draw_textured_rectangle(
             PICKER_I_BAR_X, PICKER_I_BAR_Y,
             picker_team_x, PICKER_I_BAR_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -428,7 +412,7 @@ void Gameplay::do_drawing() {
         draw_textured_rectangle(
             PICKER_I_BAR_X + picker_team_x, PICKER_I_BAR_Y,
             PICKER_I_BAR_W - picker_team_x, PICKER_I_BAR_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -437,7 +421,7 @@ void Gameplay::do_drawing() {
             chosen_team != TEAM_NONE
         );
         
-        al_draw_bitmap(bmp_picker_2, PICKER_I_X, PICKER_I_Y, 0);
+        al_draw_bitmap(game->bmp_picker_i, PICKER_I_X, PICKER_I_Y, 0);
         
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
@@ -457,15 +441,15 @@ void Gameplay::do_drawing() {
             ok_button_tint = cur_arena.ink_colors[chosen_team];
         }
         al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? bmp_button_2 : bmp_button_1),
+            (mouse_on_ok_button ? game->bmp_button_r_selected : game->bmp_button_r_unselected),
             ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
         );
         
-    } else if(game_mode == GAME_MODE_EXPERT) {
+    } else if(difficulty == DIFFICULTY_EXPERT) {
         draw_textured_rectangle(
             PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_Y,
             picker_team_x, PICKER_E_TEAM_BAR_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_1] :
@@ -477,7 +461,7 @@ void Gameplay::do_drawing() {
         draw_textured_rectangle(
             PICKER_E_TEAM_BAR_X + picker_team_x, PICKER_E_TEAM_BAR_Y,
             PICKER_E_TEAM_BAR_W - picker_team_x, PICKER_E_TEAM_BAR_H,
-            bmp_ink_effect,
+            game->bmp_ink_effect,
             (
                 chosen_team != TEAM_NONE ?
                 cur_arena.ink_colors[TEAM_2] :
@@ -489,10 +473,10 @@ void Gameplay::do_drawing() {
         draw_textured_rectangle(
             PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_Y,
             picker_unclaimed_x, PICKER_E_NONE_BAR_H,
-            bmp_checkerboard, al_map_rgb(128, 128, 128), false
+            game->bmp_checkerboard, al_map_rgb(128, 128, 128), false
         );
         
-        al_draw_bitmap(bmp_picker_3, PICKER_E_X, PICKER_E_Y, 0);
+        al_draw_bitmap(game->bmp_picker_e, PICKER_E_X, PICKER_E_Y, 0);
         
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
@@ -517,7 +501,7 @@ void Gameplay::do_drawing() {
             ok_button_tint = cur_arena.ink_colors[chosen_team];
         }
         al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? bmp_button_2 : bmp_button_1),
+            (mouse_on_ok_button ? game->bmp_button_r_selected : game->bmp_button_r_unselected),
             ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
         );
         
@@ -553,24 +537,24 @@ void Gameplay::do_drawing() {
         );
         if(chosen_team == 0) {
             al_draw_tinted_bitmap(
-                bmp_splash, cur_arena.ink_colors[chosen_team],
+                game->bmp_splash, cur_arena.ink_colors[chosen_team],
                 ANALYSIS_LEFT_TEAM_X -
-                al_get_bitmap_width(bmp_splash) * 0.5,
+                al_get_bitmap_width(game->bmp_splash) * 0.5,
                 ANALYSIS_YOUR_DECISION_Y -
-                al_get_bitmap_height(bmp_splash) * 0.5,
+                al_get_bitmap_height(game->bmp_splash) * 0.5,
                 0
             );
         } else {
             al_draw_tinted_bitmap(
-                bmp_splash, cur_arena.ink_colors[chosen_team],
+                game->bmp_splash, cur_arena.ink_colors[chosen_team],
                 ANALYSIS_RIGHT_TEAM_X -
-                al_get_bitmap_width(bmp_splash) * 0.5,
+                al_get_bitmap_width(game->bmp_splash) * 0.5,
                 ANALYSIS_YOUR_DECISION_Y -
-                al_get_bitmap_height(bmp_splash) * 0.5,
+                al_get_bitmap_height(game->bmp_splash) * 0.5,
                 0
             );
         }
-        if(game_mode == GAME_MODE_BEGINNER) {
+        if(difficulty == DIFFICULTY_BEGINNER) {
             draw_shadowed_text(
                 game->font, al_map_rgb(255, 255, 255),
                 ANALYSIS_LEFT_TEAM_X, ANALYSIS_YOUR_DECISION_Y,
@@ -585,7 +569,7 @@ void Gameplay::do_drawing() {
                 f2s(player_percentages[TEAM_1]) + "%", 0.8
             );
         }
-        if(game_mode == GAME_MODE_BEGINNER) {
+        if(difficulty == DIFFICULTY_BEGINNER) {
             draw_shadowed_text(
                 game->font, al_map_rgb(255, 255, 255),
                 ANALYSIS_RIGHT_TEAM_X, ANALYSIS_YOUR_DECISION_Y,
@@ -605,7 +589,7 @@ void Gameplay::do_drawing() {
             ANALYSIS_UNCLAIMED_X, ANALYSIS_YOUR_DECISION_Y,
             ALLEGRO_ALIGN_CENTER,
             (
-                game_mode == GAME_MODE_EXPERT ?
+                difficulty == DIFFICULTY_EXPERT ?
                 f2s(player_percentages[TEAM_NONE]) + "%" :
                 "---"
             ), 0.8
@@ -624,20 +608,20 @@ void Gameplay::do_drawing() {
             cur_arena.real_percentages[TEAM_2]
         ) {
             al_draw_tinted_bitmap(
-                bmp_splash, cur_arena.ink_colors[TEAM_1],
+                game->bmp_splash, cur_arena.ink_colors[TEAM_1],
                 ANALYSIS_LEFT_TEAM_X -
-                al_get_bitmap_width(bmp_splash) * 0.5,
+                al_get_bitmap_width(game->bmp_splash) * 0.5,
                 ANALYSIS_REAL_Y -
-                al_get_bitmap_height(bmp_splash) * 0.5,
+                al_get_bitmap_height(game->bmp_splash) * 0.5,
                 0
             );
         } else {
             al_draw_tinted_bitmap(
-                bmp_splash, cur_arena.ink_colors[TEAM_2],
+                game->bmp_splash, cur_arena.ink_colors[TEAM_2],
                 ANALYSIS_RIGHT_TEAM_X -
-                al_get_bitmap_width(bmp_splash) * 0.5,
+                al_get_bitmap_width(game->bmp_splash) * 0.5,
                 ANALYSIS_REAL_Y -
-                al_get_bitmap_height(bmp_splash) * 0.5,
+                al_get_bitmap_height(game->bmp_splash) * 0.5,
                 0
             );
         }
@@ -677,6 +661,7 @@ void Gameplay::do_drawing() {
 
 
 void Gameplay::unload() {
+    //TODO
     al_save_bitmap("bmp.png", cur_arena.arena_bmp); //TODO
 }
 
@@ -747,10 +732,10 @@ void Gameplay::update_picker_x(
 
 
 void Gameplay::calculate_player_percentages() {
-    if(game_mode == GAME_MODE_BEGINNER) {
+    if(difficulty == DIFFICULTY_BEGINNER) {
         return;
         
-    } else if(game_mode == GAME_MODE_INTERMEDIATE) {
+    } else if(difficulty == DIFFICULTY_INTERMEDIATE) {
         player_percentages[TEAM_NONE] = 0;
         player_percentages[TEAM_1] =
             (picker_team_x / (float) PICKER_E_TEAM_BAR_W) *
@@ -778,7 +763,7 @@ void Gameplay::calculate_player_percentages() {
 
 
 void Gameplay::calculate_player_score() {
-    if(game_mode == GAME_MODE_BEGINNER) {
+    if(difficulty == DIFFICULTY_BEGINNER) {
         unsigned char real_winner =
             cur_arena.real_percentages[TEAM_1] >
             cur_arena.real_percentages[TEAM_2] ? TEAM_1 : TEAM_2;
@@ -797,8 +782,8 @@ void Gameplay::calculate_player_score() {
     //use the best match of the two.
     player_score = max(accuracies[0], accuracies[1]);
     
-    if(game_mode == GAME_MODE_EXPERT) {
-        //Expert mode accuracy =
+    if(difficulty == DIFFICULTY_EXPERT) {
+        //Expert difficulty accuracy =
         //(unclaimed turf accuracy + claimed turf split accuracy) / 2.
         player_score = (player_score + accuracies[2]) / 2;
     }

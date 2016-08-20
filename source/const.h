@@ -17,24 +17,34 @@ const string GRAPHICS_FOLDER = "graphics";
 const string FONT_FILE_NAME = "Waree-Bold.ttf";
 const int FONT_SIZE = 40;
 
-const string BMP_BUTTON_1 = "button_1.png";
-const string BMP_BUTTON_2 = "button_2.png";
-const string BMP_PICKER_1 = "picker_1.png";
-const string BMP_PICKER_2 = "picker_2.png";
-const string BMP_PICKER_3 = "picker_3.png";
+const string BMP_BUTTON_R_UNSELECTED = "button_r_unselected.png";
+const string BMP_BUTTON_R_SELECTED =   "button_r_selected.png";
+const string BMP_BUTTON_L_UNSELECTED = "button_l_unselected.png";
+const string BMP_BUTTON_L_SELECTED =   "button_l_selected.png";
+const string BMP_BUTTON_K_UNSELECTED = "button_k_unselected.png";
+const string BMP_BUTTON_K_SELECTED =   "button_k_selected.png";
+const string BMP_PICKER_B = "picker_1.png";
+const string BMP_PICKER_I = "picker_2.png";
+const string BMP_PICKER_E = "picker_3.png";
 const string BMP_INK_EFFECT = "ink_effect.png";
 const string BMP_CHECKERBOARD = "checkerboard.png";
 const string BMP_SPLASH = "splash.png";
+const string BMP_LOGO = "logo.png";
+const string BMP_TITLE_BG = "title_background.png";
+const string BMP_JUDD_R = "judd_r.png";
+const string BMP_JUDD_L = "judd_l.png";
+const string BMP_FLAG_R = "flag_r.png";
+const string BMP_FLAG_L = "flag_l.png";
 
 enum GAME_STATES {
     GAME_STATE_MAIN_MENU,
     GAME_STATE_GAMEPLAY,
 };
 
-enum GAME_MODES {
-    GAME_MODE_BEGINNER,
-    GAME_MODE_INTERMEDIATE,
-    GAME_MODE_EXPERT,
+enum DIFFICULTIES {
+    DIFFICULTY_BEGINNER,
+    DIFFICULTY_INTERMEDIATE,
+    DIFFICULTY_EXPERT,
 };
 
 enum TEAMS {

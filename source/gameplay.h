@@ -9,7 +9,7 @@
 class Gameplay : public Game_State {
 private:
     Arena cur_arena;
-    unsigned char game_mode;
+    unsigned char difficulty;
     unsigned char sub_state;
     float next_state_timer;
     
@@ -24,15 +24,6 @@ private:
     
     float player_percentages[3];
     float player_score;
-    
-    ALLEGRO_BITMAP* bmp_button_1;
-    ALLEGRO_BITMAP* bmp_button_2;
-    ALLEGRO_BITMAP* bmp_picker_1;
-    ALLEGRO_BITMAP* bmp_picker_2;
-    ALLEGRO_BITMAP* bmp_picker_3;
-    ALLEGRO_BITMAP* bmp_ink_effect;
-    ALLEGRO_BITMAP* bmp_checkerboard;
-    ALLEGRO_BITMAP* bmp_splash;
     
     enum SUB_STATES {
         SUB_STATE_PICKING,
@@ -101,8 +92,8 @@ private:
     const int PICKER_E_NONE_BAR_Y = PICKER_E_Y + 94;
     
     const int OK_BUTTON_W = 128;
-    const int OK_BUTTON_H = 128;
-    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 4;
+    const int OK_BUTTON_H = 64;
+    const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 25;
     const int OK_BUTTON_Y = PICKER_E_Y - OK_BUTTON_H - 4;
     
     const int ANALYSIS_HEADER_ROW_Y = WINDOW_HEIGHT * 0.1;

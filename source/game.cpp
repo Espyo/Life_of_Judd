@@ -5,6 +5,7 @@
 #include "const.h"
 #include "game.h"
 #include "gameplay.h"
+#include "main_menu.h"
 #include "utils.h"
 
 
@@ -43,18 +44,34 @@ Game::Game() :
             (GRAPHICS_FOLDER + "/" + FONT_FILE_NAME).c_str(),
             FONT_SIZE, 0
         );
+    big_font =
+        al_load_ttf_font(
+            (GRAPHICS_FOLDER + "/" + FONT_FILE_NAME).c_str(),
+            FONT_SIZE * 2.0, 0
+        );
         
-    bmp_mgr.load_bitmap(BMP_BUTTON_1);
-    bmp_mgr.load_bitmap(BMP_BUTTON_2);
-    bmp_mgr.load_bitmap(BMP_PICKER_1);
-    bmp_mgr.load_bitmap(BMP_PICKER_2);
-    bmp_mgr.load_bitmap(BMP_PICKER_3);
-    bmp_mgr.load_bitmap(BMP_INK_EFFECT);
-    bmp_mgr.load_bitmap(BMP_CHECKERBOARD);
-    bmp_mgr.load_bitmap(BMP_SPLASH);
+    bmp_button_r_unselected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_R_UNSELECTED).c_str());
+    bmp_button_r_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_R_SELECTED).c_str());
+    bmp_button_l_unselected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_L_UNSELECTED).c_str());
+    bmp_button_l_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_L_SELECTED).c_str());
+    bmp_button_k_unselected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_K_UNSELECTED).c_str());
+    bmp_button_k_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_K_SELECTED).c_str());
+    bmp_picker_b = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_B).c_str());
+    bmp_picker_i = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_I).c_str());
+    bmp_picker_e = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_E).c_str());
+    bmp_ink_effect = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_INK_EFFECT).c_str());
+    bmp_checkerboard = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_CHECKERBOARD).c_str());
+    bmp_splash = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_SPLASH).c_str());
+    bmp_logo = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_LOGO).c_str());
+    bmp_title_background = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_TITLE_BG).c_str());
+    bmp_judd_r = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_JUDD_R).c_str());
+    bmp_judd_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_JUDD_L).c_str());
+    bmp_flag_r = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_R).c_str());
+    bmp_flag_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_L).c_str());
     
+    state_mgr.register_state(GAME_STATE_MAIN_MENU, new Main_Menu(this));
     state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));
-    state_mgr.change_state(GAME_STATE_GAMEPLAY);
+    state_mgr.change_state(GAME_STATE_MAIN_MENU);
     
     al_start_timer(timer);
 }
@@ -85,4 +102,41 @@ void Game::loop() {
             
         }
     }
+}
+
+
+void Game::draw_judd(
+    const float pivot_x, const float pivot_y, const float scale,
+    const bool right, const ALLEGRO_COLOR flag_color
+) {
+    ALLEGRO_BITMAP* judd_bmp =
+        right ? bmp_judd_r : bmp_judd_l;
+    ALLEGRO_BITMAP* flag_bmp =
+        right ? bmp_flag_r : bmp_flag_l;
+    int flag_x =
+        right ? 451 : -70;
+    int flag_y =
+        right ? 95 : 90;
+    int feet_x =
+        right ? 188 : 437;
+        
+    int judd_bmp_w = al_get_bitmap_width(judd_bmp);
+    int judd_bmp_h = al_get_bitmap_height(judd_bmp);
+    int flag_bmp_w = al_get_bitmap_width(flag_bmp);
+    int flag_bmp_h = al_get_bitmap_height(flag_bmp);
+    int judd_x = pivot_x - (feet_x * scale);
+    int judd_y = pivot_y - (judd_bmp_h * scale);
+    al_draw_tinted_scaled_bitmap(
+        flag_bmp, flag_color,
+        0, 0, flag_bmp_w, flag_bmp_h,
+        judd_x + (flag_x * scale), judd_y + (flag_y * scale),
+        flag_bmp_w * scale, flag_bmp_h * scale,
+        0
+    );
+    al_draw_scaled_bitmap(
+        judd_bmp,
+        0, 0, judd_bmp_w, judd_bmp_h,
+        judd_x, judd_y, judd_bmp_w * scale, judd_bmp_h * scale,
+        0
+    );
 }

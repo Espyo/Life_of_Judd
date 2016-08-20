@@ -162,6 +162,7 @@ void Arena::calculate_real_percentages() {
 
 
 void Arena::render() {
+    ALLEGRO_BITMAP* old_target_bitmap = al_get_target_bitmap();
     al_set_target_bitmap(result_bmp);
     al_lock_bitmap(
         result_bmp, ALLEGRO_PIXEL_FORMAT_RGBA_8888, ALLEGRO_LOCK_READWRITE
@@ -181,6 +182,7 @@ void Arena::render() {
     }
     
     al_unlock_bitmap(result_bmp);
+    al_set_target_bitmap(old_target_bitmap);
     
 }
 

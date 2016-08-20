@@ -16,6 +16,7 @@ const Point Point::operator +(const Point &p) const {
 Point Point::operator +=(const Point &p) {
     x += p.x;
     y += p.y;
+    return Point(x, y);
 }
 
 
