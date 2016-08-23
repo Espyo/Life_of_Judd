@@ -21,9 +21,10 @@ Main_Menu::Main_Menu(Game* game) :
 
 void Main_Menu::load() {
     logo_split_x = al_get_bitmap_width(game->bmp_logo) * randomf(0.1, 0.9);
-    //TODO dynamic ink colors.
-    ink_colors[0] = al_map_rgb(255, 0, 0);
-    ink_colors[1] = al_map_rgb(0, 255, 0);
+    
+    size_t ink_pair = randomi(0, game->all_ink_colors.size() - 1);
+    ink_colors[0] = game->all_ink_colors[ink_pair].first;
+    ink_colors[1] = game->all_ink_colors[ink_pair].second;
     
     mouse_on_story_start_button = false;
     mouse_on_next_chapter_button = false;

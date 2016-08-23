@@ -8,7 +8,6 @@
 
 class Gameplay : public Game_State {
 private:
-    Chapter* cur_chapter;
     unsigned char difficulty;
     unsigned char sub_state;
     float next_state_timer;
@@ -26,6 +25,7 @@ private:
     
     float player_percentages[3];
     float player_score;
+    string committee_comment;
     
     enum SUB_STATES {
         SUB_STATE_PICKING,
@@ -74,14 +74,19 @@ private:
     const int PICKER_B_TEAM_2_BUTTON_X = PICKER_B_X + 390;
     
     const int PICKER_I_W = 750;
-    const int PICKER_I_H = 94;
+    const int PICKER_I_H = 126;
     const int PICKER_I_X = 25;
     const int PICKER_I_Y = WINDOW_HEIGHT - 4 - PICKER_I_H;
     
     const int PICKER_I_BAR_W = 684;
     const int PICKER_I_BAR_H = 68;
     const int PICKER_I_BAR_X = PICKER_I_X + 33;
-    const int PICKER_I_BAR_Y = PICKER_I_Y + 13;
+    const int PICKER_I_BAR_Y = PICKER_I_Y + 45;
+    const int PICKER_I_UNINKED_X = PICKER_I_X + 250;
+    const int PICKER_I_UNINKED_Y = PICKER_I_Y + 13;
+    const int PICKER_I_UNINKED_W = 250;
+    const int PICKER_I_UNINKED_H = 19;
+    const float PICKER_I_UNINKED_SCALE = 0.5;
     
     const int PICKER_E_W = 750;
     const int PICKER_E_H = 151;
@@ -116,6 +121,15 @@ private:
     const int ANALYSIS_REAL_Y = WINDOW_HEIGHT * 0.3;
     const int ANALYSIS_SCORE_X = WINDOW_WIDTH * 0.5;
     const int ANALYSIS_SCORE_Y = WINDOW_HEIGHT * 0.5;
+    const int ANALYSIS_MAX_SCORE_X = WINDOW_WIDTH * 0.79;
+    const int ANALYSIS_MAX_SCORE_Y = WINDOW_HEIGHT * 0.53;
+    const float ANALYSIS_MAX_SCORE_SCALE = 0.5;
+    const int ANALYSIS_COMMENT_X = WINDOW_WIDTH * 0.5;
+    const int ANALYSIS_COMMENT_Y = WINDOW_HEIGHT * 0.7;
+    const float ANALYSIS_COMMENT_SCALE = 0.5;
+    const int ANALYSIS_COMMENT_SIGNED_X = WINDOW_WIDTH * 0.7;
+    const int ANALYSIS_COMMENT_SIGNED_Y = WINDOW_HEIGHT * 0.8;
+    const float ANALYSIS_COMMENT_SIGNED_SCALE = 0.5;
     
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,

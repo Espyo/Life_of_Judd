@@ -93,6 +93,27 @@ Game::Game() :
     
     all_chapter_data = get_chapters();
     
+#define register_color(r1, g1, b1, r2, g2, b2) \
+    all_ink_colors.push_back( \
+                              make_pair( \
+                                         al_map_rgb(r1, g1, b1), \
+                                         al_map_rgb(r2, g2, b2) \
+                                       ) \
+                            )
+    
+    register_color(200, 61,  121, 64,  157, 59);
+    register_color(201, 52,  87,  4,   129, 136);
+    register_color(218, 55,  129, 237, 148, 8);
+    register_color(207, 88,  27,  20,  20,  148);
+    register_color(121, 149, 22,  110, 6,   138);
+    register_color(32,  131, 125, 223, 100, 26);
+    register_color(34,  140, 255, 232, 84,  7);
+    register_color(0,   126, 220, 225, 163, 7);
+    register_color(46,  12,  181, 248, 99,  0);
+    register_color(38,  34,  159, 145, 176, 11);
+    
+#undef register_color
+    
     state_mgr.register_state(GAME_STATE_MAIN_MENU, new Main_Menu(this));
     state_mgr.register_state(GAME_STATE_LOADING, new Loading(this));
     state_mgr.register_state(GAME_STATE_GAMEPLAY, new Gameplay(this));

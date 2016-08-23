@@ -16,6 +16,8 @@ const string GAME_TITLE = "A Day in the Life of Judd";
 const string GRAPHICS_FOLDER = "graphics";
 const string FONT_FILE_NAME = "Waree-Bold.ttf";
 const int FONT_SIZE = 40;
+const ALLEGRO_COLOR COLOR_CLEAR = { 0.12, 0.12, 0.12, 1.0 };
+const ALLEGRO_COLOR COLOR_VOID = { 0.0, 0.0, 0.0, 0.0 };
 
 const string BMP_BUTTON_R_UNSELECTED = "button_r_unselected.png";
 const string BMP_BUTTON_R_SELECTED =   "button_r_selected.png";
@@ -60,9 +62,7 @@ enum TEAMS {
 const size_t N_INKLINGS = 4;
 const size_t N_ARENAS = 1; //TODO;
 const float SPAWN_RADIUS = 4.0;
-
-const ALLEGRO_COLOR COLOR_CLEAR = { 0.12, 0.12, 0.12, 1.0 };
-const ALLEGRO_COLOR COLOR_VOID = { 0.0, 0.0, 0.0, 0.0 };
+const float PASSING_SCORE = 95;
 
 
 #endif //ifndef INCLUDED_CONST_H

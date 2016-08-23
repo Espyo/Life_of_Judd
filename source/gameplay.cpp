@@ -55,7 +55,6 @@ void Gameplay::load() {
         
     }
     
-    
     calculate_player_percentages();
 }
 
@@ -78,7 +77,10 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
             ev.mouse.x <= OK_BUTTON_X + OK_BUTTON_W &&
             ev.mouse.y <= OK_BUTTON_Y + OK_BUTTON_H;
             
-        if(mouse_on_ok_button || mouse_on_back_button) {
+        if(
+            (mouse_on_ok_button && chosen_team != TEAM_NONE) ||
+            mouse_on_back_button
+        ) {
             cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK;
         }
         
@@ -485,6 +487,12 @@ void Gameplay::do_drawing() {
             chosen_team != TEAM_NONE
         );
         
+        draw_textured_rectangle(
+            PICKER_I_UNINKED_X, PICKER_I_UNINKED_Y,
+            PICKER_I_UNINKED_W, PICKER_I_UNINKED_H,
+            game->bmp_checkerboard, al_map_rgb(255, 255, 255), false
+        );
+        
         al_draw_bitmap(game->bmp_picker_i, PICKER_I_X, PICKER_I_Y, 0);
         
         draw_shadowed_text(
@@ -498,6 +506,14 @@ void Gameplay::do_drawing() {
             PICKER_I_BAR_Y + 21,
             ALLEGRO_ALIGN_RIGHT,
             f2s(player_percentages[TEAM_2]) + "%"
+        );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            PICKER_I_UNINKED_X + PICKER_I_UNINKED_W * 0.5,
+            PICKER_I_UNINKED_Y + PICKER_I_UNINKED_H * 0.5,
+            ALLEGRO_ALIGN_CENTER,
+            f2s(game->cur_chapter.real_percentages[TEAM_NONE]) + "% uninked",
+            PICKER_I_UNINKED_SCALE
         );
         
         ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
@@ -722,6 +738,25 @@ void Gameplay::do_drawing() {
             ALLEGRO_ALIGN_CENTER,
             "YOUR SCORE: " + i2s(round(player_score))
         );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            ANALYSIS_MAX_SCORE_X, ANALYSIS_MAX_SCORE_Y,
+            ALLEGRO_ALIGN_CENTER,
+            "/100", ANALYSIS_MAX_SCORE_SCALE
+        );
+        
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            ANALYSIS_COMMENT_X, ANALYSIS_COMMENT_Y,
+            ALLEGRO_ALIGN_CENTER, "\"" + committee_comment + "\"",
+            ANALYSIS_COMMENT_SCALE
+        );
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255),
+            ANALYSIS_COMMENT_SIGNED_X, ANALYSIS_COMMENT_SIGNED_Y,
+            ALLEGRO_ALIGN_CENTER, "-- The committee",
+            ANALYSIS_COMMENT_SIGNED_SCALE
+        );
         
     }
     
@@ -831,11 +866,48 @@ void Gameplay::calculate_player_percentages() {
 
 
 void Gameplay::calculate_player_score() {
+    unsigned char real_winner =
+        game->cur_chapter.real_percentages[TEAM_1] >
+        game->cur_chapter.real_percentages[TEAM_2] ? TEAM_1 : TEAM_2;
+        
+    if(real_winner != chosen_team) {
+        player_score = 0;
+        
+        string c1 =
+            rp("Shoot", "Oh no") + "! We can't let the " +
+            rp("wrong", "losing") + " team " + rp("be the winners", "win") +
+            "!\n" + rp("Sorry", "I'm sorry") + ", but we'll have to fire you.";
+        string c2 =
+            "We can't just let the " + rp("loser", "losing") + " team get "
+            + rp("away with the", "the") + " " +
+            rp("reward", "prize") + "!\n" + rp("I'm sorry", "Sorry") +
+            ", but you're fired.";
+        string c3 =
+            "Your guess " + rp("was wrong", "wasn't right") + ", and now"
+            " the " + rp("winning", "winner") + " team\nleft " +
+            rp("with empty hands", "empty-handed") +
+            "! We'll have to lay you off.";
+            
+        committee_comment = rp(c1, c2, c3);
+        
+        return;
+    }
+    
     if(difficulty == DIFFICULTY_BEGINNER) {
-        unsigned char real_winner =
-            game->cur_chapter.real_percentages[TEAM_1] >
-            game->cur_chapter.real_percentages[TEAM_2] ? TEAM_1 : TEAM_2;
-        player_score = (real_winner == chosen_team ? 100 : 0);
+        player_score = 100;
+        
+        string c1 =
+            rp("Nice", "Great", "Terrific", "Wonderful") + " work, " +
+            rp("ace", "Judd") + "! We're glad we can count\non " +
+            rp("you", "your efforts") + ". Keep " +
+            rp("it up", "up the good work") + rp(".", "!");
+        string c2 =
+            rp("And another", "Yet another", "Another") + " " +
+            rp("fine", "great") + " guess, Judd!\nWe're happy we " +
+            rp("chose", "picked") + " you for the " + rp("job", "task") +
+            ".";
+        committee_comment = rp(c1, c2);
+        
         return;
     }
     
@@ -862,6 +934,84 @@ void Gameplay::calculate_player_score() {
     
     player_score = (player_score - 50) * 2.0;
     player_score = max(0.0f, player_score);
+    
+    if(player_score == 0) {
+        committee_comment =
+            rp("Judd", "Wow", "Uhm") + "... " +
+            rp("Don't tell me", "Let me guess") + ", you purposely tried to"
+            " get\nthe worst " + rp("possible score", "score possible") +
+            ", " + rp("right", "am I right", "correct", "is that it") + "?";
+            
+    } else if(player_score > 0 && player_score < 25) {
+        string c1 =
+            rp("Why", "Judd") + ", this is a " + rp("terrible", "horrible") +
+            " guess!\nWhat " +
+            rp("has gotten into you?", "is wrong with you?") +
+            " We'll have to lay you off.";
+        string c2 =
+            "You were " + rp("very", "quite") + " far off! Your guess is " +
+            rp("of no use", "useless") + "!\nSorry, but you're " +
+            rp("hereby", "officially") + " fired!";
+        committee_comment = rp(c1, c2);
+        
+    } else if(player_score >= 25 && player_score < 50) {
+        committee_comment =
+            "Your " + rp("guess", "decision") + " won't do, since it's too " +
+            rp("far off", "inaccurate") + "!\nWe can't " +
+            rp("just let", "let") + " you " + rp("continue", "go on") +
+            " after this " + rp("mistake", "blunder") + ".";
+            
+    } else if(player_score >= 50 && player_score < 75) {
+        committee_comment =
+            "You weren't " + rp("close", "accurate") + " enough... We expected"
+            " a more\naccurate " + rp("guess", "result") + ". Sorry, but we'll"
+            " have to " + rp("lay you off", "let you go") + ".";
+            
+    } else if(player_score >= 75 && player_score < PASSING_SCORE) {
+        string c1 =
+            "Your " + rp("decision", "guess") + " was good, but we " +
+            rp("require", "need") + " more accuracy. We'll\n"
+            "lay you off for a " + rp("bit", "while") + " so you can get " +
+            rp("that", "your") + " spark back, okay?";
+        string c2 =
+            "Your " + rp("answer", "choice") + " wasn't good enough,"
+            " I'm afraid. We'll\ndismiss you for a " + rp("while", "bit") +
+            " so you can clear your mind, okay?";
+        committee_comment = rp(c1, c2);
+        
+    } else if(player_score >= PASSING_SCORE && player_score <= 99.9) {
+        string c1 =
+            "Congrats on " + rp("yet another", "another") + " good " +
+            rp("guess", "call") + ", Judd!\nWe're glad to have you " +
+            rp("on board", "on the job") + ".";
+        string c2 =
+            rp("Well", "Nicely") + " done! Your guesses save the day once " +
+            rp("more", "again") + ".\nKeep up the good work, " +
+            rp("ace", "champ") + "!";
+        string c3 =
+            "Another " + rp("great", "good", "fine") + " guess. We knew"
+            " we could count\non " + rp("you", "your efforts") + "."
+            " Don't let us down!";
+        committee_comment = rp(c1, c2, c3);
+        
+    } else {
+        string c1 =
+            "Why, this is " + rp("astonishing", "incredible", "amazing") + "!"
+            " You were completely " + rp("right", "spot-on") + "\n"
+            "about your guess! " + rp("Thank you", "Many thanks") +
+            " for your continued efforts!";
+        string c2 =
+            rp("Incredible", "Terrific", "Amazing") + "! You were " +
+            rp("spot-on", "right on the mark") + "!\nWe " +
+            rp("can't", "just can't") + " thank you enough for what you do.";
+        string c3 =
+            "You actually guessed perfectly! " +
+            rp("Outstanding", "Amazing", "Spectacular") + " work " +
+            rp("out there, ace", ", ace") + "!\nWe're happy we can use your " +
+            rp("wonderful", "incredible") + " skills.";
+        committee_comment = rp(c1, c2, c3);
+        
+    }
 }
 
 

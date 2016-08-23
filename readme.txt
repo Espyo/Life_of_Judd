@@ -41,6 +41,7 @@ Difficulties
         The percentage of unclaimed turf is automatically decided.
     Expert
         Same as intermediate, but you must also decide the unclaimed turf percentage.
+        Terrain that cannot be inked doesn't count for any percentage.
 
 Playing
     At the top of the screen, you get the overhead view of the arena.

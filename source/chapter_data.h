@@ -12,6 +12,8 @@
 using namespace std;
 
 
+struct Game;
+
 struct Chapter_Data {
     string name;
     size_t arena_nr;
@@ -25,7 +27,7 @@ struct Chapter_Data {
 };
 
 
-Chapter_Data generate_random_chapter_data();
+Chapter_Data generate_random_chapter_data(Game* game);
 vector<Chapter_Data> get_chapters();
 
 

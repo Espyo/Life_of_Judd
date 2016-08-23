@@ -1,5 +1,6 @@
 #include "chapter_data.h"
 #include "const.h"
+#include "game.h"
 #include "utils.h"
 
 Chapter_Data::Chapter_Data() :
@@ -10,7 +11,7 @@ Chapter_Data::Chapter_Data() :
 }
 
 
-Chapter_Data generate_random_chapter_data() {
+Chapter_Data generate_random_chapter_data(Game* game) {
     Chapter_Data data;
     data.arena_nr = randomi(0, N_ARENAS - 1);
     data.n_simulation_iterations =
@@ -20,9 +21,9 @@ Chapter_Data generate_random_chapter_data() {
         for(size_t i = 0; i < N_INKLINGS; ++i) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
             data.inklings[t][i].aggressiveness = randomf(0, 0.005);
-            data.inklings[t][i].speed = randomf(2, 5);
-            data.inklings[t][i].ink_radius = randomf(3, 5);
-            data.inklings[t][i].respawn_chance = randomf(0, 0.001);
+            data.inklings[t][i].speed = randomf(1, 5);
+            data.inklings[t][i].ink_radius = randomf(3, 6);
+            data.inklings[t][i].respawn_chance = randomf(0, 0.005);
         }
     }
     
@@ -34,9 +35,9 @@ Chapter_Data generate_random_chapter_data() {
         data.blotch_generators[t].team = t;
     }
     
-    //TODO dynamic ink colors;
-    data.ink_colors[0] = al_map_rgb(175, 22, 172);
-    data.ink_colors[1] = al_map_rgb(113, 218, 12);
+    size_t ink_pair = randomi(0, game->all_ink_colors.size() - 1);
+    data.ink_colors[0] = game->all_ink_colors[ink_pair].first;
+    data.ink_colors[1] = game->all_ink_colors[ink_pair].second;
     
     return data;
 }

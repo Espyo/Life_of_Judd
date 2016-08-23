@@ -24,7 +24,7 @@ void Loading::load() {
     al_flip_display();
     
     if(game->chapter_to_load == 0) {
-        game->random_chapter_data = generate_random_chapter_data();
+        game->random_chapter_data = generate_random_chapter_data(game);
         game->cur_chapter.chapter_data = &game->random_chapter_data;
     } else {
         game->cur_chapter.chapter_data =

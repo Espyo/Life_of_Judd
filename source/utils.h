@@ -22,6 +22,14 @@ string f2s(const float f);
 string i2s(const long long i);
 float randomf(float min, float max);
 int randomi(int min, int max);
+string rp(
+    const string s1, const string s2,
+    const string s3 = "", const string s4 = ""
+);
+vector<string> split(
+    string text, const string &del = " ", const bool inc_empty = false,
+    const bool inc_del = false
+);
 
 
 #endif //ifndef INCLUDED_UTILS_H

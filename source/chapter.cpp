@@ -1,6 +1,7 @@
 #include <algorithm>
 
 #include "chapter.h"
+#include "chapter_data.h"
 #include "utils.h"
 
 
@@ -20,7 +21,6 @@ void Chapter::load(
     this->background_bmp = bg_bmp;
     
     get_data_from_bmp(data_bmp);
-    al_destroy_bitmap(data_bmp);
     
     generate_data();
     
@@ -97,7 +97,6 @@ void Chapter::get_data_from_bmp(ALLEGRO_BITMAP* data_bmp) {
         }
         
     } al_unlock_bitmap(data_bmp);
-    
     
 }
 

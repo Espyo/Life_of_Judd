@@ -7,14 +7,13 @@
 #include <allegro5/allegro_image.h>
 
 #include "blotch_generator.h"
-#include "cell.h"
 #include "chapter_data.h"
+#include "cell.h"
 #include "const.h"
 #include "inkling.h"
 #include "point.h"
 
 using namespace std;
-
 
 struct Chapter {
 private:

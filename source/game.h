@@ -49,6 +49,7 @@ struct Game {
     Chapter cur_chapter;
     Chapter_Data random_chapter_data;
     vector<Chapter_Data> all_chapter_data;
+    vector<pair<ALLEGRO_COLOR, ALLEGRO_COLOR> > all_ink_colors;
     
     Game();
     void loop();
