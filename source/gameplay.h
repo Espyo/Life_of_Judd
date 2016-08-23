@@ -1,6 +1,8 @@
 #ifndef INCLUDED_GAMEPLAY_H
 #define INCLUDED_GAMEPLAY_H
 
+#include <math.h>
+
 #include "chapter.h"
 #include "const.h"
 #include "game_state.h"
@@ -119,17 +121,21 @@ private:
     const int ANALYSIS_UNCLAIMED_X = WINDOW_WIDTH * 0.8;
     const int ANALYSIS_YOUR_DECISION_Y = WINDOW_HEIGHT * 0.2;
     const int ANALYSIS_REAL_Y = WINDOW_HEIGHT * 0.3;
-    const int ANALYSIS_SCORE_X = WINDOW_WIDTH * 0.5;
+    const int ANALYSIS_SCORE_X = WINDOW_WIDTH * 0.35;
     const int ANALYSIS_SCORE_Y = WINDOW_HEIGHT * 0.5;
-    const int ANALYSIS_MAX_SCORE_X = WINDOW_WIDTH * 0.79;
-    const int ANALYSIS_MAX_SCORE_Y = WINDOW_HEIGHT * 0.53;
-    const float ANALYSIS_MAX_SCORE_SCALE = 0.5;
     const int ANALYSIS_COMMENT_X = WINDOW_WIDTH * 0.5;
     const int ANALYSIS_COMMENT_Y = WINDOW_HEIGHT * 0.7;
     const float ANALYSIS_COMMENT_SCALE = 0.5;
     const int ANALYSIS_COMMENT_SIGNED_X = WINDOW_WIDTH * 0.7;
     const int ANALYSIS_COMMENT_SIGNED_Y = WINDOW_HEIGHT * 0.8;
     const float ANALYSIS_COMMENT_SIGNED_SCALE = 0.5;
+    const int ANALYSIS_STAMP_X = WINDOW_WIDTH * 0.75;
+    const int ANALYSIS_STAMP_Y = WINDOW_HEIGHT * 0.5;
+    const float ANALYSIS_STAMP_ANGLE = -(M_PI * 0.15);
+    const float ANALYSIS_STAMP_SCALE = 0.6;
+    const int ANALYSIS_CLICK_NOTE_X = WINDOW_WIDTH * 0.95;
+    const int ANALYSIS_CLICK_NOTE_Y = WINDOW_HEIGHT * 0.95;
+    const float ANALYSIS_CLICK_NOTE_SCALE = 0.4;
     
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,

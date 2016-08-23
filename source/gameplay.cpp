@@ -738,12 +738,6 @@ void Gameplay::do_drawing() {
             ALLEGRO_ALIGN_CENTER,
             "YOUR SCORE: " + i2s(round(player_score))
         );
-        draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            ANALYSIS_MAX_SCORE_X, ANALYSIS_MAX_SCORE_Y,
-            ALLEGRO_ALIGN_CENTER,
-            "/100", ANALYSIS_MAX_SCORE_SCALE
-        );
         
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
@@ -756,6 +750,25 @@ void Gameplay::do_drawing() {
             ANALYSIS_COMMENT_SIGNED_X, ANALYSIS_COMMENT_SIGNED_Y,
             ALLEGRO_ALIGN_CENTER, "-- The committee",
             ANALYSIS_COMMENT_SIGNED_SCALE
+        );
+        
+        ALLEGRO_BITMAP* b =
+            player_score >= PASSING_SCORE ?
+            game->bmp_stamp_pass :
+            game->bmp_stamp_fail;
+        al_draw_scaled_rotated_bitmap(
+            b,
+            al_get_bitmap_width(b) * 0.5, al_get_bitmap_height(b) * 0.5,
+            ANALYSIS_STAMP_X, ANALYSIS_STAMP_Y,
+            ANALYSIS_STAMP_SCALE, ANALYSIS_STAMP_SCALE,
+            ANALYSIS_STAMP_ANGLE, 0
+        );
+        
+        draw_shadowed_text(
+            game->font, al_map_rgb(192, 192, 192),
+            ANALYSIS_CLICK_NOTE_X, ANALYSIS_CLICK_NOTE_Y,
+            ALLEGRO_ALIGN_RIGHT, "Click anywhere to continue...",
+            ANALYSIS_CLICK_NOTE_SCALE
         );
         
     }

@@ -362,9 +362,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="2902.5186"
-     inkscape:cy="18.022103"
+     inkscape:zoom="1"
+     inkscape:cx="3369.0893"
+     inkscape:cy="45.210066"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1599,6 +1599,46 @@
          id="tspan4952-9-6-3"
          x="2960.6816"
          y="1043.9897">%</tspan></text>
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e55353;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4327"
+       width="240"
+       height="118"
+       x="3105"
+       y="929.36218"
+       rx="25.573771"
+       ry="25.147539" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90px;line-height:125%;font-family:Waree;-inkscape-font-specification:'Waree Bold';text-align:center;letter-spacing:-8px;word-spacing:0px;text-anchor:middle;fill:#e55353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3222.0776"
+       y="1021.1674"
+       id="text4329"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4331"
+         x="3218.0776"
+         y="1021.1674">FAIL</tspan></text>
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#36cc22;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4327-8"
+       width="240"
+       height="118"
+       x="3405"
+       y="929.36218"
+       rx="25.573771"
+       ry="25.147539" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90px;line-height:125%;font-family:Waree;-inkscape-font-specification:'Waree Bold';text-align:center;letter-spacing:-8px;word-spacing:0px;text-anchor:middle;fill:#36cc22;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3524.187"
+       y="1021.1234"
+       id="text4329-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4331-4"
+         x="3520.187"
+         y="1021.1234">PASS</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

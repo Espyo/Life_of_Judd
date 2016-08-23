@@ -38,6 +38,8 @@ struct Game {
     ALLEGRO_BITMAP* bmp_judd_l;
     ALLEGRO_BITMAP* bmp_flag_r;
     ALLEGRO_BITMAP* bmp_flag_l;
+    ALLEGRO_BITMAP* bmp_stamp_fail;
+    ALLEGRO_BITMAP* bmp_stamp_pass;
     ALLEGRO_BITMAP* bmp_difficulty_icon[3];
     ALLEGRO_BITMAP* bmp_arena[N_ARENAS];
     ALLEGRO_BITMAP* bmp_arena_data[N_ARENAS];

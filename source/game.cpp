@@ -72,6 +72,8 @@ Game::Game() :
     bmp_judd_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_JUDD_L).c_str());
     bmp_flag_r = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_R).c_str());
     bmp_flag_l = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_FLAG_L).c_str());
+    bmp_stamp_fail = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_STAMP_FAIL).c_str());
+    bmp_stamp_pass = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_STAMP_PASS).c_str());
     bmp_difficulty_icon[0] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BEGINNER_ICON).c_str());
     bmp_difficulty_icon[1] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_INTERMEDIATE_ICON).c_str());
     bmp_difficulty_icon[2] = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_EXPERT_ICON).c_str());
