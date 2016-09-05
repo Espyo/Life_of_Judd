@@ -10,26 +10,10 @@
 
 class Gameplay : public Game_State {
 private:
-    unsigned char difficulty;
-    unsigned char sub_state;
-    float next_state_timer;
-    
-    unsigned char analysis_darken_opacity;
-    float judd_timer;
-    
-    bool mouse_on_back_button;
-    bool mouse_on_ok_button;
-    unsigned char chosen_team;
-    int picker_team_x;
-    bool mouse_down_on_team_picker;
-    int picker_unclaimed_x;
-    bool mouse_down_on_unclaimed_picker;
-    
-    float player_percentages[3];
-    float player_score;
-    string committee_comment;
-    
+
     enum SUB_STATES {
+        SUB_STATE_STORY_WRITING,
+        SUB_STATE_STORY_WAITING,
         SUB_STATE_PICKING,
         SUB_STATE_CELEBRATING,
         SUB_STATE_ANALYSIS_FADE_IN,
@@ -45,14 +29,14 @@ private:
         float angle;
         float rotation_speed;
         
-        static const int CONFETTO_SIZE = 16;
+        static const int CONFETTO_W = 16;
+        static const int CONFETTO_H = 8;
         
         bool tick();
         void draw();
     };
     
-    vector<Confetto> confetti;
-    
+    const float MESSAGE_CHAR_INTERVAL = 0.03;
     const size_t N_CONFETTI = 150;
     const float JUDD_HOP_DURATION = 1;
     const float CELEBRATION_DURATION = 2;
@@ -60,9 +44,15 @@ private:
     const float ANALYSIS_FADE_DURATION = 0.5;
     const float ANALYSIS_DATA_DELAY = 0.8;
     
-    const int JUDD_START_Y = WINDOW_WIDTH + 100;
-    int judd_end_y;
-    const float JUDD_SCALE = 0.3;
+    const int STORY_X = 8;
+    const int STORY_Y = WINDOW_HEIGHT * 0.3;
+    const int SKIP_BUTTON_W = 128;
+    const int SKIP_BUTTON_H = 64;
+    const int SKIP_BUTTON_X = WINDOW_WIDTH - SKIP_BUTTON_W - 8;
+    const int SKIP_BUTTON_Y = 8;
+    const int STORY_CLICK_NOTE_X = WINDOW_WIDTH * 0.95;
+    const int STORY_CLICK_NOTE_Y = WINDOW_HEIGHT * 0.95;
+    const float STORY_CLICK_NOTE_SCALE = 0.4;
     
     const int PICKER_B_W = 750;
     const int PICKER_B_H = 94;
@@ -114,13 +104,16 @@ private:
     const int OK_BUTTON_X = WINDOW_WIDTH - OK_BUTTON_W - 8;
     const int OK_BUTTON_Y = PICKER_E_Y - OK_BUTTON_H - 4;
     
-    const int ANALYSIS_HEADER_ROW_Y = WINDOW_HEIGHT * 0.1;
+    const int JUDD_START_Y = WINDOW_WIDTH + 100;
+    const float JUDD_SCALE = 0.3;
+    
     const int ANALYSIS_HEADER_COLUMN_X = WINDOW_WIDTH * 0.3;
     const int ANALYSIS_LEFT_TEAM_X = WINDOW_WIDTH * 0.4;
     const int ANALYSIS_RIGHT_TEAM_X = WINDOW_WIDTH * 0.6;
     const int ANALYSIS_UNCLAIMED_X = WINDOW_WIDTH * 0.8;
     const int ANALYSIS_YOUR_DECISION_Y = WINDOW_HEIGHT * 0.2;
     const int ANALYSIS_REAL_Y = WINDOW_HEIGHT * 0.3;
+    const int ANALYSIS_HEADER_ROW_Y = WINDOW_HEIGHT * 0.1;
     const int ANALYSIS_SCORE_X = WINDOW_WIDTH * 0.35;
     const int ANALYSIS_SCORE_Y = WINDOW_HEIGHT * 0.5;
     const int ANALYSIS_COMMENT_X = WINDOW_WIDTH * 0.5;
@@ -137,6 +130,35 @@ private:
     const int ANALYSIS_CLICK_NOTE_Y = WINDOW_HEIGHT * 0.95;
     const float ANALYSIS_CLICK_NOTE_SCALE = 0.4;
     
+    unsigned char difficulty;
+    unsigned char sub_state;
+    float next_state_timer;
+    
+    bool mouse_on_skip_button;
+    bool mouse_on_back_button;
+    bool mouse_on_ok_button;
+    unsigned char chosen_team;
+    int picker_team_x;
+    bool mouse_down_on_team_picker;
+    int picker_unclaimed_x;
+    bool mouse_down_on_unclaimed_picker;
+    bool show_arena;
+    bool show_ink;
+    
+    float player_percentages[3];
+    float player_score;
+    string committee_comment;
+    
+    string cur_message;
+    size_t cur_message_char;
+    float cur_message_char_timer;
+    size_t cur_message_block;
+    
+    vector<Confetto> confetti;
+    int judd_end_y;
+    float judd_timer;
+    unsigned char analysis_darken_opacity;
+    
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,
         ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
@@ -149,6 +171,7 @@ private:
     float ease_hop(const float n);
     void calculate_player_percentages();
     void calculate_player_score();
+    void advance_story();
     
 public:
     virtual void load();

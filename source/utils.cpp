@@ -15,19 +15,18 @@ ALLEGRO_COLOR darken_color(ALLEGRO_COLOR color, const float ratio) {
 void draw_shadowed_text(
     ALLEGRO_FONT* font, ALLEGRO_COLOR color,
     const int x, const int cy, const int flags, const string &text,
-    const float scale
+    const float scale, const bool top_valign
 ) {
     vector<string> lines = split(text, "\n");
     int fh = al_get_font_line_height(font);
     int total_height = lines.size() * fh + (lines.size() - 1);
-    
+    int top =
+        top_valign ? cy : cy - total_height * 0.5 * scale;
+        
     ALLEGRO_TRANSFORM transform;
     al_identity_transform(&transform);
     al_scale_transform(&transform, scale, scale);
-    al_translate_transform(
-        &transform, x,
-        cy - total_height * 0.5 * scale
-    );
+    al_translate_transform(&transform, x, top);
     ALLEGRO_TRANSFORM old_transform;
     al_copy_transform(&old_transform, al_get_current_transform());
     al_use_transform(&transform); {

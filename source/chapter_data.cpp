@@ -51,6 +51,27 @@ vector<Chapter_Data> get_chapters() {
     data.name = "Chapter 1: First Day on the Job";
     data.arena_nr = 0;
     data.difficulty = DIFFICULTY_BEGINNER;
+    
+    data.story.push_back(
+        "This is a test.\n"
+        "Line #2"
+    );
+    data.story.push_back(
+        "Box #2. Showing the map..."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "Showing the ink now..."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "All done."
+    );
+    
     data.n_simulation_iterations = 10000;
     
     for(size_t t = 0; t < 2; ++t) {

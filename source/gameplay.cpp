@@ -10,7 +10,7 @@
 Gameplay::Gameplay(Game* game) :
     Game_State(game),
     difficulty(DIFFICULTY_BEGINNER),
-    sub_state(SUB_STATE_PICKING),
+    sub_state(SUB_STATE_STORY_WRITING),
     next_state_timer(0),
     mouse_on_back_button(false),
     mouse_on_ok_button(false),
@@ -25,7 +25,6 @@ Gameplay::Gameplay(Game* game) :
 
 
 void Gameplay::load() {
-    sub_state = SUB_STATE_PICKING;
     next_state_timer = 0;
     mouse_on_back_button = false;
     mouse_on_ok_button = false;
@@ -34,11 +33,30 @@ void Gameplay::load() {
     chosen_team = TEAM_NONE;
     analysis_darken_opacity = 0;
     confetti.clear();
+    cur_message.clear();
+    cur_message_char = 0;
+    cur_message_char_timer = 0;
+    cur_message_block = 0;
     
     if(game->chapter_to_load == 0) {
+        //Free play.
+        sub_state = SUB_STATE_PICKING;
+        show_arena = true;
+        show_ink = true;
         difficulty = game->free_play_difficulty;
     } else {
+        //Story mode.
+        show_arena = false;
+        show_ink = false;
+        sub_state = SUB_STATE_STORY_WRITING;
         difficulty = game->cur_chapter.chapter_data->difficulty;
+        cur_message = game->cur_chapter.chapter_data->story[0];
+        cur_message_block = 0;
+        cur_message_char = 0;
+        cur_message_char_timer = MESSAGE_CHAR_INTERVAL;
+        al_set_system_mouse_cursor(
+            game->display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK
+        );
     }
     
     if(difficulty == DIFFICULTY_BEGINNER) {
@@ -61,6 +79,41 @@ void Gameplay::load() {
 
 void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
 
+    if(
+        sub_state == SUB_STATE_STORY_WRITING ||
+        sub_state == SUB_STATE_STORY_WAITING
+    ) {
+        mouse_on_skip_button =
+            ev.mouse.x >= SKIP_BUTTON_X &&
+            ev.mouse.x <= SKIP_BUTTON_X + SKIP_BUTTON_W &&
+            ev.mouse.y >= SKIP_BUTTON_Y &&
+            ev.mouse.y <= SKIP_BUTTON_Y + SKIP_BUTTON_H;
+    }
+    
+    if(sub_state == SUB_STATE_STORY_WRITING) {
+        if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+            if(mouse_on_skip_button) {
+                sub_state = SUB_STATE_PICKING;
+                show_arena = true;
+                show_ink = true;
+            } else {
+                cur_message_char = cur_message.size() - 1;
+            }
+        }
+        
+    } else if(sub_state == SUB_STATE_STORY_WAITING) {
+        if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+            if(mouse_on_skip_button) {
+                sub_state = SUB_STATE_PICKING;
+                show_arena = true;
+                show_ink = true;
+            } else {
+                advance_story();
+            }
+        }
+        
+    }
+    
     if(sub_state == SUB_STATE_PICKING) {
     
         ALLEGRO_SYSTEM_MOUSE_CURSOR cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT;
@@ -249,9 +302,9 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
                 confetto.pos =
                     Point(
                         randomi(0, WINDOW_WIDTH),
-                        randomi(-WINDOW_HEIGHT, -Gameplay::Confetto::CONFETTO_SIZE)
+                        randomi(-WINDOW_HEIGHT, -Gameplay::Confetto::CONFETTO_W)
                     );
-                confetto.rotation_speed = randomf(0, M_PI * 2);
+                confetto.rotation_speed = randomf(M_PI * 2, M_PI * 4);
                 confetto.speed =
                     Point(
                         randomf(-50, 50),
@@ -269,7 +322,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
                     );
                 confetto.pos =
                     Point(
-                        -(Gameplay::Confetto::CONFETTO_SIZE * 2),
+                        -(Gameplay::Confetto::CONFETTO_W * 2),
                         randomi(0, WINDOW_HEIGHT * 0.3)
                     );
                 confetto.rotation_speed = randomf(0, M_PI * 2);
@@ -290,7 +343,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
                     );
                 confetto.pos =
                     Point(
-                        WINDOW_WIDTH + (Gameplay::Confetto::CONFETTO_SIZE * 2),
+                        WINDOW_WIDTH + (Gameplay::Confetto::CONFETTO_W * 2),
                         randomi(0, WINDOW_HEIGHT * 0.3)
                     );
                 confetto.rotation_speed = randomf(0, M_PI * 2);
@@ -346,6 +399,19 @@ void Gameplay::do_logic() {
         }
     }
     
+    if(sub_state == SUB_STATE_STORY_WRITING) {
+        if(cur_message_char < cur_message.size()) {
+            cur_message_char_timer -= 1.0 / GAME_FPS;
+            if(cur_message_char_timer < 0) {
+                cur_message_char_timer = MESSAGE_CHAR_INTERVAL;
+                cur_message_char++;
+                if(cur_message_char == cur_message.size()) {
+                    sub_state = SUB_STATE_STORY_WAITING;
+                }
+            }
+        }
+    }
+    
     if(next_state_timer > 0) {
         next_state_timer -= 1.0 / GAME_FPS;
         if(next_state_timer <= 0) {
@@ -389,214 +455,261 @@ void Gameplay::do_logic() {
 void Gameplay::do_drawing() {
     al_clear_to_color(al_map_rgb(0, 0, 0));
     
-    draw_textured_rectangle(
-        0, 0, WINDOW_WIDTH, WINDOW_HEIGHT,
-        game->cur_chapter.background_bmp, al_map_rgb(255, 255, 255),
-        false
-    );
-    al_draw_bitmap(
-        game->cur_chapter.arena_bmp, WINDOW_WIDTH / 2.0 - game->cur_chapter.width / 2.0,
-        4, 0
-    );
-    al_draw_tinted_bitmap(
-        game->cur_chapter.result_bmp, al_map_rgba(255, 255, 255, 210),
-        WINDOW_WIDTH / 2.0 - game->cur_chapter.width / 2.0, 4, 0
-    );
     
-    for(size_t c = 0; c < confetti.size(); ++c) {
-        confetti[c].draw();
+    if(show_arena) {
+        draw_textured_rectangle(
+            0, 0, WINDOW_WIDTH, WINDOW_HEIGHT,
+            game->cur_chapter.background_bmp, al_map_rgb(255, 255, 255),
+            false
+        );
+        al_draw_bitmap(
+            game->cur_chapter.arena_bmp,
+            WINDOW_WIDTH / 2.0 - game->cur_chapter.width / 2.0,
+            4, 0
+        );
+        
+    } else {
+        al_draw_bitmap(game->bmp_title_background, 0, 0, 0);
+        
     }
     
-    if(sub_state >= SUB_STATE_CELEBRATING) {
-        game->draw_judd(
-            WINDOW_WIDTH * 0.5,
-            JUDD_START_Y - (JUDD_START_Y - judd_end_y) *
-            ease_hop(1 - (judd_timer / JUDD_HOP_DURATION)),
-            JUDD_SCALE, chosen_team == TEAM_2,
-            game->cur_chapter.ink_colors[chosen_team]
+    if(show_ink) {
+        al_draw_tinted_bitmap(
+            game->cur_chapter.result_bmp, al_map_rgba(255, 255, 255, 210),
+            WINDOW_WIDTH / 2.0 - game->cur_chapter.width / 2.0, 4, 0
         );
     }
     
-    //TODO remove these debugging values
-    draw_shadowed_text(
-        game->font, al_map_rgb(255, 255, 255), 0, 8, 0,
-        f2s(game->cur_chapter.real_percentages[TEAM_1]) + ";" +
-        f2s(game->cur_chapter.real_percentages[TEAM_2]) + ";" +
-        f2s(game->cur_chapter.real_percentages[TEAM_NONE]),
-        0.5
-    );
-    
-    if(difficulty == DIFFICULTY_BEGINNER) {
-        draw_textured_rectangle(
-            PICKER_B_TEAM_1_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
-            PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team == TEAM_1 ?
-                game->cur_chapter.ink_colors[TEAM_1] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
-            ),
-            (chosen_team == TEAM_1)
+    if(
+        sub_state == SUB_STATE_STORY_WRITING ||
+        sub_state == SUB_STATE_STORY_WAITING
+    ) {
+        al_draw_filled_rectangle(
+            0, 0, WINDOW_WIDTH, WINDOW_HEIGHT,
+            al_map_rgba(0, 0, 0, 128)
         );
-        
-        draw_textured_rectangle(
-            PICKER_B_TEAM_2_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
-            PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team == TEAM_2 ?
-                game->cur_chapter.ink_colors[TEAM_2] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
-            ),
-            (chosen_team == TEAM_2)
-        );
-        
-        al_draw_bitmap(game->bmp_picker_b, PICKER_B_X, PICKER_B_Y, 0);
-        
-        ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
-        if(chosen_team != TEAM_NONE) {
-            ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
-        }
-        al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
-            ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
-        );
-        
-    } else if(difficulty == DIFFICULTY_INTERMEDIATE) {
-        draw_textured_rectangle(
-            PICKER_I_BAR_X, PICKER_I_BAR_Y,
-            picker_team_x, PICKER_I_BAR_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team != TEAM_NONE ?
-                game->cur_chapter.ink_colors[TEAM_1] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
-            ),
-            chosen_team != TEAM_NONE
-        );
-        
-        draw_textured_rectangle(
-            PICKER_I_BAR_X + picker_team_x, PICKER_I_BAR_Y,
-            PICKER_I_BAR_W - picker_team_x, PICKER_I_BAR_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team != TEAM_NONE ?
-                game->cur_chapter.ink_colors[TEAM_2] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
-            ),
-            chosen_team != TEAM_NONE
-        );
-        
-        draw_textured_rectangle(
-            PICKER_I_UNINKED_X, PICKER_I_UNINKED_Y,
-            PICKER_I_UNINKED_W, PICKER_I_UNINKED_H,
-            game->bmp_checkerboard, al_map_rgb(255, 255, 255), false
-        );
-        
-        al_draw_bitmap(game->bmp_picker_i, PICKER_I_X, PICKER_I_Y, 0);
         
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255),
-            PICKER_I_BAR_X + 8, PICKER_I_BAR_Y + 21, 0,
-            f2s(player_percentages[TEAM_1]) + "%"
-        );
-        draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            PICKER_I_BAR_X + PICKER_I_BAR_W - 8,
-            PICKER_I_BAR_Y + 21,
-            ALLEGRO_ALIGN_RIGHT,
-            f2s(player_percentages[TEAM_2]) + "%"
-        );
-        draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            PICKER_I_UNINKED_X + PICKER_I_UNINKED_W * 0.5,
-            PICKER_I_UNINKED_Y + PICKER_I_UNINKED_H * 0.5,
-            ALLEGRO_ALIGN_CENTER,
-            f2s(game->cur_chapter.real_percentages[TEAM_NONE]) + "% uninked",
-            PICKER_I_UNINKED_SCALE
+            STORY_X, STORY_Y, ALLEGRO_ALIGN_LEFT,
+            cur_message.substr(0, cur_message_char + 1),
+            1.0, true
         );
         
-        ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
-        if(chosen_team != TEAM_NONE) {
-            ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
-        }
-        al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
-            ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
+        al_draw_bitmap(
+            mouse_on_skip_button ?
+            game->bmp_button_s_selected :
+            game->bmp_button_s_unselected,
+            SKIP_BUTTON_X, SKIP_BUTTON_Y, 0
         );
-        
-    } else if(difficulty == DIFFICULTY_EXPERT) {
-        draw_textured_rectangle(
-            PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_Y,
-            picker_team_x, PICKER_E_TEAM_BAR_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team != TEAM_NONE ?
-                game->cur_chapter.ink_colors[TEAM_1] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
-            ),
-            chosen_team != TEAM_NONE
-        );
-        
-        draw_textured_rectangle(
-            PICKER_E_TEAM_BAR_X + picker_team_x, PICKER_E_TEAM_BAR_Y,
-            PICKER_E_TEAM_BAR_W - picker_team_x, PICKER_E_TEAM_BAR_H,
-            game->bmp_ink_effect,
-            (
-                chosen_team != TEAM_NONE ?
-                game->cur_chapter.ink_colors[TEAM_2] :
-                darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
-            ),
-            chosen_team != TEAM_NONE
-        );
-        
-        draw_textured_rectangle(
-            PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_Y,
-            picker_unclaimed_x, PICKER_E_NONE_BAR_H,
-            game->bmp_checkerboard, al_map_rgb(128, 128, 128), false
-        );
-        
-        al_draw_bitmap(game->bmp_picker_e, PICKER_E_X, PICKER_E_Y, 0);
         
         draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            PICKER_E_TEAM_BAR_X + 8, PICKER_E_TEAM_BAR_Y + 21,
-            0, f2s(player_percentages[TEAM_1]) + "%"
-        );
-        draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            PICKER_E_TEAM_BAR_X + PICKER_E_TEAM_BAR_W - 8,
-            PICKER_E_TEAM_BAR_Y + 21,
-            ALLEGRO_ALIGN_RIGHT,
-            f2s(player_percentages[TEAM_2]) + "%"
-        );
-        draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            PICKER_E_NONE_BAR_X + 8, PICKER_E_NONE_BAR_Y + 20,
-            0, f2s(player_percentages[TEAM_NONE]) + "%"
-        );
-        
-        ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
-        if(chosen_team != TEAM_NONE) {
-            ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
-        }
-        al_draw_tinted_bitmap(
-            (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
-            ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
+            game->font, al_map_rgb(192, 192, 192),
+            STORY_CLICK_NOTE_X, STORY_CLICK_NOTE_Y,
+            ALLEGRO_ALIGN_RIGHT, "Click anywhere to continue...",
+            STORY_CLICK_NOTE_SCALE
         );
         
     }
     
-    al_draw_bitmap(
-        (mouse_on_back_button ? game->bmp_button_l_selected : game->bmp_button_l_unselected),
-        BACK_BUTTON_X, BACK_BUTTON_Y, 0
-    );
+    if(sub_state >= SUB_STATE_PICKING) {
+        for(size_t c = 0; c < confetti.size(); ++c) {
+            confetti[c].draw();
+        }
+        
+        if(sub_state >= SUB_STATE_CELEBRATING) {
+            game->draw_judd(
+                WINDOW_WIDTH * 0.5,
+                JUDD_START_Y - (JUDD_START_Y - judd_end_y) *
+                ease_hop(1 - (judd_timer / JUDD_HOP_DURATION)),
+                JUDD_SCALE, chosen_team == TEAM_2,
+                game->cur_chapter.ink_colors[chosen_team]
+            );
+        }
+        
+        //TODO remove these debugging values
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 255, 255), 0, 8, 0,
+            f2s(game->cur_chapter.real_percentages[TEAM_1]) + ";" +
+            f2s(game->cur_chapter.real_percentages[TEAM_2]) + ";" +
+            f2s(game->cur_chapter.real_percentages[TEAM_NONE]),
+            0.5
+        );
+        
+        if(difficulty == DIFFICULTY_BEGINNER) {
+            draw_textured_rectangle(
+                PICKER_B_TEAM_1_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
+                PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team == TEAM_1 ?
+                    game->cur_chapter.ink_colors[TEAM_1] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
+                ),
+                (chosen_team == TEAM_1)
+            );
+            
+            draw_textured_rectangle(
+                PICKER_B_TEAM_2_BUTTON_X, PICKER_B_TEAM_BUTTON_Y,
+                PICKER_B_TEAM_BUTTON_W, PICKER_B_TEAM_BUTTON_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team == TEAM_2 ?
+                    game->cur_chapter.ink_colors[TEAM_2] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
+                ),
+                (chosen_team == TEAM_2)
+            );
+            
+            al_draw_bitmap(game->bmp_picker_b, PICKER_B_X, PICKER_B_Y, 0);
+            
+            ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
+            if(chosen_team != TEAM_NONE) {
+                ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
+            }
+            al_draw_tinted_bitmap(
+                (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
+                ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
+            );
+            
+        } else if(difficulty == DIFFICULTY_INTERMEDIATE) {
+            draw_textured_rectangle(
+                PICKER_I_BAR_X, PICKER_I_BAR_Y,
+                picker_team_x, PICKER_I_BAR_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team != TEAM_NONE ?
+                    game->cur_chapter.ink_colors[TEAM_1] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
+                ),
+                chosen_team != TEAM_NONE
+            );
+            
+            draw_textured_rectangle(
+                PICKER_I_BAR_X + picker_team_x, PICKER_I_BAR_Y,
+                PICKER_I_BAR_W - picker_team_x, PICKER_I_BAR_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team != TEAM_NONE ?
+                    game->cur_chapter.ink_colors[TEAM_2] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
+                ),
+                chosen_team != TEAM_NONE
+            );
+            
+            draw_textured_rectangle(
+                PICKER_I_UNINKED_X, PICKER_I_UNINKED_Y,
+                PICKER_I_UNINKED_W, PICKER_I_UNINKED_H,
+                game->bmp_checkerboard, al_map_rgb(255, 255, 255), false
+            );
+            
+            al_draw_bitmap(game->bmp_picker_i, PICKER_I_X, PICKER_I_Y, 0);
+            
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_I_BAR_X + 8, PICKER_I_BAR_Y + 21, 0,
+                f2s(player_percentages[TEAM_1]) + "%"
+            );
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_I_BAR_X + PICKER_I_BAR_W - 8,
+                PICKER_I_BAR_Y + 21,
+                ALLEGRO_ALIGN_RIGHT,
+                f2s(player_percentages[TEAM_2]) + "%"
+            );
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_I_UNINKED_X + PICKER_I_UNINKED_W * 0.5,
+                PICKER_I_UNINKED_Y + PICKER_I_UNINKED_H * 0.5,
+                ALLEGRO_ALIGN_CENTER,
+                f2s(game->cur_chapter.real_percentages[TEAM_NONE]) + "% uninked",
+                PICKER_I_UNINKED_SCALE
+            );
+            
+            ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
+            if(chosen_team != TEAM_NONE) {
+                ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
+            }
+            al_draw_tinted_bitmap(
+                (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
+                ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
+            );
+            
+        } else if(difficulty == DIFFICULTY_EXPERT) {
+            draw_textured_rectangle(
+                PICKER_E_TEAM_BAR_X, PICKER_E_TEAM_BAR_Y,
+                picker_team_x, PICKER_E_TEAM_BAR_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team != TEAM_NONE ?
+                    game->cur_chapter.ink_colors[TEAM_1] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
+                ),
+                chosen_team != TEAM_NONE
+            );
+            
+            draw_textured_rectangle(
+                PICKER_E_TEAM_BAR_X + picker_team_x, PICKER_E_TEAM_BAR_Y,
+                PICKER_E_TEAM_BAR_W - picker_team_x, PICKER_E_TEAM_BAR_H,
+                game->bmp_ink_effect,
+                (
+                    chosen_team != TEAM_NONE ?
+                    game->cur_chapter.ink_colors[TEAM_2] :
+                    darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
+                ),
+                chosen_team != TEAM_NONE
+            );
+            
+            draw_textured_rectangle(
+                PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_Y,
+                picker_unclaimed_x, PICKER_E_NONE_BAR_H,
+                game->bmp_checkerboard, al_map_rgb(128, 128, 128), false
+            );
+            
+            al_draw_bitmap(game->bmp_picker_e, PICKER_E_X, PICKER_E_Y, 0);
+            
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_E_TEAM_BAR_X + 8, PICKER_E_TEAM_BAR_Y + 21,
+                0, f2s(player_percentages[TEAM_1]) + "%"
+            );
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_E_TEAM_BAR_X + PICKER_E_TEAM_BAR_W - 8,
+                PICKER_E_TEAM_BAR_Y + 21,
+                ALLEGRO_ALIGN_RIGHT,
+                f2s(player_percentages[TEAM_2]) + "%"
+            );
+            draw_shadowed_text(
+                game->font, al_map_rgb(255, 255, 255),
+                PICKER_E_NONE_BAR_X + 8, PICKER_E_NONE_BAR_Y + 20,
+                0, f2s(player_percentages[TEAM_NONE]) + "%"
+            );
+            
+            ALLEGRO_COLOR ok_button_tint = al_map_rgb(255, 255, 255);
+            if(chosen_team != TEAM_NONE) {
+                ok_button_tint = game->cur_chapter.ink_colors[chosen_team];
+            }
+            al_draw_tinted_bitmap(
+                (mouse_on_ok_button ? game->bmp_button_k_selected : game->bmp_button_k_unselected),
+                ok_button_tint, OK_BUTTON_X, OK_BUTTON_Y, 0
+            );
+            
+        }
+        
+        al_draw_bitmap(
+            (mouse_on_back_button ? game->bmp_button_l_selected : game->bmp_button_l_unselected),
+            BACK_BUTTON_X, BACK_BUTTON_Y, 0
+        );
+        
+    }
     
     if(sub_state >= SUB_STATE_ANALYSIS_FADE_IN) {
         al_draw_filled_rectangle(
             0, 0, WINDOW_WIDTH, WINDOW_HEIGHT,
             al_map_rgba(0, 0, 0, analysis_darken_opacity)
         );
+        
     }
     
     if(sub_state >= SUB_STATE_ANALYSIS_1) {
@@ -778,7 +891,9 @@ void Gameplay::do_drawing() {
 
 
 void Gameplay::unload() {
-
+    al_set_system_mouse_cursor(
+        game->display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT
+    );
 }
 
 
@@ -1028,6 +1143,34 @@ void Gameplay::calculate_player_score() {
 }
 
 
+void Gameplay::advance_story() {
+    if(
+        cur_message_block <
+        game->cur_chapter.chapter_data->story.size() - 1
+    ) {
+        cur_message_block++;
+        cur_message =
+            game->cur_chapter.chapter_data->story[cur_message_block];
+        cur_message_char = 0;
+        cur_message_char_timer = MESSAGE_CHAR_INTERVAL;
+        sub_state = SUB_STATE_STORY_WRITING;
+        
+        if(cur_message == "#arena") {
+            show_arena = true;
+            advance_story();
+        } else if(cur_message == "#ink") {
+            show_ink = true;
+            advance_story();
+        }
+        
+    } else {
+        sub_state = SUB_STATE_PICKING;
+        show_arena = true;
+        show_ink = true;
+    }
+}
+
+
 float Gameplay::ease_hop(const float n) {
     //From http://i.stack.imgur.com/vqA2E.jpg
     return n * (n * (4 * n - 9) + 6);
@@ -1037,7 +1180,7 @@ float Gameplay::ease_hop(const float n) {
 bool Gameplay::Confetto::tick() {
     pos += speed * (1.0 / GAME_FPS);
     angle += rotation_speed * 1.0 / GAME_FPS;
-    if(pos.y > WINDOW_HEIGHT + CONFETTO_SIZE * 2) {
+    if(pos.y > WINDOW_HEIGHT + CONFETTO_W * 2) {
         return true;
     }
     return false;
@@ -1053,8 +1196,8 @@ void Gameplay::Confetto::draw() {
     al_copy_transform(&old_transform, al_get_current_transform());
     al_use_transform(&transform); {
         al_draw_filled_rectangle(
-            -(CONFETTO_SIZE * 0.5), -(CONFETTO_SIZE * 0.5),
-            (CONFETTO_SIZE * 0.5), (CONFETTO_SIZE * 0.5),
+            -(CONFETTO_W * 0.5), -(CONFETTO_H * 0.5),
+            (CONFETTO_W * 0.5), (CONFETTO_H * 0.5),
             color
         );
     } al_use_transform(&old_transform);

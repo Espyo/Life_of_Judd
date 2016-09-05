@@ -36,7 +36,9 @@ void Main_Menu::load() {
 
 
 void Main_Menu::unload() {
-
+    al_set_system_mouse_cursor(
+        game->display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT
+    );
 }
 
 

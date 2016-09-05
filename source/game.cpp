@@ -60,6 +60,8 @@ Game::Game() :
     bmp_button_l_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_L_SELECTED).c_str());
     bmp_button_k_unselected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_K_UNSELECTED).c_str());
     bmp_button_k_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_K_SELECTED).c_str());
+    bmp_button_s_unselected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_S_UNSELECTED).c_str());
+    bmp_button_s_selected = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_BUTTON_S_SELECTED).c_str());
     bmp_picker_b = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_B).c_str());
     bmp_picker_i = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_I).c_str());
     bmp_picker_e = al_load_bitmap((GRAPHICS_FOLDER + "/" + BMP_PICKER_E).c_str());
@@ -133,7 +135,7 @@ void Game::loop() {
         
         Game_State* cur_state = state_mgr.get_current_state();
         
-        if(ev.type == ALLEGRO_EVENT_TIMER) {
+        if(ev.type == ALLEGRO_EVENT_TIMER && al_is_event_queue_empty(queue)) {
             time_spent += 1.0 / GAME_FPS;
             cur_state->do_drawing();
             cur_state->do_logic();

@@ -18,6 +18,7 @@ struct Chapter_Data {
     string name;
     size_t arena_nr;
     unsigned char difficulty;
+    vector<string> story;
     size_t n_simulation_iterations;
     Blotch_Generator blotch_generators[3];
     ALLEGRO_COLOR ink_colors[2];

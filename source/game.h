@@ -26,6 +26,8 @@ struct Game {
     ALLEGRO_BITMAP* bmp_button_l_selected;
     ALLEGRO_BITMAP* bmp_button_k_unselected;
     ALLEGRO_BITMAP* bmp_button_k_selected;
+    ALLEGRO_BITMAP* bmp_button_s_unselected;
+    ALLEGRO_BITMAP* bmp_button_s_selected;
     ALLEGRO_BITMAP* bmp_picker_b;
     ALLEGRO_BITMAP* bmp_picker_i;
     ALLEGRO_BITMAP* bmp_picker_e;
