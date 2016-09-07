@@ -493,7 +493,7 @@ void Gameplay::do_drawing() {
             game->font, al_map_rgb(255, 255, 255),
             STORY_X, STORY_Y, ALLEGRO_ALIGN_LEFT,
             cur_message.substr(0, cur_message_char + 1),
-            1.0, true
+            STORY_SCALE, true
         );
         
         al_draw_bitmap(

@@ -33,7 +33,9 @@ private:
     const int CHAPTER_SCORE_Y = WINDOW_HEIGHT * 0.36;
     const int CHAPTER_DIFFICULTY_X = WINDOW_WIDTH * 0.5;
     const int CHAPTER_DIFFICULTY_ICON_X = WINDOW_WIDTH * 0.7;
+    const int CHAPTER_DIFFICULTY_NAME_X = WINDOW_WIDTH * 0.76;
     const int CHAPTER_DIFFICULTY_Y = WINDOW_HEIGHT * 0.36;
+    const float DIFFICULTY_NAME_SCALE = 0.5;
     const int PREV_BUTTON_X = WINDOW_WIDTH * 0.2;
     const int PREV_BUTTON_W = 128;
     const int PREV_BUTTON_H = 32;
@@ -47,6 +49,7 @@ private:
     const int FREE_H = 32;
     const int FREE_DIFFICULTY_X = WINDOW_WIDTH * 0.2;
     const int FREE_DIFFICULTY_ICON_X = WINDOW_WIDTH * 0.4;
+    const int FREE_DIFFICULTY_NAME_X = WINDOW_WIDTH * 0.46;
     const int FREE_DIFFICULTY_Y = WINDOW_HEIGHT * 0.57;
     const int FREE_BUTTON_Y = WINDOW_HEIGHT * 0.61;
     const int DISCLAIMER_X = WINDOW_WIDTH * 0.5;
@@ -60,6 +63,8 @@ private:
         "The copyrights of all associated characters, names, terms, art,"
         " music, and assets belong to Nintendo®.";
         
+    string get_difficulty_name(const int difficulty_number);
+    
 public:
     virtual void load();
     virtual void handle_mouse(ALLEGRO_EVENT ev);

@@ -58,6 +58,14 @@ string i2s(const long long i) {
 }
 
 
+ALLEGRO_BITMAP* load_png_or_jpg(const string path) {
+    ALLEGRO_BITMAP* b =
+        al_load_bitmap((path + ".png").c_str());
+    if(b) return b;
+    return al_load_bitmap((path + ".jpg").c_str());
+}
+
+
 /* ----------------------------------------------------------------------------
  * Returns a random float between the provided range, inclusive.
  */

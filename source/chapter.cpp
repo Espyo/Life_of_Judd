@@ -52,6 +52,8 @@ void Chapter::get_data_from_bmp(ALLEGRO_BITMAP* data_bmp) {
     width = al_get_bitmap_width(data_bmp);
     height = al_get_bitmap_height(data_bmp);
     
+    grid.clear();
+    
     for(size_t x = 0; x < width; ++x) {
         grid.push_back(vector<Cell>());
         vector<Cell>* row_ptr = &grid.back();

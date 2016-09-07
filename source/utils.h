@@ -20,6 +20,7 @@ void draw_shadowed_text(
 );
 string f2s(const float f);
 string i2s(const long long i);
+ALLEGRO_BITMAP* load_png_or_jpg(const string path);
 float randomf(float min, float max);
 int randomi(int min, int max);
 string rp(

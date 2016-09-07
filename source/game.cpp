@@ -82,17 +82,11 @@ Game::Game() :
     
     for(size_t a = 0; a < N_ARENAS; ++a) {
         bmp_arena_data[a] =
-            al_load_bitmap(
-                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_data.png").c_str()
-            );
+            load_png_or_jpg(GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_data");
         bmp_arena[a] =
-            al_load_bitmap(
-                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + ".png").c_str()
-            );
+            load_png_or_jpg(GRAPHICS_FOLDER + "/arenas/" + i2s(a));
         bmp_arena_bg[a] =
-            al_load_bitmap(
-                (GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_bg.jpg").c_str()
-            );
+            load_png_or_jpg(GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_bg");
     }
     
     all_chapter_data = get_chapters();

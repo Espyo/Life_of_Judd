@@ -45,7 +45,8 @@ private:
     const float ANALYSIS_DATA_DELAY = 0.8;
     
     const int STORY_X = 8;
-    const int STORY_Y = WINDOW_HEIGHT * 0.3;
+    const int STORY_Y = WINDOW_HEIGHT * 0.2;
+    const float STORY_SCALE = 0.75;
     const int SKIP_BUTTON_W = 128;
     const int SKIP_BUTTON_H = 64;
     const int SKIP_BUTTON_X = WINDOW_WIDTH - SKIP_BUTTON_W - 8;

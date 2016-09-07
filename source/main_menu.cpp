@@ -219,6 +219,14 @@ void Main_Menu::do_drawing() {
         CHAPTER_DIFFICULTY_Y - al_get_bitmap_height(b) * 0.5,
         0
     );
+    draw_shadowed_text(
+        game->font, al_map_rgb(255, 255, 255),
+        CHAPTER_DIFFICULTY_NAME_X, CHAPTER_DIFFICULTY_Y, ALLEGRO_ALIGN_LEFT,
+        get_difficulty_name(
+            game->all_chapter_data[chosen_chapter - 1].difficulty
+        ),
+        DIFFICULTY_NAME_SCALE
+    );
     
     b =
         mouse_on_prev_chapter_button ? game->bmp_button_l_selected :
@@ -259,17 +267,18 @@ void Main_Menu::do_drawing() {
         game->font, al_map_rgb(255, 255, 255),
         FREE_DIFFICULTY_X, FREE_DIFFICULTY_Y, 0, "Difficulty:", 0.5
     );
+    b = game->bmp_difficulty_icon[game->free_play_difficulty];
     al_draw_bitmap(
-        game->bmp_difficulty_icon[game->free_play_difficulty],
-        FREE_DIFFICULTY_ICON_X -
-        al_get_bitmap_width(
-            game->bmp_difficulty_icon[game->free_play_difficulty]
-        ) * 0.5,
-        FREE_DIFFICULTY_Y -
-        al_get_bitmap_height(
-            game->bmp_difficulty_icon[game->free_play_difficulty]
-        ) * 0.5,
+        b,
+        FREE_DIFFICULTY_ICON_X - al_get_bitmap_width(b) * 0.5,
+        FREE_DIFFICULTY_Y - al_get_bitmap_height(b) * 0.5,
         0
+    );
+    draw_shadowed_text(
+        game->font, al_map_rgb(255, 255, 255),
+        FREE_DIFFICULTY_NAME_X, FREE_DIFFICULTY_Y, ALLEGRO_ALIGN_LEFT,
+        get_difficulty_name(game->free_play_difficulty),
+        DIFFICULTY_NAME_SCALE
     );
     
     b =
@@ -306,4 +315,15 @@ void Main_Menu::do_drawing() {
     
     
     al_flip_display();
+}
+
+
+string Main_Menu::get_difficulty_name(const int difficulty_number) {
+    if(difficulty_number == DIFFICULTY_BEGINNER) {
+        return "Beginner";
+    } else if(difficulty_number == DIFFICULTY_INTERMEDIATE) {
+        return "Intermediate";
+    } else {
+        return "Expert";
+    }
 }
