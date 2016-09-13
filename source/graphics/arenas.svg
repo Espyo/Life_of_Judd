@@ -21,6 +21,178 @@
      id="defs4419">
     <linearGradient
        inkscape:collect="always"
+       id="linearGradient4830">
+      <stop
+         style="stop-color:#4d8aa0;stop-opacity:1;"
+         offset="0"
+         id="stop4832" />
+      <stop
+         style="stop-color:#71a7bb;stop-opacity:1"
+         offset="1"
+         id="stop4834" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4703">
+      <stop
+         style="stop-color:#3e7f4f;stop-opacity:1;"
+         offset="0"
+         id="stop4705" />
+      <stop
+         style="stop-color:#295535;stop-opacity:1"
+         offset="1"
+         id="stop4707" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4674">
+      <stop
+         style="stop-color:#e9c574;stop-opacity:1;"
+         offset="0"
+         id="stop4676" />
+      <stop
+         style="stop-color:#694e11;stop-opacity:1"
+         offset="1"
+         id="stop4678" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4632">
+      <stop
+         style="stop-color:#8a8b76;stop-opacity:1;"
+         offset="0"
+         id="stop4634" />
+      <stop
+         style="stop-color:#b9baad;stop-opacity:1"
+         offset="1"
+         id="stop4636" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4522">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4524" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4526" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4480">
+      <stop
+         style="stop-color:#fafa3c;stop-opacity:1;"
+         offset="0"
+         id="stop4482" />
+      <stop
+         id="stop4488"
+         offset="0.5000118"
+         style="stop-color:#fafa3c;stop-opacity:1" />
+      <stop
+         style="stop-color:#181814;stop-opacity:1"
+         offset="1"
+         id="stop4484" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4470">
+      <stop
+         style="stop-color:#a0acb1;stop-opacity:1;"
+         offset="0"
+         id="stop4472" />
+      <stop
+         style="stop-color:#a0acb1;stop-opacity:0;"
+         offset="1"
+         id="stop4474" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4446">
+      <stop
+         style="stop-color:#c2d3cc;stop-opacity:1;"
+         offset="0"
+         id="stop4448" />
+      <stop
+         style="stop-color:#c2d3cc;stop-opacity:0;"
+         offset="1"
+         id="stop4450" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6435">
+      <stop
+         style="stop-color:#45606e;stop-opacity:1"
+         offset="0"
+         id="stop6437" />
+      <stop
+         style="stop-color:#537484;stop-opacity:1"
+         offset="1"
+         id="stop6439" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5647">
+      <stop
+         style="stop-color:#909090;stop-opacity:1;"
+         offset="0"
+         id="stop5649" />
+      <stop
+         style="stop-color:#b7b7b7;stop-opacity:1"
+         offset="1"
+         id="stop5651" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5605">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.73962265"
+         offset="0"
+         id="stop5607" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop5609" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4715">
+      <stop
+         style="stop-color:#745929;stop-opacity:1"
+         offset="0"
+         id="stop4717" />
+      <stop
+         style="stop-color:#9e7938;stop-opacity:1"
+         offset="1"
+         id="stop4719" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4690">
+      <stop
+         style="stop-color:#3c3c3c;stop-opacity:1"
+         offset="0"
+         id="stop4692" />
+      <stop
+         style="stop-color:#6b6b6b;stop-opacity:1"
+         offset="1"
+         id="stop4694" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4512">
+      <stop
+         style="stop-color:#e0e0e0;stop-opacity:1"
+         offset="0"
+         id="stop4514" />
+      <stop
+         style="stop-color:#c0c0c0;stop-opacity:1"
+         offset="1"
+         id="stop4516" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
        id="linearGradient4306">
       <stop
          style="stop-color:#c0c0c0;stop-opacity:1;"
@@ -166,81 +338,6 @@
        y1="1017.3622"
        x2="85"
        y2="1017.3622" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient6343"
-       id="radialGradient6565-4"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.33333344,0,0,0.33333186,398.3333,468.24271)"
-       spreadMethod="reflect"
-       cx="350"
-       cy="852.36218"
-       fx="350"
-       fy="852.36218"
-       r="15" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient6333"
-       id="linearGradient6569-5"
-       gradientUnits="userSpaceOnUse"
-       x1="355"
-       y1="912.36218"
-       x2="355"
-       y2="987.36218"
-       gradientTransform="translate(165,-99.999985)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient6325"
-       id="linearGradient6573-4"
-       gradientUnits="userSpaceOnUse"
-       x1="265"
-       y1="987.36218"
-       x2="265"
-       y2="947.36218"
-       gradientTransform="translate(165,-99.999985)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5038"
-       id="linearGradient6577-0"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="reflect"
-       x1="270"
-       y1="852.36218"
-       x2="290"
-       y2="852.36218"
-       gradientTransform="translate(165,-99.999985)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5038"
-       id="linearGradient6581-6"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="reflect"
-       x1="270"
-       y1="852.36218"
-       x2="290"
-       y2="852.36218"
-       gradientTransform="translate(165,-99.999985)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5080"
-       id="linearGradient6585-8"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(265,-100.00001)"
-       x1="65"
-       y1="937.36218"
-       x2="115"
-       y2="937.36218" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5038"
-       id="linearGradient6589-3"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(265,-100.00001)"
-       spreadMethod="reflect"
-       x1="65"
-       y1="1017.3622"
-       x2="85"
-       y2="1017.3622" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient4306"
@@ -250,6 +347,452 @@
        x2="208"
        y2="352.36218"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4512"
+       id="linearGradient4518"
+       x1="135"
+       y1="-127.63779"
+       x2="135"
+       y2="-63.637794"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.5,0,-31.818893)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4512"
+       id="linearGradient4528"
+       x1="230"
+       y1="-17.637794"
+       x2="166"
+       y2="-17.637794"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.5,0,0,1,83,0)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4512"
+       id="linearGradient4545"
+       x1="182"
+       y1="-79.637794"
+       x2="166"
+       y2="-63.637794"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4690"
+       id="linearGradient4696"
+       x1="54"
+       y1="-470.63779"
+       x2="56"
+       y2="-470.63779"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       gradientTransform="matrix(2.546875,0,0,2.546875,-10.828125,707.90845)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4715"
+       id="linearGradient4721"
+       x1="75"
+       y1="-492.63779"
+       x2="85"
+       y2="-492.63779"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2,0,0,1,-85,0)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="20"
+       height="20"
+       patternTransform="translate(-110,-602.6378)"
+       id="pattern4797">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path4770"
+         d="M 0,0 0,1 3.9375,5.00108 0,9 0,11 3.9375,15.00108 0,19 0,20 1,20 5,16.06163 9,20 11,20 15,16.06163 19,20 20,20 20,19 16.060547,14.99913 20,11 20,9 16.0625,5.00108 20,1 20,0 19,0 15,3.93858 11,0 9,0 5,3.93858 1,0 Z M 10,1.06163 13.9375,5.00108 10,8.93858 6.0625,5.00108 Z m -5,5 3.9375,3.93945 L 5,13.93858 1.0625,10.00108 Z m 10,0.002 3.9375,3.9375 -3.9375,3.9375 -3.9375,-3.9375 z m -5,4.99805 3.9375,3.93945 L 10,18.93863 6.0625,15.00113 Z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    </pattern>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4690"
+       id="linearGradient4696-9"
+       x1="54"
+       y1="-470.63779"
+       x2="56"
+       y2="-470.63779"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       gradientTransform="matrix(2.546875,0,0,2.546875,-763.46592,1020.5462)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4690"
+       id="linearGradient4696-9-1"
+       x1="54"
+       y1="-470.63779"
+       x2="56"
+       y2="-470.63779"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       gradientTransform="matrix(2.546875,0,0,2.546875,-763.46584,1085.5462)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5605"
+       id="linearGradient5621"
+       x1="175"
+       y1="-507.63779"
+       x2="190"
+       y2="-522.63776"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5647"
+       id="linearGradient5653"
+       x1="180"
+       y1="-532.63782"
+       x2="190"
+       y2="-522.63782"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4690"
+       id="linearGradient4696-4"
+       x1="54"
+       y1="-470.63779"
+       x2="56"
+       y2="-470.63779"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       gradientTransform="matrix(2.546875,0,0,2.546875,74.17188,627.9084)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4715"
+       id="linearGradient5695"
+       x1="215"
+       y1="-697.63782"
+       x2="215"
+       y2="-717.63782"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5647"
+       id="linearGradient5776"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,20.000454)"
+       spreadMethod="reflect"
+       x1="200"
+       y1="-637.63782"
+       x2="210"
+       y2="-632.63782" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5605"
+       id="linearGradient5784"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(20,-84.99995)"
+       spreadMethod="reflect"
+       x1="175"
+       y1="-522.63782"
+       x2="184"
+       y2="-529.63782" />
+    <linearGradient
+       gradientTransform="matrix(2.0000044,0,0,1,372.6375,652.63778)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4715"
+       id="linearGradient4721-6"
+       x1="75"
+       y1="-492.63779"
+       x2="85"
+       y2="-492.63779"
+       gradientUnits="userSpaceOnUse" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="20"
+       height="20"
+       patternTransform="translate(-110,-602.6378)"
+       id="pattern4797-2">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path4770-0"
+         d="M 0,0 0,1 3.9375,5.00108 0,9 0,11 3.9375,15.00108 0,19 0,20 1,20 5,16.06163 9,20 11,20 15,16.06163 19,20 20,20 20,19 16.060547,14.99913 20,11 20,9 16.0625,5.00108 20,1 20,0 19,0 15,3.93858 11,0 9,0 5,3.93858 1,0 Z M 10,1.06163 13.9375,5.00108 10,8.93858 6.0625,5.00108 Z m -5,5 3.9375,3.93945 L 5,13.93858 1.0625,10.00108 Z m 10,0.002 3.9375,3.9375 -3.9375,3.9375 -3.9375,-3.9375 z m -5,4.99805 3.9375,3.93945 L 10,18.93863 6.0625,15.00113 Z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    </pattern>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6435"
+       id="linearGradient6441"
+       x1="-130"
+       y1="-652.63782"
+       x2="-130"
+       y2="-662.63782"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="20"
+       height="20"
+       patternTransform="translate(-110,-602.6378)"
+       id="pattern6563">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path6561"
+         d="M 0,0 0,1 3.9375,5.00108 0,9 0,11 3.9375,15.00108 0,19 0,20 1,20 5,16.06163 9,20 11,20 15,16.06163 19,20 20,20 20,19 16.060547,14.99913 20,11 20,9 16.0625,5.00108 20,1 20,0 19,0 15,3.93858 11,0 9,0 5,3.93858 1,0 Z M 10,1.06163 13.9375,5.00108 10,8.93858 6.0625,5.00108 Z m -5,5 3.9375,3.93945 L 5,13.93858 1.0625,10.00108 Z m 10,0.002 3.9375,3.9375 -3.9375,3.9375 -3.9375,-3.9375 z m -5,4.99805 3.9375,3.93945 L 10,18.93863 6.0625,15.00113 Z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#a18248;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="20"
+       height="20"
+       patternTransform="translate(-110,-602.6378)"
+       id="pattern6570">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path6568"
+         d="M 0,0 0,1 3.9375,5.00108 0,9 0,11 3.9375,15.00108 0,19 0,20 1,20 5,16.06163 9,20 11,20 15,16.06163 19,20 20,20 20,19 16.060547,14.99913 20,11 20,9 16.0625,5.00108 20,1 20,0 19,0 15,3.93858 11,0 9,0 5,3.93858 1,0 Z M 10,1.06163 13.9375,5.00108 10,8.93858 6.0625,5.00108 Z m -5,5 3.9375,3.93945 L 5,13.93858 1.0625,10.00108 Z m 10,0.002 3.9375,3.9375 -3.9375,3.9375 -3.9375,-3.9375 z m -5,4.99805 3.9375,3.93945 L 10,18.93863 6.0625,15.00113 Z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ebe133;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    </pattern>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4446"
+       id="linearGradient4452"
+       x1="5"
+       y1="-1241.6378"
+       x2="1"
+       y2="-1241.6378"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.25,0,0,1,-1.25,0)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4470"
+       id="linearGradient4476"
+       x1="5"
+       y1="-1146.6378"
+       x2="1"
+       y2="-1146.6378"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.25,0,0,0.99999997,-1.25,-2.7759522e-5)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4480"
+       id="linearGradient4525"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75,0,0,1.3846171,0.5,478.24744)"
+       spreadMethod="reflect"
+       x1="6"
+       y1="-1235.6378"
+       x2="6.8000002"
+       y2="-1234.1934" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4480"
+       id="linearGradient4527"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75,0,0,1.3846171,-15.5,478.24745)"
+       spreadMethod="reflect"
+       x1="6"
+       y1="-1235.6378"
+       x2="6.8000002"
+       y2="-1234.1934" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="linearGradient4529"
+       x1="5"
+       y1="-1146.6378"
+       x2="0"
+       y2="-1146.6378"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-50.999912)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="linearGradient4529-61"
+       x1="5"
+       y1="-1146.6378"
+       x2="0"
+       y2="-1146.6378"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,51.000193)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4480"
+       id="linearGradient4624"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75,0,0,1.3846171,0.5,478.24744)"
+       spreadMethod="reflect"
+       x1="6"
+       y1="-1235.6378"
+       x2="6.8000002"
+       y2="-1234.1934" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4480"
+       id="linearGradient4626"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75,0,0,1.3846171,-15.5,478.24745)"
+       spreadMethod="reflect"
+       x1="6"
+       y1="-1235.6378"
+       x2="6.8000002"
+       y2="-1234.1934" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4632"
+       id="linearGradient4638"
+       x1="37"
+       y1="-1158.6378"
+       x2="37"
+       y2="-1155.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       gradientTransform="translate(0,16.000063)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4632"
+       id="linearGradient4638-9"
+       x1="37"
+       y1="-1158.6378"
+       x2="37"
+       y2="-1155.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4674"
+       id="linearGradient4680"
+       x1="11"
+       y1="-1151.6378"
+       x2="9"
+       y2="-1151.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4703"
+       id="linearGradient4709"
+       x1="55"
+       y1="-1272.6378"
+       x2="105"
+       y2="-1272.6378"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(-260,3.8251314e-5)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4703"
+       id="linearGradient4709-3"
+       x1="55"
+       y1="-1272.6378"
+       x2="105"
+       y2="-1272.6378"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(-260,2295.2756)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4703"
+       id="linearGradient4709-3-1"
+       x1="55"
+       y1="-1272.6378"
+       x2="105"
+       y2="-1272.6378"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="translate(0,2295.2756)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4703"
+       id="linearGradient4709-7"
+       x1="55"
+       y1="-1272.6378"
+       x2="105"
+       y2="-1272.6378"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4446"
+       id="linearGradient4452-0"
+       x1="5"
+       y1="-1241.6378"
+       x2="1"
+       y2="-1241.6378"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.25,0,0,1,-1.25,190)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4830"
+       id="linearGradient4836"
+       x1="90"
+       y1="-1075.1378"
+       x2="100"
+       y2="-1077.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="linearGradient5784-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91666667,0,0,1.5238089,-66.666667,-267.80895)"
+       spreadMethod="reflect"
+       x1="175"
+       y1="-522.63782"
+       x2="184"
+       y2="-529.63782" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4715"
+       id="linearGradient4872"
+       x1="135"
+       y1="-1102.6378"
+       x2="137"
+       y2="-1102.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       gradientTransform="translate(-569.40547,72.545973)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="linearGradient5784-0-5"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91666667,0,0,1.5238089,4.33333,-335.80889)"
+       spreadMethod="reflect"
+       x1="175"
+       y1="-522.63782"
+       x2="184"
+       y2="-529.63782" />
+    <linearGradient
+       gradientTransform="translate(71,-67.999951)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4830"
+       id="linearGradient4836-6"
+       x1="90"
+       y1="-1075.1378"
+       x2="100"
+       y2="-1077.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="linearGradient5784-0-7"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91666667,0,0,1.5238089,-22.66667,-371.80889)"
+       spreadMethod="reflect"
+       x1="175"
+       y1="-522.63782"
+       x2="184"
+       y2="-529.63782" />
+    <linearGradient
+       gradientTransform="translate(44,-103.99996)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4830"
+       id="linearGradient4836-2"
+       x1="90"
+       y1="-1075.1378"
+       x2="100"
+       y2="-1077.6378"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -258,9 +801,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="-144.9821"
-     inkscape:cy="580.57814"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="342.10271"
+     inkscape:cy="2159.6054"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
@@ -268,7 +811,7 @@
      inkscape:object-nodes="true"
      inkscape:snap-smooth-nodes="true"
      inkscape:snap-intersection-paths="true"
-     inkscape:snap-bbox="true"
+     inkscape:snap-bbox="false"
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
@@ -277,7 +820,8 @@
      inkscape:window-height="1055"
      inkscape:window-x="48"
      inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     inkscape:snap-global="true">
     <inkscape:grid
        type="xygrid"
        id="grid4965" />
@@ -362,12 +906,124 @@
        transform="translate(250,200.00002)"
        width="100%"
        height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4967"
+       id="use4473"
+       transform="translate(0,-1000)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4980"
+       id="use4475"
+       transform="translate(0,-1000)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4967-1-9"
+       id="use4477"
+       transform="translate(0,-1000)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use6591"
+       id="use4479"
+       transform="translate(0,-1000)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4473"
+       id="use4675"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4475"
+       id="use4677"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4477"
+       id="use4679"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4479"
+       id="use4681"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4675"
+       id="use4414"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4677"
+       id="use4416"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4679"
+       id="use4418"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4681"
+       id="use4420"
+       transform="translate(0,-500)"
+       width="100%"
+       height="100%" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="terrain"
      style="display:inline">
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 102,-227.6378 68,0 0,-68 80,0 0,147.99999 -148,0 z"
+       id="rect4549"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4471"
+       width="128"
+       height="128"
+       x="-200"
+       y="424.36221"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#977d96;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4970"
@@ -497,7 +1153,7 @@
        d="m 250,867.36218 a 15,15 0 0 1 -12.99038,-7.5 15,15 0 0 1 0,-15 15,15 0 0 1 12.99038,-7.5 l 0,15 z" />
     <g
        id="g6470"
-       transform="matrix(0.4,0,0,0.4,-9,610.41733)">
+       transform="matrix(0.9,0,0,0.9,-64,101.73624)">
       <circle
          r="9"
          cy="1017.3622"
@@ -525,168 +1181,6 @@
          id="path6353"
          style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e0e0e0;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
     </g>
-    <g
-       id="g6746"
-       transform="matrix(-1,0,0,-1,765,1604.7244)">
-      <rect
-         y="887.36218"
-         x="270"
-         height="59.999977"
-         width="60"
-         id="rect4970-1"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#977d96;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <path
-         sodipodi:nodetypes="sscccccs"
-         inkscape:connector-curvature="0"
-         id="rect4972-4"
-         d="m 310,807.36132 c -11.04569,-4.8e-4 -20,8.95431 -20,20 l 0,60.00087 40,0 0,-60.00087 0,20.00087 0,-40 z"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#606060;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="897.36218"
-         x="330"
-         height="40.000023"
-         width="105"
-         id="rect4976-9"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient6589-3);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="887.36224"
-         x="435"
-         height="59.999977"
-         width="80"
-         id="rect4978-2"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#977d96;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="path5078-0"
-         d="m 330,807.36219 40,10e-6 0,40 -40,-10e-6 z"
-         style="display:inline;fill:url(#linearGradient6585-8);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         sodipodi:nodetypes="cccccccccscccc"
-         inkscape:connector-curvature="0"
-         id="rect4972-8-6"
-         d="m 390,767.36133 -0.0117,0.0117 c -4.62756,-5.7e-4 -9.11213,1.60357 -12.68945,4.53906 -4.60465,3.79828 -7.27208,9.45476 -7.27344,15.42383 l -0.0254,0.0254 0,20 0,20.00195 0,19.99805 20,0.002 c 11.0457,4.8e-4 20,-8.95431 20,-20 l 0,-20.00195 24.99999,8.3e-4 0,-40 z"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="847.36218"
-         x="435"
-         height="39.999977"
-         width="40"
-         id="rect5111-8"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e869d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="847.36224"
-         x="475"
-         height="39.999977"
-         width="40"
-         id="rect5111-4-9"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ac97ab;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="807.36224"
-         x="475"
-         height="39.999977"
-         width="40"
-         id="rect5111-4-5-2"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#bcabbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="807.36224"
-         x="435"
-         height="39.999977"
-         width="40"
-         id="rect5111-4-5-0-6"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient6581-6);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <rect
-         y="697.36218"
-         x="435"
-         height="109.99998"
-         width="80"
-         id="rect5162-6"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient6577-0);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6307-4"
-         d="m 265,952.3622 0,-70 25,0 0,5 -20,0 0,60 60,0 0,-10 5,0 0,15 z"
-         style="display:inline;fill:#70596f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6309-9"
-         d="m 330,897.3622 0,-15 5,0 0,15 z"
-         style="display:inline;fill:#70596f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6311-5"
-         d="m 430,897.3622 0,-10 5,0 0,10 z"
-         style="display:inline;fill:#70596f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6313-0"
-         d="m 430,937.3622 5,0 0,10 80,0 0,-60 5,0 0,65 -90,0 z"
-         style="display:inline;fill:#70596f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6315-4"
-         d="m 430,887.3622 0,-40 5,0 0,40 z"
-         style="display:inline;fill:url(#linearGradient6573-4);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="path6319-8"
-         d="m 515,887.3622 0,-75 5,0 0,75 z"
-         style="display:inline;fill:url(#linearGradient6569-5);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path6321-7"
-         d="m 430,847.3622 0,-40 5,0 0,40 z"
-         style="display:inline;fill:#6b4414;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="path6323-1"
-         d="m 430,767.3622 0,-75 85,0 0,5 -80,0 0,70 z"
-         style="display:inline;fill:#6b4414;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         d="m 515,767.36218 a 15,15 0 0 1 -12.99038,-7.5 15,15 0 0 1 0,-15 15,15 0 0 1 12.99038,-7.5 l 0,15 z"
-         sodipodi:end="4.712389"
-         sodipodi:start="1.5707963"
-         sodipodi:ry="15"
-         sodipodi:rx="15"
-         sodipodi:cy="752.36218"
-         sodipodi:cx="515"
-         sodipodi:type="arc"
-         id="path6341-7"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#radialGradient6565-4);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <g
-         transform="matrix(0.4,0,0,0.4,256,510.41733)"
-         id="g6470-2"
-         style="display:inline">
-        <circle
-           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke:#606060;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-           id="path5036-7"
-           cx="110"
-           cy="1017.3622"
-           r="9" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#path6353-2"
-           id="use6355-2"
-           transform="matrix(-1,0,0,-1,220,2034.7244)"
-           width="100%"
-           height="100%" />
-        <path
-           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e0e0e0;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-           id="path6353-2"
-           sodipodi:type="arc"
-           sodipodi:cx="110"
-           sodipodi:cy="1017.3622"
-           sodipodi:rx="5"
-           sodipodi:ry="5"
-           sodipodi:start="2.6179939"
-           sodipodi:end="4.712389"
-           d="m 105.66987,1019.8622 a 5,5 0 0 1 0,-5 5,5 0 0 1 4.33013,-2.5"
-           sodipodi:open="true" />
-      </g>
-    </g>
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#c0c0c0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4243"
@@ -697,40 +1191,6 @@
        inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <g
-       style="display:inline"
-       id="g6470-3"
-       transform="matrix(0.4,0,0,0.4,89,75.417332)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
-      <circle
-         r="9"
-         cy="1017.3622"
-         cx="110"
-         id="path5036-5"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke:#606060;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-      <use
-         height="100%"
-         width="100%"
-         transform="matrix(-1,0,0,-1,220,2034.7244)"
-         id="use6355-6"
-         xlink:href="#path6353-29"
-         y="0"
-         x="0" />
-      <path
-         sodipodi:open="true"
-         d="m 105.66987,1019.8622 a 5,5 0 0 1 0,-5 5,5 0 0 1 4.33013,-2.5"
-         sodipodi:end="4.712389"
-         sodipodi:start="2.6179939"
-         sodipodi:ry="5"
-         sodipodi:rx="5"
-         sodipodi:cy="1017.3622"
-         sodipodi:cx="110"
-         sodipodi:type="arc"
-         id="path6353-29"
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e0e0e0;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-    </g>
     <path
        style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 250,206.3622 0,4 -88,0 0,70 -4,0 0,-70 -50,0 0,140 27,0 0,4 -27,0 0,140 50,0 0,-70 4,0 0,70 88,0 0,4 -146,0 0,-292 z"
@@ -769,86 +1229,26 @@
        inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#rect4243"
-       id="use4342"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#g6470-3"
-       id="use4344"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#path4283"
-       id="use4346"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#rect4243-9"
-       id="use4348"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#rect4243-3"
-       id="use4350"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <use
-       height="100%"
-       width="100%"
-       x="0"
-       y="0"
-       xlink:href="#path4314"
-       id="use4352"
-       transform="matrix(-1,0,0,-1,500,704.7244)"
-       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#202020;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4368"
-       width="32"
-       height="32"
+       width="24"
+       height="24"
        x="-200"
-       y="520.36218" />
+       y="528.36218"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#303030;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4368-6"
-       width="32"
-       height="32"
+       width="24"
+       height="24"
        x="-168"
-       y="520.36218" />
+       y="528.36218"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -856,7 +1256,10 @@
        id="use4421"
        transform="translate(64,2.2107222e-5)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -864,7 +1267,10 @@
        id="use4423"
        transform="translate(64,2.2107222e-5)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -872,7 +1278,10 @@
        id="use4425"
        transform="translate(32,-31.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -880,7 +1289,10 @@
        id="use4427"
        transform="translate(-32,-31.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -888,7 +1300,10 @@
        id="use4429"
        transform="translate(32,-31.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -896,7 +1311,10 @@
        id="use4431"
        transform="translate(96,-31.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -904,7 +1322,10 @@
        id="use4433"
        transform="translate(0,-63.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -912,7 +1333,10 @@
        id="use4435"
        transform="translate(64,-63.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -920,7 +1344,10 @@
        id="use4437"
        transform="translate(32,-95.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -928,7 +1355,10 @@
        id="use4439"
        transform="translate(96,-95.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -936,7 +1366,10 @@
        id="use4441"
        transform="translate(0,-63.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -944,7 +1377,10 @@
        id="use4445"
        transform="translate(64,-63.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -952,7 +1388,10 @@
        id="use4447"
        transform="translate(-32,-95.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
@@ -960,14 +1399,20 @@
        id="use4449"
        transform="translate(32,-95.999978)"
        width="100%"
-       height="100%" />
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4451"
        width="10"
        height="40"
        x="-200"
-       y="424.36221" />
+       y="424.36221"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4453"
@@ -976,7 +1421,10 @@
        x="-189"
        y="439.36221"
        rx="2.9999917"
-       ry="2.9999917" />
+       ry="2.9999917"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4455"
@@ -985,20 +1433,2340 @@
        x="-181"
        y="438.36221"
        rx="0"
-       ry="0" />
+       ry="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4457"
        width="6"
        height="2"
        x="-188"
-       y="447.36221" />
+       y="447.36221"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        id="rect4459"
        width="6"
        height="2"
        x="-188"
-       y="437.36221" />
+       y="437.36221"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4451"
+       id="use4461"
+       transform="translate(0,63.999992)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4453"
+       id="use4463"
+       transform="translate(0,63.999992)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4455"
+       id="use4465"
+       transform="translate(0,63.999992)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4457"
+       id="use4467"
+       transform="translate(0,63.999992)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4459"
+       id="use4469"
+       transform="translate(0,63.999992)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/0_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#c0c0c0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4481"
+       width="64"
+       height="64"
+       x="102"
+       y="-63.637787" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4518);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4481-1"
+       width="64"
+       height="32"
+       x="102"
+       y="-95.637787" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4528);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4481-8"
+       width="32"
+       height="64"
+       x="166"
+       y="-63.637794" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4545);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 166,-95.637795 32,32 -32,8e-6 z"
+       id="rect4481-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#e0e0e0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 166,-94.637795 31,31 1,63.99999972 52,0 0,-148.00000472 -148,0 0,52.000005 z"
+       id="path4547"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4549-9"
+       width="68"
+       height="67.999992"
+       x="102"
+       y="-295.63779" />
+    <path
+       style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 98,-299.63867 0,303.9999981 152,0 0,-3.99999998 -14,0 -4,0 -130,0 0,-145.99999812 43,0 0,-4 -43,0 0,-146 66,0 0,34 4,0 0,-34 78,0 0,-4 -152,0 z m 134,229.999998 0,58 4,0 0,-58 -4,0 z"
+       id="path4483"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 168,-229.6378 80,0 0,-54 2,0 0,58 -82,0 z"
+       id="path4567"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 248,-149.6378 -56,0 0,4 56,0 0,28 2,0 0,-60 -2,0 z"
+       id="path4569"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc" />
+    <path
+       style="display:inline;fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 250,-69.637795 0,58 -2,0 0,-58 z"
+       id="path4567-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#745929;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 5,-522.6378 165,0 0,20 -95,0 0,20 -70,0 z"
+       id="rect4683"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e7938;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4685"
+       width="40"
+       height="39.999992"
+       x="85"
+       y="-502.63779"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4696);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4688"
+       width="45"
+       height="19.999992"
+       x="125"
+       y="-502.63779"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e7938;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4685-5"
+       width="40"
+       height="39.999992"
+       x="170"
+       y="-502.63779"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4721);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4713"
+       width="20"
+       height="20"
+       x="65"
+       y="-502.63779"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient5653);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4723"
+       width="40"
+       height="39.999977"
+       x="170"
+       y="-542.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5621);stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5613"
+       width="36"
+       height="36"
+       x="172"
+       y="-540.63782"
+       rx="5.0000219"
+       ry="5.0000219"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:none;stroke:none"
+       width="20"
+       height="20"
+       x="-110"
+       y="-602.63782"
+       id="rect4800" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e7938;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 85,-582.63782 125,0 0,39.99998 -85,4e-5 0,20 -40,0 z"
+       id="rect4685-5-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#pattern6570);fill-opacity:1;fill-rule:evenodd;stroke:#ebe133;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4723-2"
+       width="20"
+       height="39.999977"
+       x="190"
+       y="-542.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 3,-524.6378 0,44 80,0 0,20 44,0 0,-22 -2,0 0,20 -40,0 0,-18 0,-2 -80,0 0,-40 80,0 0,-60 -2,0 0,58 z"
+       id="path5533"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4696-9);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4688-6"
+       width="85.000023"
+       height="40"
+       x="-667.63782"
+       y="-190"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4696-9-1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4688-6-3"
+       width="84.999962"
+       height="40"
+       x="-667.63776"
+       y="-125"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#745929;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 190,-627.6378 40,0 0,25 20,0 0,-95 -60,0 z"
+       id="path5584"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e7938;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5586"
+       width="105"
+       height="30"
+       x="85"
+       y="-697.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient5776);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4723-1"
+       width="40"
+       height="24.999977"
+       x="190"
+       y="-627.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5784);stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5613-8"
+       width="36"
+       height="21.000023"
+       x="192"
+       y="-625.63782"
+       rx="5.0000219"
+       ry="5.0000219"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4696-4);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4688-3"
+       width="40"
+       height="20.000023"
+       x="210"
+       y="-582.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient5695);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5687"
+       width="60"
+       height="20"
+       x="190"
+       y="-717.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#9e7938;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5697"
+       width="60"
+       height="19.999977"
+       x="190"
+       y="-737.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4721-6);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4713-6"
+       width="20.000044"
+       height="20"
+       x="522.63782"
+       y="150"
+       transform="matrix(0,-1,1,0,0,0)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 170,-482.6378 -2,0 0,22 44,0 0,-42 -2,0 0,40 -40,0 z"
+       id="path5812"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#pattern6570);fill-opacity:1;fill-rule:evenodd;stroke:#ebe133;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4723-2-6"
+       width="25"
+       height="24.999977"
+       x="125"
+       y="-637.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 210,-542.6378 0,-20 2,0 0,20 z"
+       id="path5853"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 190,-582.6378 0,-2 20,0 0,2 z"
+       id="path5880"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 125,-584.6378 25,0 0,2 -25,0 z"
+       id="path5887"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 125,-667.6378 0,2 25,0 0,-2 z"
+       id="path5894"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 85,-667.6378 -2,0 0,-32 105,0 0,-40 62,0 0,2 -60,0 0,40 -105,0 z"
+       id="path5901"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 190,-602.6378 0,2 58,0 0,18 2,0 0,-20 z"
+       id="path5908"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 248,-562.6378 2,0 0,7 -2,0 z"
+       id="path6010"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4e6d7c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect6431"
+       width="128"
+       height="128"
+       x="-150"
+       y="-780.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient6441);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect6433"
+       width="40"
+       height="128"
+       x="-150"
+       y="-780.63782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#4e577c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -110,-652.6378 5,0 0,-5 15,0 0,5 15,0 0,-128 -15,0 0,108 -15,0 0,-5 -5,0 z"
+       id="path6443"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/3_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:none;stroke:none"
+       width="20"
+       height="20"
+       x="-110"
+       y="-602.63782"
+       id="rect6566" />
+    <rect
+       style="fill:url(#pattern6570);stroke:none"
+       width="20"
+       height="20"
+       x="-110"
+       y="-602.63782"
+       id="rect6573" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#a0acb1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4422"
+       width="245"
+       height="179.99995"
+       x="5"
+       y="-1237.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35-1"
+       width="17"
+       height="4"
+       x="5"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e7f4f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424"
+       width="50"
+       height="49.999977"
+       x="5"
+       y="-1297.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#c2d3cc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4426"
+       width="245"
+       height="10.000022"
+       x="5"
+       y="-1247.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#12542b;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 1,-1301.6378 249,0 0,4 -245,0 0,50 -4,0 z"
+       id="path4428"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4452);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 0,-1247.6378 0,10 5,0 0,-10 z"
+       id="path4430"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4476);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 0,-1237.6378 0,180 5,0 0,-180 z"
+       id="path4454"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448"
+       width="12"
+       height="4"
+       x="238"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-6"
+       width="24"
+       height="4"
+       x="190"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-7"
+       width="24"
+       height="4"
+       x="142"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-5"
+       width="24"
+       height="4"
+       x="94"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35"
+       width="24"
+       height="4"
+       x="46"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4529);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35-2"
+       width="5"
+       height="4"
+       x="0"
+       y="-1200.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35-1-9"
+       width="17"
+       height="4"
+       x="5"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-2"
+       width="12"
+       height="4"
+       x="238"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-6-0"
+       width="24"
+       height="4"
+       x="190"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-7-2"
+       width="24"
+       height="4"
+       x="142"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-5-3"
+       width="24"
+       height="4"
+       x="94"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35-7"
+       width="24"
+       height="4"
+       x="46"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4529-61);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4448-35-2-5"
+       width="5"
+       height="4"
+       x="0"
+       y="-1098.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#22bc2b;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 250,-1152.6378 -245,0 0,10 245,0 z"
+       id="path4628"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:url(#linearGradient4638);fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 5,-1152.6378 0,-6 245,0 0,6 z"
+       id="path4630"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="display:inline;fill:url(#linearGradient4638-9);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 5,-1136.6378 0,-6 245,0 0,6 z"
+       id="path4630-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="use4543"
+       transform="translate(0,100.00002)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4624);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="rect4618"
+         width="3"
+         height="20.000023"
+         x="5"
+         y="-1232.6378" />
+      <rect
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4626);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="rect4620"
+         width="3"
+         height="20.000023"
+         x="-11"
+         y="-1232.6378"
+         transform="scale(-1,1)" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+         d="m 8,-1232.6378 0,20"
+         id="path4622"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g4532"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-1232.6378"
+         x="5"
+         height="20.000023"
+         width="3"
+         id="rect4478"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4525);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <rect
+         transform="scale(-1,1)"
+         y="-1232.6378"
+         x="-11"
+         height="20.000023"
+         width="3"
+         id="rect4478-6"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4527);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4516"
+         d="m 8,-1232.6378 0,20"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g4532"
+       id="use4537"
+       transform="translate(0,25.000022)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4537"
+       id="use4539"
+       transform="translate(0,25)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4545"
+       id="use4547"
+       transform="translate(0,25)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use4543"
+       id="use4545"
+       transform="translate(0,25)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4709);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-9"
+       width="50"
+       height="49.999977"
+       x="55"
+       y="-1297.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#295535;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-7"
+       width="50"
+       height="49.999977"
+       x="105"
+       y="-1297.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4709-3);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-9-2"
+       width="50"
+       height="49.999977"
+       x="-205"
+       y="-1297.6378"
+       transform="scale(-1,1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e7f4f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-93"
+       width="45"
+       height="49.999977"
+       x="205"
+       y="-1297.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e7f4f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-8"
+       width="50"
+       height="49.999977"
+       x="5"
+       y="997.63782"
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#c2d3cc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4426-4"
+       width="245"
+       height="10.000022"
+       x="5"
+       y="1047.6378"
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="display:inline;fill:#12542b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1,-993.6378 249,0 0,-4 -245,0 0,-50 -4,0 z"
+       id="path4428-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4709-7);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-9-0"
+       width="50"
+       height="49.999977"
+       x="55"
+       y="997.63782"
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#295535;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-7-3"
+       width="50"
+       height="49.999977"
+       x="105"
+       y="997.63782"
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4709-3-1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-9-2-6"
+       width="50"
+       height="49.999977"
+       x="-205"
+       y="997.63782"
+       transform="scale(-1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3e7f4f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4424-93-1"
+       width="45"
+       height="49.999977"
+       x="205"
+       y="997.63782"
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4452-0);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 0,-1057.6378 0,10 5,0 0,-10 z"
+       id="path4430-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:url(#linearGradient4680);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 11,-1045.6378 0,-204 -6,0 0,2 4,0 0,200 -4,0 0,2 z"
+       id="path4672"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4836);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4828"
+       width="35"
+       height="35"
+       x="90"
+       y="-1092.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5784-0);stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5613-8-5"
+       width="31"
+       height="30.999977"
+       x="92"
+       y="-1090.6378"
+       rx="4.5833535"
+       ry="7.6190782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4872);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4864"
+       width="10"
+       height="50"
+       x="-434.40546"
+       y="-1055.0918"
+       rx="0"
+       ry="0"
+       transform="matrix(0.8660254,0.5,-0.5,0.8660254,0,0)"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4836-6);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4828-9"
+       width="35"
+       height="35"
+       x="161"
+       y="-1160.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5784-0-5);stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5613-8-5-3"
+       width="31"
+       height="30.999977"
+       x="163"
+       y="-1158.6378"
+       rx="4.5833535"
+       ry="7.6190782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient4836-2);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect4828-7"
+       width="35"
+       height="35"
+       x="134"
+       y="-1196.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5784-0-7);stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5613-8-5-4"
+       width="31"
+       height="30.999977"
+       x="136"
+       y="-1194.6378"
+       rx="4.5833535"
+       ry="7.6190782"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#2a6320;fill-rule:evenodd;stroke:#2a4c20;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;filter-blend-mode:normal;filter-gaussianBlur-deviation:0;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 130,-1197.6378 10,0 0,-20 -10,0 z"
+       id="path4928"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#2a6320;fill-rule:evenodd;stroke:#2a4c20;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 135,-1217.6378 0,-20 10,0 0,20 z"
+       id="path4930"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <circle
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#5c625b;fill-opacity:1;fill-rule:evenodd;stroke:#272e25;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path4946"
+       cx="62.999996"
+       cy="-1181.6378"
+       r="13.999999"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <circle
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path4948"
+       cx="63"
+       cy="-1181.6378"
+       r="10"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 214,-1083.6378 c 3,4 -3,8 0,10 3,2 9,-7 15,-5 6,2 2.46875,8.0078 2.46875,8.0078"
+       id="path4950"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czzc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 201,-1080.6378 c -5,1 -0.42202,8.7134 4,11 4.42202,2.2866 19,4 14,0 -5,-4 1,-14 1,-14"
+       id="path4952"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czzc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 190,-1072.6378 c 0.43721,0.5247 4.9469,-4.2662 5,-10 0.0531,-5.7338 4.46447,-6.1785 8,-5 3.53553,1.1785 6.0625,4.6875 2,8"
+       id="path4954"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czzc"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g5013"
+       transform="matrix(-1,0,0,-1,500,1704.7244)">
+      <use
+         id="use4970"
+         xlink:href="#rect4970"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4972"
+         xlink:href="#rect4972"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4974"
+         xlink:href="#rect4976"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4976"
+         xlink:href="#rect4978"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4978"
+         xlink:href="#path5078"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4981"
+         xlink:href="#rect4972-8"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4983"
+         xlink:href="#rect5111"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4985"
+         xlink:href="#rect5111-4"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4987"
+         xlink:href="#rect5111-4-5"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4989"
+         xlink:href="#rect5111-4-5-0"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4991"
+         xlink:href="#rect5162"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4993"
+         xlink:href="#path6307"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4995"
+         xlink:href="#path6309"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4997"
+         xlink:href="#path6311"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use4999"
+         xlink:href="#path6313"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5001"
+         xlink:href="#path6315"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5003"
+         xlink:href="#path6319"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5005"
+         xlink:href="#path6321"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5007"
+         xlink:href="#path6323"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5009"
+         xlink:href="#path6341"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5011"
+         xlink:href="#g6470"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g6470"
+       id="use5048"
+       transform="translate(98,-535)"
+       width="100%"
+       height="100%" />
+    <g
+       id="g5064"
+       transform="matrix(-1,0,0,-1,500,704.7244)">
+      <use
+         id="use5052"
+         xlink:href="#rect4243"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5054"
+         xlink:href="#path4283"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5056"
+         xlink:href="#rect4243-9"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5058"
+         xlink:href="#rect4243-3"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5060"
+         xlink:href="#path4314"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5062"
+         xlink:href="#use5048"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g6470"
+       id="use5072"
+       transform="translate(99,-1049)"
+       width="100%"
+       height="100%" />
+    <g
+       id="g5110"
+       transform="matrix(-1,0,0,-1,500,-295.2756)">
+      <use
+         id="use5086"
+         xlink:href="#rect4549"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5088"
+         xlink:href="#rect4481"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5090"
+         xlink:href="#rect4481-1"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5092"
+         xlink:href="#rect4481-8"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5094"
+         xlink:href="#rect4481-7"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5096"
+         xlink:href="#path4547"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5098"
+         xlink:href="#rect4549-9"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5100"
+         xlink:href="#path4483"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5102"
+         xlink:href="#path4567"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5104"
+         xlink:href="#path4569"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5106"
+         xlink:href="#path4567-2"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+      <use
+         id="use5108"
+         xlink:href="#use5072"
+         y="0"
+         x="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g6470"
+       id="use5124"
+       transform="translate(-15,-1520)"
+       width="100%"
+       height="100%" />
+    <g
+       id="g5198"
+       transform="matrix(-1,0,0,-1,765,-1350.2756)">
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5138"
+         xlink:href="#rect4683"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5140"
+         xlink:href="#rect4685"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5142"
+         xlink:href="#rect4688"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5144"
+         xlink:href="#rect4685-5"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5146"
+         xlink:href="#rect4713"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5148"
+         xlink:href="#rect4723"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5150"
+         xlink:href="#rect5613"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5152"
+         xlink:href="#rect4685-5-8"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5154"
+         xlink:href="#rect4723-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5156"
+         xlink:href="#path5533"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5158"
+         xlink:href="#rect4688-6"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5160"
+         xlink:href="#rect4688-6-3"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5162"
+         xlink:href="#path5584"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5164"
+         xlink:href="#rect5586"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5166"
+         xlink:href="#rect4723-1"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5168"
+         xlink:href="#rect5613-8"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5170"
+         xlink:href="#rect4688-3"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5172"
+         xlink:href="#rect5687"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5174"
+         xlink:href="#rect5697"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5176"
+         xlink:href="#rect4713-6"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5178"
+         xlink:href="#path5812"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5180"
+         xlink:href="#rect4723-2-6"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5182"
+         xlink:href="#path5853"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5184"
+         xlink:href="#path5880"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5186"
+         xlink:href="#path5887"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5188"
+         xlink:href="#path5894"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5190"
+         xlink:href="#path5901"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5192"
+         xlink:href="#path5908"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5194"
+         xlink:href="#path6010"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(265,-55.000001)"
+         id="use5196"
+         xlink:href="#use5124"
+         y="0"
+         x="0" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g6470"
+       id="use5230"
+       transform="translate(-5,-2040)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#101010;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.94375014px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5405"
+       width="128"
+       height="128"
+       x="-180"
+       y="-1155.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5407"
+       width="32"
+       height="32"
+       x="-180"
+       y="-1059.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#373828;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5409"
+       width="44"
+       height="44"
+       x="-144"
+       y="-1071.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5411"
+       width="40"
+       height="40"
+       x="-96"
+       y="-1067.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5413"
+       width="20"
+       height="20"
+       x="-180"
+       y="-1083.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5415"
+       width="8.0000219"
+       height="8.0000219"
+       x="-156.00002"
+       y="-1071.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2e2f21;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5417"
+       width="32"
+       height="35.999977"
+       x="-156"
+       y="-1111.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5419"
+       width="20"
+       height="20"
+       x="-120"
+       y="-1095.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#373828;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5435"
+       width="40"
+       height="40"
+       x="-96"
+       y="-1111.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#373828;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5437"
+       width="16"
+       height="35.999977"
+       x="-72"
+       y="-1151.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2e2f21;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5462"
+       width="8"
+       height="11.999978"
+       x="-108"
+       y="-1111.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5464"
+       width="8"
+       height="11.999978"
+       x="-120"
+       y="-1111.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5468"
+       width="28.000008"
+       height="24.000029"
+       x="-180"
+       y="-1139.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5491"
+       width="20"
+       height="23.999977"
+       x="-180"
+       y="-1111.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5439-8"
+       width="23.99999"
+       height="23.99999"
+       x="-100"
+       y="-1151.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4a4b35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5462-4"
+       width="8"
+       height="8"
+       x="-84"
+       y="-1123.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5462-4-9"
+       width="12"
+       height="8"
+       x="-100"
+       y="-1123.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5464-6"
+       width="20"
+       height="8"
+       x="-180"
+       y="-1151.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2e2f21;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5464-9"
+       width="16"
+       height="8"
+       x="-156"
+       y="-1151.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5625"
+       width="8"
+       height="12"
+       x="-148"
+       y="-1139.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5642"
+       width="32"
+       height="24.000023"
+       x="-136"
+       y="-1151.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#25261a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5625-6"
+       width="12"
+       height="8.0000219"
+       x="-148"
+       y="-1123.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2e2f21;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect5659"
+       width="28"
+       height="7.9999781"
+       x="-132"
+       y="-1123.6378"
+       inkscape:export-filename="/home/andre/Dropbox/Programacao/C++/Life_of_Judd/graphics/arenas/4_bg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5661"
+       sodipodi:cx="-226"
+       sodipodi:cy="-1072.6378"
+       sodipodi:expansion="1"
+       sodipodi:revolution="1.9229848"
+       sodipodi:radius="5.8485322"
+       sodipodi:argument="-21.826"
+       sodipodi:t0="0"
+       d="m -226,-1072.6378 c -0.45125,-0.075 -0.12125,-0.6454 0.125,-0.75 0.66732,-0.2835 1.28688,0.3881 1.375,1 0.15762,1.0945 -0.84882,1.9548 -1.875,2 -1.50597,0.066 -2.63551,-1.3132 -2.625,-2.75 0.014,-1.915 1.77858,-3.3212 3.625,-3.25 2.32353,0.09 4.00924,2.2443 3.875,4.5 -0.16258,2.7319 -2.71026,4.6987 -5.375,4.5 -2.06322,-0.1539 -3.8759,-1.5249 -4.67893,-3.4172"
+       transform="scale(-1,1)" />
+    <g
+       id="g5779"
+       transform="matrix(-1,0,0,-1,712,-2294.2756)">
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5663"
+         xlink:href="#rect4422"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5665"
+         xlink:href="#rect4448-35-1"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5667"
+         xlink:href="#rect4424"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5669"
+         xlink:href="#rect4426"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5671"
+         xlink:href="#path4428"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5673"
+         xlink:href="#path4430"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5675"
+         xlink:href="#path4454"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5677"
+         xlink:href="#rect4448"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5679"
+         xlink:href="#rect4448-6"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5681"
+         xlink:href="#rect4448-7"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5683"
+         xlink:href="#rect4448-5"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5685"
+         xlink:href="#rect4448-35"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5687"
+         xlink:href="#rect4448-35-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5689"
+         xlink:href="#rect4448-35-1-9"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5691"
+         xlink:href="#rect4448-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5693"
+         xlink:href="#rect4448-6-0"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5695"
+         xlink:href="#rect4448-7-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5697"
+         xlink:href="#rect4448-5-3"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5699"
+         xlink:href="#rect4448-35-7"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5701"
+         xlink:href="#rect4448-35-2-5"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5703"
+         xlink:href="#path4628"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5705"
+         xlink:href="#path4630"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5707"
+         xlink:href="#path4630-8"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5709"
+         xlink:href="#use4543"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5711"
+         xlink:href="#g4532"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5713"
+         xlink:href="#use4537"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5715"
+         xlink:href="#use4539"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5717"
+         xlink:href="#use4547"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5719"
+         xlink:href="#use4545"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5721"
+         xlink:href="#rect4424-9"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5723"
+         xlink:href="#rect4424-7"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5725"
+         xlink:href="#rect4424-9-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5727"
+         xlink:href="#rect4424-93"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5729"
+         xlink:href="#rect4424-8"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5731"
+         xlink:href="#rect4426-4"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5733"
+         xlink:href="#path4428-5"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5735"
+         xlink:href="#rect4424-9-0"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5737"
+         xlink:href="#rect4424-7-3"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5739"
+         xlink:href="#rect4424-9-2-6"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5741"
+         xlink:href="#rect4424-93-1"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5743"
+         xlink:href="#path4430-2"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5745"
+         xlink:href="#path4672"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5747"
+         xlink:href="#rect4828"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5749"
+         xlink:href="#rect5613-8-5"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5751"
+         xlink:href="#rect4864"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5753"
+         xlink:href="#rect4828-9"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5755"
+         xlink:href="#rect5613-8-5-3"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5757"
+         xlink:href="#rect4828-7"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5759"
+         xlink:href="#rect5613-8-5-4"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5761"
+         xlink:href="#path4928"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5763"
+         xlink:href="#path4930"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5765"
+         xlink:href="#path4946"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5767"
+         xlink:href="#path4948"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5769"
+         xlink:href="#path4950"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5771"
+         xlink:href="#path4952"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5773"
+         xlink:href="#path4954"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5775"
+         xlink:href="#use5230"
+         y="0"
+         x="0" />
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(212,1.0000221)"
+         id="use5777"
+         xlink:href="#path5661"
+         y="0"
+         x="0" />
+    </g>
   </g>
 </svg>

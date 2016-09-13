@@ -3,7 +3,7 @@ A Day in the Life of Judd
 You take on the role of Inkopolis's Judd, the cat that judges Turf War matches.
 You'll be presented with an overhead view of an inked arena, and your task is to decide which team covered the most turf.
 It's not as simple as that, though! Deciding the exact percentages, thinking about how much turf went uninked,
-figuring out if that blotch is green ink or just foliage, and even moral choices are all normal occurences for
+figuring out if that blotch is green ink or just foliage, and even avoiding biases are all normal occurrences for
 a day in the life of Judd.
 
 ===============
@@ -35,10 +35,10 @@ Game modes
 
 Difficulties
     Beginner
-        You only have to choose which team got more.
+        You only have to choose which team got more ink.
     Intermediate
         You have to decide what percentage of the arena each team covered.
-        The percentage of unclaimed turf is automatically decided.
+        The percentage of unclaimed turf is automatically given.
     Expert
         Same as intermediate, but you must also decide the unclaimed turf percentage.
         Terrain that cannot be inked doesn't count for any percentage.
@@ -51,7 +51,7 @@ Playing
         On expert difficulty, you get the same as intermediate, plus a slider for the percentage of unclaimed area.
     After deciding, press the Okay button on the right side of the screen.
     Once you do, you're shown your given values, the real percentages, and your score.
-    You get scored based on how accurately you estimated, on a scale of 0 to 100 points.
+    You get scored based on how accurately you estimated, on a scale from 0 to 100 points.
 
 ===============
 2) Tips
@@ -68,6 +68,19 @@ Why can't I see the game window?
 I crunched the numbers on the results screen, and they're slightly off. What gives?
     Rounding errors. The error shouldn't be greater than 0.1%, so it's not very important.
     In addition, if you get 99.9% or 99 points, it's automatically turned into 100 for the sake of fairness.
+    Finally, if the real scores reveal that both teams got exactly the same percentage,
+    the values are slightly skewered in your favor, to avoid having an unfair tie.
+Some colors of ink make it hard to see on the background. Why is that?
+    Believe it or not, that's actually part of the challenge.
+On intermediate difficulty, if Judd is only meant to compare the two teams,
+why are the percentages based on the whole arena, and where does the uninked percentage come from?
+    http://tvtropes.org/pmwiki/pmwiki.php/Main/GameplayAndStorySegregation
+    For the sake of gameplay and scoring, it makes more sense to use the percentages compared to the entire arena.
+    For the sake of convenience, the uninked percentage is also shown.
+    Unfortunately, this doesn't make much sense for the plot.
+    I've got no better way to do this. If you have any ideas, send them my way!
+On X arena, what is Y meant to be?
+    ...Use your imagination! Sorry, but I'm not an artist. Sometimes I just drew random objects on the arenas.
 
 ===============
 4) Compiling

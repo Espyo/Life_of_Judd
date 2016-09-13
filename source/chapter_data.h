@@ -20,6 +20,7 @@ struct Chapter_Data {
     unsigned char difficulty;
     vector<string> story;
     size_t n_simulation_iterations;
+    bool can_switch_teams;
     Blotch_Generator blotch_generators[3];
     ALLEGRO_COLOR ink_colors[2];
     Inkling inklings[2][N_INKLINGS];

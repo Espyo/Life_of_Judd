@@ -373,11 +373,21 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
     ) {
         if(game->chapter_to_load > 0) {
-            game->chapter_to_load++;
+            //Story mode.
+            if(player_score >= PASSING_SCORE) {
+                game->chapter_to_load++;
+                //TODO last chapter
+                game->state_mgr.change_state(GAME_STATE_LOADING);
+                
+            } else {
+                game->state_mgr.change_state(GAME_STATE_MAIN_MENU);
+                
+            }
+            
+        } else {
+            game->state_mgr.change_state(GAME_STATE_LOADING);
+            
         }
-        //TODO last chapter
-        //TODO only advance on victory condition
-        game->state_mgr.change_state(GAME_STATE_LOADING);
         
     } else if(
         sub_state >= SUB_STATE_CELEBRATING &&
@@ -622,7 +632,8 @@ void Gameplay::do_drawing() {
                 PICKER_I_UNINKED_X + PICKER_I_UNINKED_W * 0.5,
                 PICKER_I_UNINKED_Y + PICKER_I_UNINKED_H * 0.5,
                 ALLEGRO_ALIGN_CENTER,
-                f2s(game->cur_chapter.real_percentages[TEAM_NONE]) + "% uninked",
+                "(" + f2s(game->cur_chapter.real_percentages[TEAM_NONE]) +
+                "% uninked)",
                 PICKER_I_UNINKED_SCALE
             );
             

@@ -32,6 +32,8 @@ void Main_Menu::load() {
     mouse_on_free_play_start_button = false;
     mouse_on_next_difficulty_button = false;
     mouse_on_prev_difficulty_button = false;
+    
+    chosen_chapter = game->all_chapter_data.size(); //TODO remove this debug convenience thing
 }
 
 
