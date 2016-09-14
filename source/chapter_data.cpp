@@ -16,23 +16,23 @@ Chapter_Data generate_random_chapter_data(Game* game) {
     Chapter_Data data;
     data.arena_nr = randomi(0, N_ARENAS - 1);
     data.n_simulation_iterations =
-        randomi(10000, 50000);
+        randomi(1000, 2000);
         
     for(size_t t = 0; t < 2; ++t) {
         for(size_t i = 0; i < N_INKLINGS; ++i) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = randomf(0, 0.005);
-            data.inklings[t][i].speed = randomf(1, 5);
-            data.inklings[t][i].ink_radius = randomf(3, 6);
+            data.inklings[t][i].aggressiveness = randomf(0, 0.01);
+            data.inklings[t][i].speed = randomf(5, 10);
+            data.inklings[t][i].ink_radius = randomf(8, 15);
             data.inklings[t][i].respawn_chance = randomf(0, 0.005);
         }
     }
     
     for(size_t t = 0; t < 3; ++t) {
         data.blotch_generators[t].min_blotches = 0;
-        data.blotch_generators[t].max_blotches = 20;
+        data.blotch_generators[t].max_blotches = 50;
         data.blotch_generators[t].min_blotch_size = 1;
-        data.blotch_generators[t].max_blotch_size = 100;
+        data.blotch_generators[t].max_blotch_size = 20;
         data.blotch_generators[t].team = t;
     }
     
@@ -132,17 +132,17 @@ vector<Chapter_Data> get_chapters() {
         "got the most turf. Here goes!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0001;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.001;
+            data.inklings[t][i].ink_radius = 6;
             data.inklings[t][i].respawn_chance = 0.0001;
         }
-        data.inklings[0][i].speed = 3;
-        data.inklings[1][i].speed = 2;
+        data.inklings[0][i].speed = 6;
+        data.inklings[1][i].speed = 4;
     }
     
     data.blotch_generators[0].min_blotches = 0;
@@ -205,17 +205,17 @@ vector<Chapter_Data> get_chapters() {
         "Meow, good game! Time to judge!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0002;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.002;
+            data.inklings[t][i].ink_radius = 8;
             data.inklings[t][i].respawn_chance = 0.0002;
         }
-        data.inklings[0][i].speed = 3.5;
-        data.inklings[1][i].speed = 2.75;
+        data.inklings[0][i].speed = 7;
+        data.inklings[1][i].speed = 5.5;
     }
     
     data.blotch_generators[0].min_blotches = 2;
@@ -283,15 +283,15 @@ vector<Chapter_Data> get_chapters() {
         "was before! But I still know which team won."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.00025;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.0025;
+            data.inklings[t][i].ink_radius = 9;
             data.inklings[t][i].respawn_chance = 0.00025;
-            data.inklings[t][i].speed = 3.5;
+            data.inklings[t][i].speed = 7;
         }
     }
     
@@ -354,15 +354,15 @@ vector<Chapter_Data> get_chapters() {
         "of it yet!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0001;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.001;
+            data.inklings[t][i].ink_radius = 4;
             data.inklings[t][i].respawn_chance = 0.0005;
-            data.inklings[t][i].speed = 1;
+            data.inklings[t][i].speed = 2;
         }
     }
     
@@ -420,15 +420,15 @@ vector<Chapter_Data> get_chapters() {
         "Oh, the match is over! Okay, let's see..."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0005;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.005;
+            data.inklings[t][i].ink_radius = 8;
             data.inklings[t][i].respawn_chance = 0.0005;
-            data.inklings[t][i].speed = 3;
+            data.inklings[t][i].speed = 6;
         }
     }
     
@@ -515,17 +515,17 @@ vector<Chapter_Data> get_chapters() {
         "I hope I know what I'm doing though..."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0001;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.001;
+            data.inklings[t][i].ink_radius = 5;
             data.inklings[t][i].respawn_chance = 0.0005;
         }
-        data.inklings[0][i].speed = 1;
-        data.inklings[1][i].speed = 1.5;
+        data.inklings[0][i].speed = 2;
+        data.inklings[1][i].speed = 3;
     }
     
     data.blotch_generators[0].min_blotches = 0;
@@ -584,17 +584,17 @@ vector<Chapter_Data> get_chapters() {
         "I'm about to find out!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 8;
             data.inklings[t][i].respawn_chance = 0.0005;
         }
-        data.inklings[0][i].speed = 1.5;
-        data.inklings[1][i].speed = 2.5;
+        data.inklings[0][i].speed = 4;
+        data.inklings[1][i].speed = 6;
     }
     
     data.blotch_generators[0].min_blotches = 0;
@@ -652,17 +652,17 @@ vector<Chapter_Data> get_chapters() {
         "according to what I was told."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 10;
             data.inklings[t][i].respawn_chance = 0.0005;
         }
-        data.inklings[0][i].speed = 3.5;
-        data.inklings[1][i].speed = 3.75;
+        data.inklings[0][i].speed = 7;
+        data.inklings[1][i].speed = 7.5;
     }
     
     data.blotch_generators[0].min_blotches = 0;
@@ -719,26 +719,26 @@ vector<Chapter_Data> get_chapters() {
         "good at this, now!"
     );
     
-    data.n_simulation_iterations = 15000;
+    data.n_simulation_iterations = 1500;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 3;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 12;
             data.inklings[t][i].respawn_chance = 0.0005;
-            data.inklings[t][i].speed = 4;
+            data.inklings[t][i].speed = 10;
         }
     }
     
-    data.blotch_generators[0].min_blotches = 3;
-    data.blotch_generators[0].max_blotches = 5;
-    data.blotch_generators[0].min_blotch_size = 10;
-    data.blotch_generators[0].max_blotch_size = 15;
-    data.blotch_generators[1].min_blotches = 3;
-    data.blotch_generators[1].max_blotches = 5;
-    data.blotch_generators[1].min_blotch_size = 10;
-    data.blotch_generators[1].max_blotch_size = 15;
+    data.blotch_generators[0].min_blotches = 5;
+    data.blotch_generators[0].max_blotches = 10;
+    data.blotch_generators[0].min_blotch_size = 5;
+    data.blotch_generators[0].max_blotch_size = 10;
+    data.blotch_generators[1].min_blotches = 5;
+    data.blotch_generators[1].max_blotches = 10;
+    data.blotch_generators[1].min_blotch_size = 5;
+    data.blotch_generators[1].max_blotch_size = 10;
     data.blotch_generators[2].min_blotches = 3;
     data.blotch_generators[2].max_blotches = 6;
     data.blotch_generators[2].min_blotch_size = 10;
@@ -793,27 +793,27 @@ vector<Chapter_Data> get_chapters() {
         "final result."
     );
     
-    data.n_simulation_iterations = 15000;
+    data.n_simulation_iterations = 1500;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 3;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 11;
             data.inklings[t][i].respawn_chance = 0.0005;
-            data.inklings[t][i].speed = 4;
+            data.inklings[t][i].speed = 8;
         }
     }
     data.inklings[0][3].speed = 0;
     
-    data.blotch_generators[0].min_blotches = 3;
-    data.blotch_generators[0].max_blotches = 5;
-    data.blotch_generators[0].min_blotch_size = 10;
-    data.blotch_generators[0].max_blotch_size = 15;
-    data.blotch_generators[1].min_blotches = 3;
-    data.blotch_generators[1].max_blotches = 5;
-    data.blotch_generators[1].min_blotch_size = 10;
-    data.blotch_generators[1].max_blotch_size = 15;
+    data.blotch_generators[0].min_blotches = 5;
+    data.blotch_generators[0].max_blotches = 10;
+    data.blotch_generators[0].min_blotch_size = 5;
+    data.blotch_generators[0].max_blotch_size = 10;
+    data.blotch_generators[1].min_blotches = 5;
+    data.blotch_generators[1].max_blotches = 10;
+    data.blotch_generators[1].min_blotch_size = 5;
+    data.blotch_generators[1].max_blotch_size = 10;
     data.blotch_generators[2].min_blotches = 3;
     data.blotch_generators[2].max_blotches = 6;
     data.blotch_generators[2].min_blotch_size = 10;
@@ -861,26 +861,26 @@ vector<Chapter_Data> get_chapters() {
         "last time I though that, it became true."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0004;
-            data.inklings[t][i].ink_radius = 3;
+            data.inklings[t][i].aggressiveness = 0.004;
+            data.inklings[t][i].ink_radius = 11;
             data.inklings[t][i].respawn_chance = 0.0005;
-            data.inklings[t][i].speed = 4;
+            data.inklings[t][i].speed = 8;
         }
     }
     
-    data.blotch_generators[0].min_blotches = 5;
-    data.blotch_generators[0].max_blotches = 8;
-    data.blotch_generators[0].min_blotch_size = 10;
-    data.blotch_generators[0].max_blotch_size = 20;
-    data.blotch_generators[1].min_blotches = 5;
-    data.blotch_generators[1].max_blotches = 8;
-    data.blotch_generators[1].min_blotch_size = 10;
-    data.blotch_generators[1].max_blotch_size = 20;
+    data.blotch_generators[0].min_blotches = 10;
+    data.blotch_generators[0].max_blotches = 20;
+    data.blotch_generators[0].min_blotch_size = 5;
+    data.blotch_generators[0].max_blotch_size = 10;
+    data.blotch_generators[1].min_blotches = 10;
+    data.blotch_generators[1].max_blotches = 20;
+    data.blotch_generators[1].min_blotch_size = 5;
+    data.blotch_generators[1].max_blotch_size = 10;
     data.blotch_generators[2].min_blotches = 5;
     data.blotch_generators[2].max_blotches = 10;
     data.blotch_generators[2].min_blotch_size = 15;
@@ -944,15 +944,15 @@ vector<Chapter_Data> get_chapters() {
         "Okay... Bring it on!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0002;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].aggressiveness = 0.002;
+            data.inklings[t][i].ink_radius = 7;
             data.inklings[t][i].respawn_chance = 0.001;
-            data.inklings[t][i].speed = 2;
+            data.inklings[t][i].speed = 5;
         }
     }
     
@@ -1000,15 +1000,15 @@ vector<Chapter_Data> get_chapters() {
         "the world."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0002;
-            data.inklings[t][i].ink_radius = 2.2;
+            data.inklings[t][i].aggressiveness = 0.002;
+            data.inklings[t][i].ink_radius = 6;
             data.inklings[t][i].respawn_chance = 0.0008;
-            data.inklings[t][i].speed = 2.2;
+            data.inklings[t][i].speed = 5.4;
         }
     }
     
@@ -1058,15 +1058,15 @@ vector<Chapter_Data> get_chapters() {
         "event is over. Look at those spry kids!"
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 2.4;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 6;
             data.inklings[t][i].respawn_chance = 0.0007;
-            data.inklings[t][i].speed = 2.4;
+            data.inklings[t][i].speed = 5.8;
         }
     }
     
@@ -1127,15 +1127,15 @@ vector<Chapter_Data> get_chapters() {
         "blue crates cannot be inked."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0004;
-            data.inklings[t][i].ink_radius = 2.5;
+            data.inklings[t][i].aggressiveness = 0.004;
+            data.inklings[t][i].ink_radius = 7;
             data.inklings[t][i].respawn_chance = 0.0007;
-            data.inklings[t][i].speed = 2.5;
+            data.inklings[t][i].speed = 6;
         }
     }
     
@@ -1211,15 +1211,15 @@ vector<Chapter_Data> get_chapters() {
         "Well, I have to judge this match anyway..."
     );
     
-    data.n_simulation_iterations = 10000;
+    data.n_simulation_iterations = 1000;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
             data.inklings[t][i].aggressiveness = 0.5;
-            data.inklings[t][i].ink_radius = 2;
+            data.inklings[t][i].ink_radius = 6;
             data.inklings[t][i].respawn_chance = 0.05;
-            data.inklings[t][i].speed = 2;
+            data.inklings[t][i].speed = 5;
         }
     }
     
@@ -1282,17 +1282,17 @@ vector<Chapter_Data> get_chapters() {
         "really hard to keep stage control, too..."
     );
     
-    data.n_simulation_iterations = 15000;
+    data.n_simulation_iterations = 1500;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].ink_radius = 2;
-            data.inklings[t][i].speed = 2.5;
+            data.inklings[t][i].ink_radius = 7;
+            data.inklings[t][i].speed = 6;
         }
-        data.inklings[0][i].aggressiveness = 0.1;
+        data.inklings[0][i].aggressiveness = 0.3;
         data.inklings[0][i].respawn_chance = 0.0005;
-        data.inklings[1][i].aggressiveness = 0.01;
+        data.inklings[1][i].aggressiveness = 0.005;
         data.inklings[1][i].respawn_chance = 0.005;
     }
     
@@ -1344,18 +1344,18 @@ vector<Chapter_Data> get_chapters() {
         "say anything on that matter."
     );
     
-    data.n_simulation_iterations = 15000;
+    data.n_simulation_iterations = 1500;
     data.can_switch_teams = false;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 3;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 12;
             data.inklings[t][i].respawn_chance = 0.0007;
         }
-        data.inklings[0][i].speed = 2.8;
-        data.inklings[1][i].speed = 3.2;
+        data.inklings[0][i].speed = 7;
+        data.inklings[1][i].speed = 8;
     }
     
     data.blotch_generators[0].min_blotches = 0;
@@ -1406,25 +1406,25 @@ vector<Chapter_Data> get_chapters() {
         "Battles are all in good fun, right?"
     );
     
-    data.n_simulation_iterations = 15000;
+    data.n_simulation_iterations = 1500;
     data.can_switch_teams = false;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
             data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
-            data.inklings[t][i].aggressiveness = 0.0003;
-            data.inklings[t][i].ink_radius = 3;
+            data.inklings[t][i].aggressiveness = 0.003;
+            data.inklings[t][i].ink_radius = 12;
             data.inklings[t][i].respawn_chance = 0.0007;
-            data.inklings[t][i].speed = 3.5;
+            data.inklings[t][i].speed = 8;
         }
     }
     
-    data.blotch_generators[0].min_blotches = 1;
-    data.blotch_generators[0].max_blotches = 3;
+    data.blotch_generators[0].min_blotches = 3;
+    data.blotch_generators[0].max_blotches = 9;
     data.blotch_generators[0].min_blotch_size = 2;
     data.blotch_generators[0].max_blotch_size = 5;
-    data.blotch_generators[1].min_blotches = 1;
-    data.blotch_generators[1].max_blotches = 3;
+    data.blotch_generators[1].min_blotches = 3;
+    data.blotch_generators[1].max_blotches = 9;
     data.blotch_generators[1].min_blotch_size = 2;
     data.blotch_generators[1].max_blotch_size = 5;
     data.blotch_generators[2].min_blotches = 10;

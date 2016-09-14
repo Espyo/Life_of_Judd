@@ -6,6 +6,7 @@ It's not as simple as that, though! Deciding the exact percentages, thinking abo
 figuring out if that blotch is green ink or just foliage, and even avoiding biases are all normal occurrences for
 a day in the life of Judd.
 
+
 ===============
 1) How to play
 2) Tips
@@ -14,6 +15,7 @@ a day in the life of Judd.
 5) Credits
 6) Disclaimer
 ===============
+
 
 ===============
 1) How to play
@@ -53,11 +55,13 @@ Playing
     Once you do, you're shown your given values, the real percentages, and your score.
     You get scored based on how accurately you estimated, on a scale from 0 to 100 points.
 
+
 ===============
 2) Tips
 ===============
 - Use the mouse wheel if you want to fine-tune your decision, when your mouse cursor is over a slider.
 - Click the mouse button at any time after you've confirmed your decisions in order to skip to the final results.
+
 
 ===============
 3) FAQ and troubleshooting
@@ -65,13 +69,16 @@ Playing
 Why can't I see the game window?
     Because the game window sometimes break under Windows.
     Right-click the game's window on the task bar, choose move, and press any arrow key on the keyboard. That should fix it.
+
 I crunched the numbers on the results screen, and they're slightly off. What gives?
     Rounding errors. The error shouldn't be greater than 0.1%, so it's not very important.
     In addition, if you get 99.9% or 99 points, it's automatically turned into 100 for the sake of fairness.
     Finally, if the real scores reveal that both teams got exactly the same percentage,
     the values are slightly skewered in your favor, to avoid having an unfair tie.
+
 Some colors of ink make it hard to see on the background. Why is that?
     Believe it or not, that's actually part of the challenge.
+
 On intermediate difficulty, if Judd is only meant to compare the two teams,
 why are the percentages based on the whole arena, and where does the uninked percentage come from?
     http://tvtropes.org/pmwiki/pmwiki.php/Main/GameplayAndStorySegregation
@@ -79,8 +86,19 @@ why are the percentages based on the whole arena, and where does the uninked per
     For the sake of convenience, the uninked percentage is also shown.
     Unfortunately, this doesn't make much sense for the plot.
     I've got no better way to do this. If you have any ideas, send them my way!
+
 On X arena, what is Y meant to be?
     ...Use your imagination! Sorry, but I'm not an artist. Sometimes I just drew random objects on the arenas.
+
+Why doesn't the ink coverage look like the aftermath of a real Splatoon match?
+    The match simulation works on the basis of "good enough". It's impossible to simulate a real battle,
+    with a lot of collisions against walls, ink sprayed on weird nooks and crannies, Charger shots,
+    Kraken trails, weird movement patterns only humans can do, crafty movements and flanks using ramps,
+    etc., etc. Even getting a very close approximation would make the loading times massive. In an effort
+    to make the game load relatively quickly and also give convincing matches, this is as best as you can get.
+    (You can get smoother coverages by editing a battle's data in the source code, increasing the number
+    of simulation iterations, and decreasing the Inkling speed, aggressiveness, and ink radii. Try factors of 10.)
+    
 
 ===============
 4) Compiling
@@ -97,6 +115,7 @@ Under Windows...
     Open the .sln with Visual Studio.
     Compile. Good luck.
 
+
 ===============
 5) Credits
 ===============
@@ -108,6 +127,7 @@ Support and beta-testing:
 Special thanks:
     Stackoverflow and other such websites
     Inkipedia
+
 
 ===============
 6) Disclaimer

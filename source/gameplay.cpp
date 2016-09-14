@@ -397,6 +397,28 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         analysis_darken_opacity = ANALYSIS_DARKEN_VALUE;
         sub_state = SUB_STATE_ANALYSIS_FULL;
     }
+    
+    if(
+        sub_state == SUB_STATE_PICKING && ev.mouse.button == 2 &&
+        ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
+    ) {
+        //TODO REMOVE THIS DEBUGGING THING.
+        for(size_t x = 0; x < game->cur_chapter.width; ++x) {
+            for(size_t y = 0; y < game->cur_chapter.height; ++y) {
+                game->cur_chapter.grid[x][y].team = TEAM_NONE;
+            }
+        }
+        for(size_t t = 0; t < 2; ++t) {
+            for(size_t i = 0; i < N_INKLINGS; ++i) {
+                game->cur_chapter.inklings[t][i].pos =
+                    game->cur_chapter.spawns[t];
+            }
+        }
+        game->cur_chapter.do_match();
+        game->cur_chapter.calculate_real_percentages();
+        game->cur_chapter.render();
+    }
+    
 }
 
 
