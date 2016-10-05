@@ -43,6 +43,8 @@ void Loading::load() {
     game->cur_chapter.calculate_real_percentages();
     game->cur_chapter.render();
     
+    al_flush_event_queue(game->queue);
+    
     game->state_mgr.change_state(GAME_STATE_GAMEPLAY);
 }
 

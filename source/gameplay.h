@@ -145,6 +145,7 @@ private:
     bool mouse_down_on_unclaimed_picker;
     bool show_arena;
     bool show_ink;
+    bool dev_text;
     
     float player_percentages[3];
     float player_score;

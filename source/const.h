@@ -64,7 +64,7 @@ enum TEAMS {
 };
 
 const size_t N_INKLINGS = 4;
-const size_t N_ARENAS = 5; //TODO;
+const size_t N_ARENAS = 7;
 const float SPAWN_RADIUS = 9.0;
 const float PASSING_SCORE = 95;
 

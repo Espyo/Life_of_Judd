@@ -60,8 +60,7 @@ private:
         " NOT be sold. Splatoon® is a trademark of Nintendo®.";
     const int DISCLAIMER_2_Y = WINDOW_HEIGHT - 16;
     const string DISCLAIMER_2_TEXT =
-        "The copyrights of all associated characters, names, terms, art,"
-        " music, and assets belong to Nintendo®.";
+        "";
         
     string get_difficulty_name(const int difficulty_number);
     

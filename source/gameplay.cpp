@@ -38,6 +38,7 @@ void Gameplay::load() {
     cur_message_char_timer = 0;
     cur_message_block = 0;
     
+    dev_text = false;
     if(game->chapter_to_load == 0) {
         //Free play.
         sub_state = SUB_STATE_PICKING;
@@ -521,9 +522,22 @@ void Gameplay::do_drawing() {
             al_map_rgba(0, 0, 0, 128)
         );
         
+        ALLEGRO_COLOR text_color;
+        int text_align;
+        int text_x;
+        if(dev_text) {
+            text_color = al_map_rgb(160, 112, 255);
+            text_align = ALLEGRO_ALIGN_CENTER;
+            text_x = WINDOW_WIDTH * 0.5;
+        } else {
+            text_color = al_map_rgb(255, 255, 255);
+            text_align = ALLEGRO_ALIGN_LEFT;
+            text_x = STORY_X;
+        }
+        
         draw_shadowed_text(
-            game->font, al_map_rgb(255, 255, 255),
-            STORY_X, STORY_Y, ALLEGRO_ALIGN_LEFT,
+            game->font, text_color,
+            text_x, STORY_Y, text_align,
             cur_message.substr(0, cur_message_char + 1),
             STORY_SCALE, true
         );
@@ -882,7 +896,7 @@ void Gameplay::do_drawing() {
             game->font, al_map_rgb(255, 255, 255),
             ANALYSIS_SCORE_X, ANALYSIS_SCORE_Y,
             ALLEGRO_ALIGN_CENTER,
-            "YOUR SCORE: " + i2s(round(player_score))
+            "YOUR SCORE: " + i2s(player_score)
         );
         
         draw_shadowed_text(
@@ -1095,6 +1109,7 @@ void Gameplay::calculate_player_score() {
     
     player_score = (player_score - 50) * 2.0;
     player_score = max(0.0f, player_score);
+    player_score = round(player_score);
     
     if(player_score == 0) {
         committee_comment =
@@ -1193,6 +1208,9 @@ void Gameplay::advance_story() {
             advance_story();
         } else if(cur_message == "#ink") {
             show_ink = true;
+            advance_story();
+        } else if(cur_message == "#devtext") {
+            dev_text = true;
             advance_story();
         }
         

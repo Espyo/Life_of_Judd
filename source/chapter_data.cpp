@@ -75,8 +75,8 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "I was there, too. It was up to me to\n"
-        "judge which team inked the most turf.\n"
-        "I've always been purretty good at that, purr..."
+        "declare the winner when it was all over.\n"
+        "I've always liked doing that, purr..."
     );
     data.story.push_back(
         "Well, I'm no hisstory teacher, so enough\n"
@@ -99,7 +99,7 @@ vector<Chapter_Data> get_chapters() {
         "Of course it won't be easy.\n"
         "It's a cat-eats-cat world out there, after all.\n"
         "I was told I'd be fired if I got it wrong.\n"
-        "Mrrow, these Inklings are really passionate\n"
+        "Mrrow, the Inklings are really passionate\n"
         "about this thing, huh?\n"
     );
     data.story.push_back(
@@ -766,6 +766,11 @@ vector<Chapter_Data> get_chapters() {
         "#arena"
     );
     data.story.push_back(
+        "I hate Winter. It feels like I'm being\n"
+        "frozen alive, which I certainly do not\n"
+        "appreciate!"
+    );
+    data.story.push_back(
         "It's too cold to be battling on a beachside\n"
         "resort! There's no air-conditioning on these\n"
         "arenas. I hope they eventually change that,\n"
@@ -780,7 +785,8 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "The match really is going to begin! Is this\n"
-        "even allowed? Oh, a committee representative\n"
+        "even allowed? Oh, a Turf War Investigation\n"
+        "and Normalization Entity representative\n"
         "just showed up. ...Okay, so the game has\n"
         "to start regardless. Well, good luck, trio!\n"
     );
@@ -1378,7 +1384,7 @@ vector<Chapter_Data> get_chapters() {
     data = Chapter_Data();
     
     data.difficulty = DIFFICULTY_EXPERT;
-    data.name = "Chapter 19: Splatfest Results";
+    data.name = "Chapter 19: Cats vs Dogs Results";
     data.arena_nr = 2;
     data.ink_colors[0] = al_map_rgb(46,  12,  181);
     data.ink_colors[1] = al_map_rgb(248, 99,  0);
@@ -1407,7 +1413,6 @@ vector<Chapter_Data> get_chapters() {
     );
     
     data.n_simulation_iterations = 1500;
-    data.can_switch_teams = false;
     
     for(size_t i = 0; i < N_INKLINGS; ++i) {
         for(size_t t = 0; t < 2; ++t) {
@@ -1431,6 +1436,943 @@ vector<Chapter_Data> get_chapters() {
     data.blotch_generators[2].max_blotches = 20;
     data.blotch_generators[2].min_blotch_size = 5;
     data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 20 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 20: Missing Inklings...";
+    data.arena_nr = 3;
+    data.ink_colors[0] = al_map_rgb(207, 88,  27);
+    data.ink_colors[1] = al_map_rgb(20,  20,  148);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "July 20th, 2015\n"
+        " \n"
+        "An Inkling is missing again?"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "This is starting to happen a lot. I wonder\n"
+        "what causes some players to just not\n"
+        "show up? Is something wrong with the\n"
+        "matchmaking system, or are they\n"
+        "bailing out on purpose?"
+    );
+    data.story.push_back(
+        "...Huh? There are actually two Inklings\n"
+        "missing? And they're both from the same\n"
+        "team?! That's horrible! But the match\n"
+        "just has to start, no matter what..."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "Oh dear... They gave it their best, but..."
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].ink_radius = 12;
+            data.inklings[t][i].speed = 8;
+        }
+        data.inklings[0][i].aggressiveness = 0.02;
+        data.inklings[1][i].aggressiveness = 0.03;
+        data.inklings[0][i].respawn_chance = 0.07;
+        data.inklings[1][i].respawn_chance = 0.003;
+    }
+    data.inklings[0][0].speed = 0;
+    data.inklings[0][1].speed = 0;
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 0;
+    data.blotch_generators[0].min_blotch_size = 0;
+    data.blotch_generators[0].max_blotch_size = 0;
+    data.blotch_generators[1].min_blotches = 3;
+    data.blotch_generators[1].max_blotches = 9;
+    data.blotch_generators[1].min_blotch_size = 2;
+    data.blotch_generators[1].max_blotch_size = 5;
+    data.blotch_generators[2].min_blotches = 10;
+    data.blotch_generators[2].max_blotches = 20;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 21 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 21: Tide Park";
+    data.arena_nr = 5;
+    data.ink_colors[0] = al_map_rgb(0,   126, 220);
+    data.ink_colors[1] = al_map_rgb(225, 163, 7);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "August 15th, 2015\n"
+        " \n"
+        "Trees everywhere...!"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "So they made Tide Park an arena, huh?\n"
+        "It does look like a pretty fun place\n"
+        "to duke it out on, that's for sure."
+    );
+    data.story.push_back(
+        "All of the trees provide cover from\n"
+        "enemy shots, but they also can't be\n"
+        "inked. ...Which just makes my job\n"
+        "harder. I'm going to have to take\n"
+        "so many spots into account, now!"
+    );
+    data.story.push_back(
+        "And of course, the big fountain in the\n"
+        "center also can't be inked. And\n"
+        "those thin street lights probably\n"
+        "can't be inked either, since they're\n"
+        "made of metal."
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].aggressiveness = 0.001;
+            data.inklings[t][i].ink_radius = 10;
+            data.inklings[t][i].respawn_chance = 0.007;
+            data.inklings[t][i].speed = 7;
+        }
+    }
+    
+    data.blotch_generators[0].min_blotches = 1;
+    data.blotch_generators[0].max_blotches = 3;
+    data.blotch_generators[0].min_blotch_size = 2;
+    data.blotch_generators[0].max_blotch_size = 5;
+    data.blotch_generators[1].min_blotches = 1;
+    data.blotch_generators[1].max_blotches = 3;
+    data.blotch_generators[1].min_blotch_size = 2;
+    data.blotch_generators[1].max_blotch_size = 5;
+    data.blotch_generators[2].min_blotches = 10;
+    data.blotch_generators[2].max_blotches = 20;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 22 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 22: Missing Inklings!!!";
+    data.arena_nr = 5;
+    data.ink_colors[0] = al_map_rgb(32,  131, 125);
+    data.ink_colors[1] = al_map_rgb(223, 100, 26);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "September 1st, 2015\n"
+        " \n"
+        "Missing Inklings, again..."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "This is becoming a bit of a problem.\n"
+        "Some Inklings just don't show up, for\n"
+        "whatever reas-- huh?"
+    );
+    data.story.push_back(
+        "The third team member also didn't show up?\n"
+        "Meow! So, is that Inkling going to fight on\n"
+        "her own, then?"
+    );
+    data.story.push_back(
+        "Oh! She's quitting! And who can blame her,\n"
+        "honestly? With friends like hers, who needs\n"
+        "enemies, right?"
+    );
+    data.story.push_back(
+        "Wait, but that means... The other team will\n"
+        "fight alone! Am I really going to judge a\n"
+        "match with only one team?"
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "...Here I go, I guess. Before I recklessly give\n"
+        "the final result, I better carefully check\n"
+        "how much turf the missing team really has."
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].aggressiveness = 0.03;
+            data.inklings[t][i].ink_radius = 13;
+            data.inklings[t][i].respawn_chance = 0;
+            data.inklings[t][i].speed = 10;
+        }
+        data.inklings[0][i].speed = 0;
+    }
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 0;
+    data.blotch_generators[0].min_blotch_size = 0;
+    data.blotch_generators[0].max_blotch_size = 0;
+    data.blotch_generators[1].min_blotches = 0;
+    data.blotch_generators[1].max_blotches = 0;
+    data.blotch_generators[1].min_blotch_size = 0;
+    data.blotch_generators[1].max_blotch_size = 0;
+    data.blotch_generators[2].min_blotches = 5;
+    data.blotch_generators[2].max_blotches = 10;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 23 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 23: Art vs Science";
+    data.arena_nr = 2;
+    data.ink_colors[0] = al_map_rgb(146, 8,   231);
+    data.ink_colors[1] = al_map_rgb(247, 143, 46);
+    data.can_switch_teams = false;
+    
+    data.story.push_back(
+        data.name + "\n"
+        "September 18th, 2015\n"
+        " \n"
+        "Now this is a hot topic!"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "Art or Science... I'm not quite sure\n"
+        "which of the two I prefer.\n"
+        "But those Inklings sure know what\n"
+        "they're fighting for."
+    );
+    data.story.push_back(
+        "In this corner, a creative bunch of\n"
+        "Inklings with sparks in their eyes.\n"
+        "They're great at making art, and painting\n"
+        "like crazy is no hard task for them."
+    );
+    data.story.push_back(
+        "In that corner, a group of calm and\n"
+        "calculated players with a knack for\n"
+        "getting things done right. And\n"
+        "efficiently, too!"
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "So let's see, which of the two is\n"
+        "best? Creative talent, or book smarts?"
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].ink_radius = 18;
+            data.inklings[t][i].speed = 12;
+        }
+        data.inklings[0][i].aggressiveness = 0.001;
+        data.inklings[0][i].respawn_chance = 0.01;
+        data.inklings[1][i].aggressiveness = 0.004;
+        data.inklings[1][i].respawn_chance = 0.005;
+    }
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 2;
+    data.blotch_generators[0].min_blotch_size = 2;
+    data.blotch_generators[0].max_blotch_size = 5;
+    data.blotch_generators[1].min_blotches = 20;
+    data.blotch_generators[1].max_blotches = 30;
+    data.blotch_generators[1].min_blotch_size = 8;
+    data.blotch_generators[1].max_blotch_size = 15;
+    data.blotch_generators[2].min_blotches = 5;
+    data.blotch_generators[2].max_blotches = 10;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 24 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 24: Goofing Around";
+    data.arena_nr = 5;
+    data.ink_colors[0] = al_map_rgb(218, 55,  129);
+    data.ink_colors[1] = al_map_rgb(237, 148, 8);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "October 4th, 2015\n"
+        " \n"
+        "Aww, isn't that nice."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "As those eight Inklings were walking\n"
+        "into the arena, they were smiling\n"
+        "and laughing with one another,\n"
+        "even though they were on opposite\n"
+        "teams."
+    );
+    data.story.push_back(
+        "Not like it's common for Inklings to be\n"
+        "bitter towards the other team. It's just\n"
+        "that, since Turf War is so popular, there\n"
+        "are so many players, and since they don't\n"
+        "know each other, friendliness is rare."
+    );
+    data.story.push_back(
+        "So, these eight are probably close friends.\n"
+        "And they have such a carefree and...\n"
+        "mischievous attitude. Hmm, the match is\n"
+        "about to start, so let me keep a\n"
+        "close eye on this bunch."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "Th-They didn't do a thing! They just\n"
+        "repeatedly changed between a kid and\n"
+        "a squid, and wobbled like that all\n"
+        "over the place!"
+    );
+    data.story.push_back(
+        "When the two teams got close, they\n"
+        "just danced together and did weird\n"
+        "stunts."
+    );
+    data.story.push_back(
+        "The imagination of a young Inkling is\n"
+        "truly a sight to behold. I guess you\n"
+        "don't need to shoot ink just to\n"
+        "have a good time."
+    );
+    data.story.push_back(
+        "Well, this is going to be tricky to\n"
+        "judge! They managed to place a few\n"
+        "splotches here and there. Guess I'll\n"
+        "go by those."
+    );
+    
+    data.n_simulation_iterations = 500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].speed = 0;
+        }
+    }
+    
+    data.blotch_generators[0].min_blotches = 5;
+    data.blotch_generators[0].max_blotches = 20;
+    data.blotch_generators[0].min_blotch_size = 1;
+    data.blotch_generators[0].max_blotch_size = 20;
+    data.blotch_generators[1].min_blotches = 5;
+    data.blotch_generators[1].max_blotches = 20;
+    data.blotch_generators[1].min_blotch_size = 1;
+    data.blotch_generators[1].max_blotch_size = 20;
+    data.blotch_generators[2].min_blotches = 0;
+    data.blotch_generators[2].max_blotches = 0;
+    data.blotch_generators[2].min_blotch_size = 0;
+    data.blotch_generators[2].max_blotch_size = 0;
+    
+    v.push_back(data);
+    
+    //Chapter 25 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 25: One Brave Hero";
+    data.arena_nr = 5;
+    data.ink_colors[0] = al_map_rgb(34,  140, 255);
+    data.ink_colors[1] = al_map_rgb(232, 84,  7);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "November 11th, 2015\n"
+        " \n"
+        "This is starting to become normal."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "The match is about to start in just a\n"
+        "minute, and some of the Inklings are\n"
+        "missing. Oh, just as I say that, the\n"
+        "fourth player of that team arrived. But..."
+    );
+    data.story.push_back(
+        "The other team is missing all of its\n"
+        "members except for one. If this match\n"
+        "is a 1v4, that Inkling will probably not\n"
+        "be very motivated to fight."
+    );
+    data.story.push_back(
+        "Most of what that Inkling will be doing\n"
+        "is ink turf already claimed by the other\n"
+        "team. That leads to a lot of points, on\n"
+        "the bright side!"
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "Predictably, the match was a 1v4.\n"
+        "Let's see how our lonesome hero\n"
+        "managed..."
+    );
+    
+    data.n_simulation_iterations = 1000;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+        }
+        data.inklings[0][i].aggressiveness = 0.01;
+        data.inklings[0][i].ink_radius = 20;
+        data.inklings[0][i].respawn_chance = 0.001;
+        data.inklings[0][i].speed = 12;
+    }
+    data.inklings[1][0].speed = 0;
+    data.inklings[1][1].speed = 0;
+    data.inklings[1][2].speed = 0;
+    data.inklings[1][3].aggressiveness = 0.05;
+    data.inklings[1][3].ink_radius = 20;
+    data.inklings[1][3].respawn_chance = 0.1;
+    data.inklings[1][3].speed = 12;
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 0;
+    data.blotch_generators[0].min_blotch_size = 0;
+    data.blotch_generators[0].max_blotch_size = 0;
+    data.blotch_generators[1].min_blotches = 5;
+    data.blotch_generators[1].max_blotches = 20;
+    data.blotch_generators[1].min_blotch_size = 1;
+    data.blotch_generators[1].max_blotch_size = 20;
+    data.blotch_generators[2].min_blotches = 2;
+    data.blotch_generators[2].max_blotches = 5;
+    data.blotch_generators[2].min_blotch_size = 2;
+    data.blotch_generators[2].max_blotch_size = 5;
+    
+    v.push_back(data);
+    
+    //Chapter 26 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 26: Mouth-watering Fun!";
+    data.arena_nr = 6;
+    data.ink_colors[0] = al_map_rgb(200, 61,  121);
+    data.ink_colors[1] = al_map_rgb(64,  157, 59);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "January 12th, 2016\n"
+        " \n"
+        "Mrr-rrow! I LOVE this arena!"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "My stomach's rumbling just by being here!\n"
+        "But I can't interfere with the arena!\n"
+        "I'll have to sit tight and simply look at\n"
+        "what's happening."
+    );
+    data.story.push_back(
+        "I'm starting to wonder if this arena is a\n"
+        "blessing or a curse, now...\n"
+        "I have to be strong! ...As I hope those\n"
+        "glasses are! They better be ready to\n"
+        "take a Splat Bomb explosion or two..."
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].aggressiveness = 0.01;
+            data.inklings[t][i].ink_radius = 10;
+            data.inklings[t][i].respawn_chance = 0.007;
+            data.inklings[t][i].speed = 7;
+        }
+    }
+    
+    data.blotch_generators[0].min_blotches = 1;
+    data.blotch_generators[0].max_blotches = 3;
+    data.blotch_generators[0].min_blotch_size = 2;
+    data.blotch_generators[0].max_blotch_size = 5;
+    data.blotch_generators[1].min_blotches = 1;
+    data.blotch_generators[1].max_blotches = 3;
+    data.blotch_generators[1].min_blotch_size = 2;
+    data.blotch_generators[1].max_blotch_size = 5;
+    data.blotch_generators[2].min_blotches = 10;
+    data.blotch_generators[2].max_blotches = 20;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 27 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 27: Weird Warzone";
+    data.arena_nr = 6;
+    data.ink_colors[0] = al_map_rgb(46,  12,  181);
+    data.ink_colors[1] = al_map_rgb(248, 99,  0);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "February 19th, 2016\n"
+        " \n"
+        "I have a weird feeling about this one."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "The Inklings on that team clean up the\n"
+        "opposing team's ink super-precisely.\n"
+        "The other team, on the other paw,\n"
+        "can't even be bothered."
+    );
+    data.story.push_back(
+        "It's so nice that there are so many different\n"
+        "types of personalities in the players that\n"
+        "play Turf War. It helps remind that\n"
+        "every one is not just a pawn in a game, but\n"
+        "somebody with exact emotions and styles."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "...Too deep? Mrrow, I guess I do that when\n"
+        "I'm hungry. Oh, and I got sidetracked, and\n"
+        "now the match is done."
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+        }
+        data.inklings[0][i].aggressiveness = 0.01;
+        data.inklings[0][i].ink_radius = 20;
+        data.inklings[0][i].respawn_chance = 0.01;
+        data.inklings[0][i].speed = 12;
+        data.inklings[1][i].aggressiveness = 0.01;
+        data.inklings[1][i].ink_radius = 20;
+        data.inklings[1][i].respawn_chance = 0.001;
+        data.inklings[1][i].speed = 12;
+    }
+    
+    data.blotch_generators[0].min_blotches = 40;
+    data.blotch_generators[0].max_blotches = 50;
+    data.blotch_generators[0].min_blotch_size = 40;
+    data.blotch_generators[0].max_blotch_size = 70;
+    data.blotch_generators[1].min_blotches = 0;
+    data.blotch_generators[1].max_blotches = 0;
+    data.blotch_generators[1].min_blotch_size = 0;
+    data.blotch_generators[1].max_blotch_size = 0;
+    data.blotch_generators[2].min_blotches = 0;
+    data.blotch_generators[2].max_blotches = 0;
+    data.blotch_generators[2].min_blotch_size = 0;
+    data.blotch_generators[2].max_blotch_size = 0;
+    
+    v.push_back(data);
+    
+    //Chapter 28 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 28: No Fun Allowed";
+    data.arena_nr = 6;
+    data.ink_colors[0] = al_map_rgb(201, 52,  87);
+    data.ink_colors[1] = al_map_rgb(4,   129, 136);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "April 16th, 2016\n"
+        " \n"
+        "Oh, \"squidbaggers\"."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "Those Inklings over there are already\n"
+        "\"squidbagging\" before even entering\n"
+        "the arena. That is what it's called,\n"
+        "right? \"Squidbagging\"? When kids go to\n"
+        "and from squid form really quickly?"
+    );
+    data.story.push_back(
+        "The other team just saw them flop like\n"
+        "crazy and decided to do the same!\n"
+        "Isn't it magical when an entire group of\n"
+        "people get the same fun idea without\n"
+        "even sharing a single word?"
+    );
+    data.story.push_back(
+        "Uhm, I take that back. Not the entire group.\n"
+        "That single Inkling has such a horrible frown...\n"
+        "Don't tell me..."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "Yep, that Inkling went alone while the others\n"
+        "frolicked about harmlessly. Her team won\n"
+        "but she's raging like crazy!\n"
+        "What's the matter? Not having fun?\n"
+        "That's what you get for being a party-pooper!"
+    );
+    data.story.push_back(
+        "...Wow. That was harsh. That Inkling was only\n"
+        "trying to follow the game's objective.\n"
+        "Squidbagging is fun, but when other people\n"
+        "don't want to join and suffer from it, that's\n"
+        "no good. I hope more people realize that."
+    );
+    data.story.push_back(
+        "What am I, the thought police? People should\n"
+        "do whatever they want. I just don't like\n"
+        "seeing anybody get upset, is all."
+    );
+    
+    data.n_simulation_iterations = 1000;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].speed = 0;
+        }
+    }
+    data.inklings[1][3].aggressiveness = 0.05;
+    data.inklings[1][3].ink_radius = 10;
+    data.inklings[1][3].respawn_chance = 0;
+    data.inklings[1][3].speed = 10;
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 0;
+    data.blotch_generators[0].min_blotch_size = 0;
+    data.blotch_generators[0].max_blotch_size = 0;
+    data.blotch_generators[1].min_blotches = 0;
+    data.blotch_generators[1].max_blotches = 0;
+    data.blotch_generators[1].min_blotch_size = 0;
+    data.blotch_generators[1].max_blotch_size = 0;
+    data.blotch_generators[2].min_blotches = 2;
+    data.blotch_generators[2].max_blotches = 5;
+    data.blotch_generators[2].min_blotch_size = 2;
+    data.blotch_generators[2].max_blotch_size = 5;
+    
+    v.push_back(data);
+    
+    //Chapter 29 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 29: Duel";
+    data.arena_nr = 4;
+    data.ink_colors[0] = al_map_rgb(218, 55,  129);
+    data.ink_colors[1] = al_map_rgb(237, 148, 8);
+    
+    data.story.push_back(
+        data.name + "\n"
+        "June 24th, 2016\n"
+        " \n"
+        "So...is this match going to be canceled?"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "Because nobody is here ye--\n"
+        "Oh, one Inkling is finally here.\n"
+        "The match will start any second now."
+    );
+    data.story.push_back(
+        "Good, another Inkling. Now, where are\n"
+        "the rest? Don't tell me this will be a\n"
+        "one-on-one!\n"
+        "Looks like it! The match is startiiing...\n"
+        "Now!"
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "That was actually one of the most interesting\n"
+        "fights I've seen in a long while.\n"
+        "This will be fun to judge."
+    );
+    
+    data.n_simulation_iterations = 1000;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].speed = 0;
+        }
+    }
+    for(size_t t = 0; t < 2; ++t) {
+        data.inklings[t][0].aggressiveness = 0.1;
+        data.inklings[t][0].ink_radius = 6;
+        data.inklings[t][0].respawn_chance = 0.005;
+        data.inklings[t][0].speed = 7;
+    }
+    
+    data.blotch_generators[0].min_blotches = 0;
+    data.blotch_generators[0].max_blotches = 0;
+    data.blotch_generators[0].min_blotch_size = 0;
+    data.blotch_generators[0].max_blotch_size = 0;
+    data.blotch_generators[1].min_blotches = 0;
+    data.blotch_generators[1].max_blotches = 0;
+    data.blotch_generators[1].min_blotch_size = 0;
+    data.blotch_generators[1].max_blotch_size = 0;
+    data.blotch_generators[2].min_blotches = 10;
+    data.blotch_generators[2].max_blotches = 20;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Chapter 30 --------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "Chapter 30: Callie vs Marie";
+    data.arena_nr = 6;
+    data.ink_colors[0] = al_map_rgb(175, 22,  172);
+    data.ink_colors[1] = al_map_rgb(113, 218, 12);
+    data.can_switch_teams = false;
+    
+    data.story.push_back(
+        data.name + "\n"
+        "July 22nd, 2016\n"
+        " \n"
+        "The final one?!"
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "This is it... The final Splatfest...\n"
+        "It feels like it started just yesterday.\n"
+        "And to top it off, you have to choose\n"
+        "between the two Squid Sisters!"
+    );
+    data.story.push_back(
+        "Good thing I'm not playing, because I\n"
+        "couldn't possibly pick! Callie plays\n"
+        "with me a lot, but Marie lets me sleep\n"
+        "on her lap. This Splatfest is just cruel!\n"
+    );
+    data.story.push_back(
+        "Is this really the final Splatfest?\n"
+        "Are they cutting off support for the\n"
+        "sport? What will this mean for the future?"
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "But...I guess the spirit of Turf War will\n"
+        "live on. Splatfest or not, Inklings are\n"
+        "always aching to ink turf in teams.\n"
+        "Oh well. Whatever happens, happens.\n"
+        "Let's judge!"
+    );
+    
+    data.n_simulation_iterations = 1500;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].aggressiveness = 0.01;
+            data.inklings[t][i].ink_radius = 18;
+            data.inklings[t][i].respawn_chance = 0.01;
+        }
+        data.inklings[0][i].speed = 12;
+        data.inklings[1][i].speed = 12.7;
+    }
+    
+    data.blotch_generators[0].min_blotches = 5;
+    data.blotch_generators[0].max_blotches = 10;
+    data.blotch_generators[0].min_blotch_size = 10;
+    data.blotch_generators[0].max_blotch_size = 20;
+    data.blotch_generators[1].min_blotches = 10;
+    data.blotch_generators[1].max_blotches = 20;
+    data.blotch_generators[1].min_blotch_size = 15;
+    data.blotch_generators[1].max_blotch_size = 25;
+    data.blotch_generators[2].min_blotches = 10;
+    data.blotch_generators[2].max_blotches = 20;
+    data.blotch_generators[2].min_blotch_size = 5;
+    data.blotch_generators[2].max_blotch_size = 10;
+    
+    v.push_back(data);
+    
+    //Credits -----------------------------------------------
+    
+    data = Chapter_Data();
+    
+    data.difficulty = DIFFICULTY_EXPERT;
+    data.name = "~Thanks For Playing!~";
+    data.arena_nr = 0;
+    data.ink_colors[0] = al_map_rgb(200, 61,  121);
+    data.ink_colors[1] = al_map_rgb(64,  157, 59);
+    
+    data.story.push_back(
+        "Present day\n"
+        " \n"
+        "Splatoon..."
+    );
+    data.story.push_back(
+        "Splatfest might be over, but players\n"
+        "from all over the globe still get\n"
+        "together to play. As long as they're\n"
+        "having fun, that's all that matters,\n"
+        "right?"
+    );
+    data.story.push_back(
+        "I wonder if they'll ever unveil a\n"
+        "\"Splatoon 2\". Maybe they'll fix\n"
+        "some of the small problems they found\n"
+        "during the development of Splatoon?"
+    );
+    data.story.push_back(
+        "Or maybe they'll focus solely on new\n"
+        "mechanics. Oh, or even allowing four\n"
+        "teams to square it out! Who's to say?"
+    );
+    data.story.push_back(
+        "Either way, this is my job now, and\n"
+        "all things considered, it's pretty good!\n"
+        "I just chill, watch as the game evolves\n"
+        "and sometimes raise a flag to one team\n"
+        "or the other."
+    );
+    data.story.push_back(
+        "There are some wacky matches here and\n"
+        "there, but I think most of the interesting\n"
+        "ones are already over. There's not much else\n"
+        "to say. Now, my life is to just judge,\n"
+        "judge, judge! Plain and simple."
+    );
+    data.story.push_back(
+        "#arena"
+    );
+    data.story.push_back(
+        "#devtext"
+    );
+    data.story.push_back(
+        "With that said, I'd like to thank you for\n"
+        "playing \"A Day in the Life of Judd\"!\n"
+        "I hope I was able to entertain you for some\n"
+        "hours with this simple game."
+    );
+    data.story.push_back(
+        "Have you tried out free mode yet? There's\n"
+        "unlimited fun to be had there. Oh, you can\n"
+        "also try to get a perfect score of 100 on\n"
+        "each chapter, actually!"
+    );
+    data.story.push_back(
+        "You won't get anything from it other than\n"
+        "a sense of achievement, though.\n"
+        "If you want to know more about the game\n"
+        "or its development, try the included\n"
+        "readme text file."
+    );
+    data.story.push_back(
+        "Hmm... I can't really create an epilogue\n"
+        "without making it into a chapter in the\n"
+        "eyes of the game. I mean, I can, but\n"
+        "I don't feel like coding that in."
+    );
+    data.story.push_back(
+        "#ink"
+    );
+    data.story.push_back(
+        "So instead, have this weird match!\n"
+        "I'll let you try it now. Take care,\n"
+        "and once again, thanks for playing!\n"
+        "                      --Espyo"
+    );
+    
+    data.n_simulation_iterations = 1;
+    
+    for(size_t i = 0; i < N_INKLINGS; ++i) {
+        for(size_t t = 0; t < 2; ++t) {
+            data.inklings[t][i] = Inkling(NULL, Point(0, 0), t);
+            data.inklings[t][i].speed = 0;
+        }
+    }
+    
+    data.blotch_generators[0].min_blotches = 200;
+    data.blotch_generators[0].max_blotches = 300;
+    data.blotch_generators[0].min_blotch_size = 10;
+    data.blotch_generators[0].max_blotch_size = 50;
+    data.blotch_generators[1].min_blotches = 200;
+    data.blotch_generators[1].max_blotches = 300;
+    data.blotch_generators[1].min_blotch_size = 10;
+    data.blotch_generators[1].max_blotch_size = 50;
+    data.blotch_generators[2].min_blotches = 0;
+    data.blotch_generators[2].max_blotches = 0;
+    data.blotch_generators[2].min_blotch_size = 0;
+    data.blotch_generators[2].max_blotch_size = 0;
     
     v.push_back(data);
     

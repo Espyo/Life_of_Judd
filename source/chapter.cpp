@@ -1,5 +1,7 @@
 #include <algorithm>
 
+#include <allegro5/allegro_primitives.h> //Used for debugging
+
 #include "chapter.h"
 #include "chapter_data.h"
 #include "utils.h"
@@ -113,6 +115,23 @@ void Chapter::do_match() {
                 inklings[team][i].move();
             }
         }
+        
+        //Uncomment this to show the simulation being made.
+        /*al_clear_to_color(al_map_rgb(0, 0, 0));
+        al_draw_bitmap(arena_bmp, 0, 0, 0);
+        for(unsigned char i = 0; i < N_INKLINGS; ++i) {
+            for(unsigned char team = 0; team < 2; ++team) {
+                al_draw_filled_rectangle(
+                    inklings[team][i].pos.x - 2,
+                    inklings[team][i].pos.y - 2,
+                    inklings[team][i].pos.x + 2,
+                    inklings[team][i].pos.y + 2,
+                    ink_colors[team]
+                );
+            }
+        }
+        al_rest(0.03);
+        al_flip_display();*/
     }
     
     for(size_t t = 0; t < 3; ++t) {
