@@ -163,7 +163,8 @@ private:
     
     void draw_textured_rectangle(
         const int x, const int y, const int w, const int h,
-        ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
+        ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color,
+        const unsigned char movement_pattern
     );
     void update_picker_x(
         int* var, const int mouse_value,

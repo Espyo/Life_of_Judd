@@ -375,9 +375,11 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
     ) {
         if(game->chapter_to_load > 0) {
             //Story mode.
-            if(player_score >= PASSING_SCORE) {
+            if(
+                player_score >= PASSING_SCORE &&
+                game->chapter_to_load < game->all_chapter_data.size()
+            ) {
                 game->chapter_to_load++;
-                //TODO last chapter
                 game->state_mgr.change_state(GAME_STATE_LOADING);
                 
             } else {
@@ -403,7 +405,8 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         sub_state == SUB_STATE_PICKING && ev.mouse.button == 2 &&
         ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
     ) {
-        //TODO REMOVE THIS DEBUGGING THING.
+        //DEBUG - Uncomment this to re-ink the chapter on RMB click.
+        //TODO
         for(size_t x = 0; x < game->cur_chapter.width; ++x) {
             for(size_t y = 0; y < game->cur_chapter.height; ++y) {
                 game->cur_chapter.grid[x][y].team = TEAM_NONE;
@@ -418,6 +421,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         game->cur_chapter.do_match();
         game->cur_chapter.calculate_real_percentages();
         game->cur_chapter.render();
+        
     }
     
 }
@@ -493,7 +497,7 @@ void Gameplay::do_drawing() {
         draw_textured_rectangle(
             0, 0, WINDOW_WIDTH, WINDOW_HEIGHT,
             game->cur_chapter.background_bmp, al_map_rgb(255, 255, 255),
-            false
+            0
         );
         al_draw_bitmap(
             game->cur_chapter.arena_bmp,
@@ -573,7 +577,8 @@ void Gameplay::do_drawing() {
             );
         }
         
-        //TODO remove these debugging values
+        //DEBUG - Uncomment this to show the real percentages.
+        /*
         draw_shadowed_text(
             game->font, al_map_rgb(255, 255, 255), 0, 8, 0,
             f2s(game->cur_chapter.real_percentages[TEAM_1]) + ";" +
@@ -581,6 +586,7 @@ void Gameplay::do_drawing() {
             f2s(game->cur_chapter.real_percentages[TEAM_NONE]),
             0.5
         );
+        */
         
         if(difficulty == DIFFICULTY_BEGINNER) {
             draw_textured_rectangle(
@@ -592,7 +598,7 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_1] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
                 ),
-                (chosen_team == TEAM_1)
+                (chosen_team == TEAM_1 ? 1 : 0)
             );
             
             draw_textured_rectangle(
@@ -604,7 +610,7 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_2] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
                 ),
-                (chosen_team == TEAM_2)
+                (chosen_team == TEAM_2 ? 1 : 0)
             );
             
             al_draw_bitmap(game->bmp_picker_b, PICKER_B_X, PICKER_B_Y, 0);
@@ -628,7 +634,7 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_1] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
                 ),
-                chosen_team != TEAM_NONE
+                (chosen_team != TEAM_NONE ? 1 : 0)
             );
             
             draw_textured_rectangle(
@@ -640,13 +646,13 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_2] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
                 ),
-                chosen_team != TEAM_NONE
+                (chosen_team != TEAM_NONE ? 1 : 0)
             );
             
             draw_textured_rectangle(
                 PICKER_I_UNINKED_X, PICKER_I_UNINKED_Y,
                 PICKER_I_UNINKED_W, PICKER_I_UNINKED_H,
-                game->bmp_checkerboard, al_map_rgb(255, 255, 255), false
+                game->bmp_checkerboard, al_map_rgb(255, 255, 255), 2
             );
             
             al_draw_bitmap(game->bmp_picker_i, PICKER_I_X, PICKER_I_Y, 0);
@@ -692,7 +698,7 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_1] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_1], 0.5)
                 ),
-                chosen_team != TEAM_NONE
+                (chosen_team != TEAM_NONE ? 1 : 0)
             );
             
             draw_textured_rectangle(
@@ -704,13 +710,13 @@ void Gameplay::do_drawing() {
                     game->cur_chapter.ink_colors[TEAM_2] :
                     darken_color(game->cur_chapter.ink_colors[TEAM_2], 0.5)
                 ),
-                chosen_team != TEAM_NONE
+                (chosen_team != TEAM_NONE ? 1 : 0)
             );
             
             draw_textured_rectangle(
                 PICKER_E_NONE_BAR_X, PICKER_E_NONE_BAR_Y,
                 picker_unclaimed_x, PICKER_E_NONE_BAR_H,
-                game->bmp_checkerboard, al_map_rgb(128, 128, 128), false
+                game->bmp_checkerboard, al_map_rgb(128, 128, 128), 2
             );
             
             al_draw_bitmap(game->bmp_picker_e, PICKER_E_X, PICKER_E_Y, 0);
@@ -946,7 +952,8 @@ void Gameplay::unload() {
 
 void Gameplay::draw_textured_rectangle(
     const int x, const int y, const int w, const int h,
-    ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color, const bool moving
+    ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color,
+    const unsigned char movement_pattern
 ) {
     ALLEGRO_VERTEX vertexes[4];
     
@@ -955,10 +962,17 @@ void Gameplay::draw_textured_rectangle(
         vertexes[v].color = color;
     }
     
+    Point mov;
+    if(movement_pattern == 1) {
+        mov = Point(-(game->time_spent * 10), -(game->time_spent * 20));
+    } else if(movement_pattern == 2) {
+        mov = Point((game->time_spent * 20), 0);
+    }
+    
     vertexes[0].x = x;
     vertexes[0].y = y;
-    vertexes[0].u = x + (moving ? -(game->time_spent * 10) : 0);
-    vertexes[0].v = y + (moving ? -(game->time_spent * 20) : 0);
+    vertexes[0].u = x + mov.x;
+    vertexes[0].v = y + mov.y;
     
     vertexes[1].x = vertexes[0].x + w;
     vertexes[1].y = vertexes[0].y;
@@ -1041,6 +1055,27 @@ void Gameplay::calculate_player_percentages() {
 
 
 void Gameplay::calculate_player_score() {
+    //If the ink percentages would appear the same to the player,
+    //skewer them in the player's favor, since there can be no ties.
+    if(
+        f2s(game->cur_chapter.real_percentages[TEAM_1]) ==
+        f2s(game->cur_chapter.real_percentages[TEAM_2])
+    ) {
+        if(chosen_team == TEAM_1) {
+            game->cur_chapter.real_percentages[TEAM_1] += 0.1;
+            game->cur_chapter.real_percentages[TEAM_2] -= 0.1;
+        } else {
+            game->cur_chapter.real_percentages[TEAM_2] += 0.1;
+            game->cur_chapter.real_percentages[TEAM_1] -= 0.1;
+        }
+        for(unsigned char t = 0; t < 2; ++t) {
+            game->cur_chapter.real_percentages[t] =
+                max(0.0f, game->cur_chapter.real_percentages[t]);
+            game->cur_chapter.real_percentages[t] =
+                min(game->cur_chapter.real_percentages[t], 100.0f);
+        }
+    }
+    
     unsigned char real_winner =
         game->cur_chapter.real_percentages[TEAM_1] >
         game->cur_chapter.real_percentages[TEAM_2] ? TEAM_1 : TEAM_2;
@@ -1048,22 +1083,33 @@ void Gameplay::calculate_player_score() {
     if(real_winner != chosen_team) {
         player_score = 0;
         
-        string c1 =
-            rp("Shoot", "Oh no") + "! We can't let the " +
-            rp("wrong", "losing") + " team " + rp("be the winners", "win") +
-            "!\n" + rp("Sorry", "I'm sorry") + ", but we'll have to fire you.";
-        string c2 =
-            "We can't just let the " + rp("loser", "losing") + " team get "
-            + rp("away with the", "the") + " " +
-            rp("reward", "prize") + "!\n" + rp("I'm sorry", "Sorry") +
-            ", but you're fired.";
-        string c3 =
-            "Your guess " + rp("was wrong", "wasn't right") + ", and now"
-            " the " + rp("winning", "winner") + " team\nleft " +
-            rp("with empty hands", "empty-handed") +
-            "! We'll have to lay you off.";
+        if(game->chapter_to_load == 1) {
+            //Different message for the first chapter.
+            committee_comment =
+                "Drat! That was the wrong choice, Judd! Perhaps\n"
+                "you weren't cut out for this job after all... Sorry.";
+                
+        } else {
+            string c1 =
+                rp("Shoot", "Oh no") + "! We can't let the " +
+                rp("wrong", "losing") + " team " +
+                rp("be the winners", "win") +
+                "!\n" + rp("Sorry", "I'm sorry") +
+                ", but we'll have to fire you.";
+            string c2 =
+                "We can't just let the " + rp("loser", "losing") + " team get "
+                + rp("away with the", "the") + " " +
+                rp("reward", "prize") + "!\n" + rp("I'm sorry", "Sorry") +
+                ", but you're fired.";
+            string c3 =
+                "Your guess " + rp("was wrong", "wasn't right") + ", and now"
+                " the " + rp("winning", "winner") + " team\nleft " +
+                rp("with empty hands", "empty-handed") +
+                "! We'll have to lay you off.";
+                
+            committee_comment = rp(c1, c2, c3);
             
-        committee_comment = rp(c1, c2, c3);
+        }
         
         return;
     }
@@ -1071,17 +1117,26 @@ void Gameplay::calculate_player_score() {
     if(difficulty == DIFFICULTY_BEGINNER) {
         player_score = 100;
         
-        string c1 =
-            rp("Nice", "Great", "Terrific", "Wonderful") + " work, " +
-            rp("ace", "Judd") + "! We're glad we can count\non " +
-            rp("you", "your efforts") + ". Keep " +
-            rp("it up", "up the good work") + rp(".", "!");
-        string c2 =
-            rp("And another", "Yet another", "Another") + " " +
-            rp("fine", "great") + " guess, Judd!\nWe're happy we " +
-            rp("chose", "picked") + " you for the " + rp("job", "task") +
-            ".";
-        committee_comment = rp(c1, c2);
+        if(game->chapter_to_load == 1) {
+            //Different message for the first chapter.
+            committee_comment =
+                "Good work, Judd. Your first day was a success!\n"
+                "We knew you would be perfect for the task.";
+                
+        } else {
+            string c1 =
+                rp("Nice", "Great", "Terrific", "Wonderful") + " work, " +
+                rp("ace", "Judd") + "! We're glad we can count\non " +
+                rp("you", "your efforts") + ". Keep " +
+                rp("it up", "up the good work") + rp(".", "!");
+            string c2 =
+                rp("And another", "Yet another", "Another") + " " +
+                rp("fine", "great") + " guess, Judd!\nWe're happy we " +
+                rp("chose", "picked") + " you for the " + rp("job", "task") +
+                ".";
+            committee_comment = rp(c1, c2);
+            
+        }
         
         return;
     }

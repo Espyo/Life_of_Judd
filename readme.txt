@@ -114,6 +114,9 @@ How close to the Splatoon canon is this game?
     b) having fully-custom arenas allows me to tweak the gameplay just right, and
     c) most canon arenas would make the match simulations very hard to process in a convincing manner.
 
+Why does Judd make so many cat puns?
+    That's how he is in Splatoon. At least in America. He's not really like that in Europe.
+
 What is the font used in this game?
     Waree.
     
@@ -122,7 +125,7 @@ What is the font used in this game?
 4) Compiling
 ===============
 (You likely don't need to do this to play under Windows.)
-First, download the source, of course.
+First, get the source, of course.
 Under Linux...
     Install Allegro 5 on your system using the instructions here https://wiki.allegro.cc/index.php?title=Getting_Started
     On a terminal, go to the source's folder and write "make".
@@ -150,6 +153,9 @@ Special thanks:
 
 The idea was that I'd make a simple game based on the simple judging mechanic, in only a week.
 ...I overestimated my abilities. Still, I manage to complete it in a month or so, so I'm still pleased!
+Initially, it was just going to have free mode. But I figured that'd be super boring, so I added a story mode.
+It was meant to have around 5 to 10 chapters, but it ended up with 30 as my imagination went wild!
+I think the extra development time was well worth it.
 
 
 ===============

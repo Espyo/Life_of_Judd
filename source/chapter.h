@@ -29,6 +29,7 @@ public:
     
     Inkling inklings[2][N_INKLINGS];
     ALLEGRO_COLOR ink_colors[2];
+    Blotch_Generator blotch_generators[3];
     Point spawns[2];
     float spawn_dist;
     

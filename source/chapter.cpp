@@ -39,14 +39,25 @@ void Chapter::load(
 void Chapter::generate_data() {
     ink_colors[0] = chapter_data->ink_colors[0];
     ink_colors[1] = chapter_data->ink_colors[1];
+    if(chapter_data->can_switch_teams && randomi(0, 100) < 50) {
+        swap(ink_colors[0], ink_colors[1]);
+    }
+    
+    bool do_swap = chapter_data->can_switch_teams && randomi(0, 100) < 50;
     
     for(size_t t = 0; t < 2; ++t) {
+        size_t fetch_t = do_swap ? (t == 0 ? 1 : 0) : t;
         for(size_t i = 0; i < N_INKLINGS; ++i) {
-            inklings[t][i] = chapter_data->inklings[t][i];
+            inklings[t][i] = chapter_data->inklings[fetch_t][i];
             inklings[t][i].chapter = this;
+            inklings[t][i].team = t;
             inklings[t][i].pos = spawns[t];
         }
+        blotch_generators[t] = chapter_data->blotch_generators[fetch_t];
+        blotch_generators[t].team = t;
     }
+    
+    blotch_generators[TEAM_NONE] = chapter_data->blotch_generators[TEAM_NONE];
 }
 
 
@@ -116,7 +127,7 @@ void Chapter::do_match() {
             }
         }
         
-        //Uncomment this to show the simulation being made.
+        //DEBUG - Uncomment this to show the simulation being made.
         /*al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_bitmap(arena_bmp, 0, 0, 0);
         for(unsigned char i = 0; i < N_INKLINGS; ++i) {
@@ -135,7 +146,7 @@ void Chapter::do_match() {
     }
     
     for(size_t t = 0; t < 3; ++t) {
-        chapter_data->blotch_generators[t].ink(this);
+        blotch_generators[t].ink(this);
     }
     
     for(size_t t = 0; t < 2; ++t) {

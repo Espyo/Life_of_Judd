@@ -45,7 +45,6 @@ Chapter_Data generate_random_chapter_data(Game* game) {
 
 
 vector<Chapter_Data> get_chapters() {
-    //TODO
     vector<Chapter_Data> v;
     
     //Chapter 1 ---------------------------------------------
@@ -91,7 +90,7 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "So, they made me the judge of this new sport.\n"
-        "And today is the very furst day!\n"
+        "And today is the very first day!\n"
         "They said the only thing I need to do\n"
         "is show up at the end, and judge the turf."
     );
@@ -247,7 +246,7 @@ vector<Chapter_Data> get_chapters() {
         data.name + "\n"
         "May 22th, 2013\n"
         " \n"
-        "Time for another match!"
+        "Time fur another match!"
     );
     data.story.push_back(
         "#arena"
@@ -403,7 +402,7 @@ vector<Chapter_Data> get_chapters() {
     data.story.push_back(
         "The matches are becoming more frequent,\n"
         "the players are becoming more skilled,\n"
-        "and the sport is evolving super-quickly."
+        "and the sport is evolving supurr-quickly."
     );
     data.story.push_back(
         "I even know the committee has plans to\n"
@@ -497,7 +496,7 @@ vector<Chapter_Data> get_chapters() {
         "turf entirely. Meow, well that's a relief.\n"
         "Finally, they told me I don't need to be\n"
         "perfect with my numbers. Just good enough\n"
-        "for them to get an idea of their performance."
+        "for them to get an idea of their purrfurmance."
     );
     data.story.push_back(
         "Still, I've got to be careful about picking\n"
@@ -701,13 +700,13 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "It's those players again! The ones\n"
-        "that played on the first ever match\n"
+        "that played on the furst ever match\n"
         "of the then-new sport."
     );
     data.story.push_back(
         "I actually haven't seen them in a while.\n"
         "But they told me they spent a lot of time\n"
-        "practicing in private. What, did they go to\n"
+        "purracticing in private. What, did they go to\n"
         "a backyard and use mattresses as walls or\n"
         "something?"
     );
@@ -1111,7 +1110,7 @@ vector<Chapter_Data> get_chapters() {
         "#arena"
     );
     data.story.push_back(
-        "Splatoon is now officially public.\n"
+        "Splatoon is meow officially public.\n"
         "There's a new arena, too. It's pretty\n"
         "neat seeing so many different players,\n"
         "and comparing Splatoon as it is now to the\n"
@@ -1188,7 +1187,7 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "Either way, since inking turf is not as\n"
-        "important, I don't judge those matches.\n"
+        "impurrtant, I don't judge those matches.\n"
         "Players are still told that I give the\n"
         "final decision, but really, the scoring\n"
         "system speaks for itself."
@@ -1343,7 +1342,7 @@ vector<Chapter_Data> get_chapters() {
         "and players vote for their tastes with ink!"
     );
     data.story.push_back(
-        "The first subject of debate is\n"
+        "The furst subject of debate is\n"
         "\"Cats vs Dogs\". Mrrow, of course\n"
         "I would pick team Cats, but since I'm\n"
         "here to judge, not to play, I won't\n"
@@ -1463,7 +1462,7 @@ vector<Chapter_Data> get_chapters() {
         "what causes some players to just not\n"
         "show up? Is something wrong with the\n"
         "matchmaking system, or are they\n"
-        "bailing out on purpose?"
+        "bailing out on purrpose?"
     );
     data.story.push_back(
         "...Huh? There are actually two Inklings\n"
@@ -1530,7 +1529,7 @@ vector<Chapter_Data> get_chapters() {
     );
     data.story.push_back(
         "So they made Tide Park an arena, huh?\n"
-        "It does look like a pretty fun place\n"
+        "It does look like a purretty fun place\n"
         "to duke it out on, that's for sure."
     );
     data.story.push_back(
@@ -2075,7 +2074,7 @@ vector<Chapter_Data> get_chapters() {
         "frolicked about harmlessly. Her team won\n"
         "but she's raging like crazy!\n"
         "What's the matter? Not having fun?\n"
-        "That's what you get for being a party-pooper!"
+        "That's what you get fur being a party-pooper!"
     );
     data.story.push_back(
         "...Wow. That was harsh. That Inkling was only\n"

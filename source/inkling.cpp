@@ -11,9 +11,9 @@ Inkling::Inkling(
     const unsigned char team
 ) :
     chapter(chapter),
+    team(team),
     pos(start_pos),
     ink_radius(0),
-    team(team),
     speed(0),
     aggressiveness(0),
     respawn_chance(0) {

@@ -33,7 +33,10 @@ void Main_Menu::load() {
     mouse_on_next_difficulty_button = false;
     mouse_on_prev_difficulty_button = false;
     
-    chosen_chapter = game->all_chapter_data.size(); //TODO remove this debug convenience thing
+    if(game->chapter_to_load > 0) chosen_chapter = game->chapter_to_load;
+    
+    //DEBUG - Uncomment this to automatically pick the last available chapter.
+    //chosen_chapter = game->all_chapter_data.size();
 }
 
 

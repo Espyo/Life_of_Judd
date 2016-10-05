@@ -9,9 +9,9 @@ struct Chapter;
 
 struct Inkling {
     Chapter* chapter;
+    unsigned char team;
     Point pos;
     unsigned int ink_radius;
-    unsigned char team;
     float speed;
     float aggressiveness;
     float respawn_chance;
