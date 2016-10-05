@@ -12,6 +12,7 @@ Main_Menu::Main_Menu(Game* game) :
     mouse_on_free_play_start_button(false),
     mouse_on_next_difficulty_button(false),
     mouse_on_prev_difficulty_button(false),
+    last_open_chapter(1),
     chosen_chapter(1),
     logo_split_x(0.5) {
     
@@ -33,10 +34,18 @@ void Main_Menu::load() {
     mouse_on_next_difficulty_button = false;
     mouse_on_prev_difficulty_button = false;
     
+    last_open_chapter = 1;
+    for(size_t c = 0; c < game->all_chapter_data.size(); ++c) {
+        if(game->high_scores[c] < PASSING_SCORE) {
+            last_open_chapter = c + 1;
+            break;
+        }
+    }
+    
     if(game->chapter_to_load > 0) chosen_chapter = game->chapter_to_load;
     
     //DEBUG - Uncomment this to automatically pick the last available chapter.
-    //chosen_chapter = game->all_chapter_data.size();
+    //chosen_chapter = last_open_chapter;
 }
 
 
@@ -98,13 +107,13 @@ void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
     if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if(mouse_on_prev_chapter_button) {
             if(chosen_chapter == 1) {
-                chosen_chapter = game->all_chapter_data.size();
+                chosen_chapter = last_open_chapter;
             } else {
                 chosen_chapter--;
             }
             
         } else if(mouse_on_next_chapter_button) {
-            if(chosen_chapter == game->all_chapter_data.size()) {
+            if(chosen_chapter == last_open_chapter) {
                 chosen_chapter = 1;
             } else {
                 chosen_chapter++;
@@ -206,9 +215,21 @@ void Main_Menu::do_drawing() {
         game->all_chapter_data[chosen_chapter - 1].name,
         0.5
     );
+    
+    ALLEGRO_COLOR high_score_color;
+    if(game->high_scores[chosen_chapter - 1] < PASSING_SCORE) {
+        high_score_color = al_map_rgb(255, 192, 192);
+    } else if(game->high_scores[chosen_chapter - 1] < 100) {
+        high_score_color = al_map_rgb(192, 192, 255);
+    } else {
+        high_score_color = al_map_rgb(192, 255, 192);
+    }
+    
     draw_shadowed_text(
-        game->font, al_map_rgb(255, 255, 255),
-        CHAPTER_SCORE_X, CHAPTER_SCORE_Y, 0, "High score: 100", 0.5
+        game->font, high_score_color,
+        CHAPTER_SCORE_X, CHAPTER_SCORE_Y, 0,
+        "High score: " + i2s(game->high_scores[chosen_chapter - 1]),
+        0.5
     );
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),

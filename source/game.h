@@ -54,9 +54,12 @@ struct Game {
     Chapter_Data random_chapter_data;
     vector<Chapter_Data> all_chapter_data;
     vector<pair<ALLEGRO_COLOR, ALLEGRO_COLOR> > all_ink_colors;
+    vector<unsigned char> high_scores;
     
     Game();
     void loop();
+    void load_save_data();
+    void save_save_data();
     void draw_judd(
         const float pivot_x, const float pivot_y, const float scale,
         const bool right, const ALLEGRO_COLOR flag_color

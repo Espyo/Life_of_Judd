@@ -91,6 +91,12 @@ Game::Game() :
     
     all_chapter_data = get_chapters();
     
+    for(size_t c = 0; c < all_chapter_data.size(); ++c) {
+        high_scores.push_back(0);
+    }
+    
+    load_save_data();
+    
 #define register_color(r1, g1, b1, r2, g2, b2) \
     all_ink_colors.push_back( \
                               make_pair( \
@@ -183,4 +189,36 @@ void Game::draw_judd(
         judd_x, judd_y, judd_bmp_w * scale, judd_bmp_h * scale,
         0
     );
+}
+
+
+void Game::load_save_data() {
+    ALLEGRO_FILE* file = al_fopen(SAVE_FILE_NAME.c_str(), "rb");
+    if(!file) return;
+    
+    unsigned char* new_high_scores = new unsigned char[all_chapter_data.size()];
+    
+    size_t n_read = al_fread(file, new_high_scores, all_chapter_data.size());
+    
+    if(n_read == all_chapter_data.size()) {
+        for(size_t c = 0; c < all_chapter_data.size(); ++c) {
+            high_scores[c] = new_high_scores[c];
+        }
+    }
+    
+    delete[] new_high_scores;
+    al_fclose(file);
+}
+
+
+void Game::save_save_data() {
+    ALLEGRO_FILE* file = al_fopen(SAVE_FILE_NAME.c_str(), "wb");
+    if(!file) return;
+    
+    for(size_t c = 0; c < all_chapter_data.size(); ++c) {
+        unsigned char byte = high_scores[c];
+        al_fwrite(file, &byte, 1);
+    }
+    
+    al_fclose(file);
 }

@@ -13,6 +13,7 @@ private:
     bool mouse_on_free_play_start_button;
     bool mouse_on_next_difficulty_button;
     bool mouse_on_prev_difficulty_button;
+    size_t last_open_chapter;
     size_t chosen_chapter;
     
     float logo_split_x;

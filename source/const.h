@@ -15,6 +15,7 @@ const string GAME_TITLE = "A Day in the Life of Judd";
 
 const string GRAPHICS_FOLDER = "graphics";
 const string FONT_FILE_NAME = "Waree-Bold.ttf";
+const string SAVE_FILE_NAME = "save.bin";
 const int FONT_SIZE = 40;
 const ALLEGRO_COLOR COLOR_CLEAR = { 0.12, 0.12, 0.12, 1.0 };
 const ALLEGRO_COLOR COLOR_VOID = { 0.0, 0.0, 0.0, 0.0 };

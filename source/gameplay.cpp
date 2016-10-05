@@ -359,6 +359,15 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
             next_state_timer = CELEBRATION_DURATION;
             cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT;
             calculate_player_score();
+            if(game->chapter_to_load != 0) {
+                if(
+                    player_score >
+                    game->high_scores[game->chapter_to_load - 1]
+                ) {
+                    game->high_scores[game->chapter_to_load - 1] = player_score;
+                    game->save_save_data();
+                }
+            }
         }
         
         if(
