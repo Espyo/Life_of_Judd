@@ -1,9 +1,14 @@
+#include <math.h>
+
 #include "const.h"
 #include "game.h"
 #include "main_menu.h"
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs a main menu game state.
+ */
 Main_Menu::Main_Menu(Game* game) :
     Game_State(game),
     mouse_on_story_start_button(false),
@@ -20,6 +25,16 @@ Main_Menu::Main_Menu(Game* game) :
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Destroys a main menu game state.
+ */
+Main_Menu::~Main_Menu() {
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Code to run when going to the main menu.
+ */
 void Main_Menu::load() {
     logo_split_x = al_get_bitmap_width(game->bmp_logo) * randomf(0.1, 0.9);
     
@@ -36,7 +51,9 @@ void Main_Menu::load() {
     
     last_open_chapter = 1;
     for(size_t c = 0; c < game->all_chapter_data.size(); ++c) {
-        if(game->high_scores[c] < PASSING_SCORE) {
+        if(game->high_scores[c] >= PASSING_SCORE) {
+            last_open_chapter = c + 1;
+        } else {
             last_open_chapter = c + 1;
             break;
         }
@@ -49,6 +66,9 @@ void Main_Menu::load() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when leaving the main menu.
+ */
 void Main_Menu::unload() {
     al_set_system_mouse_cursor(
         game->display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT
@@ -56,6 +76,9 @@ void Main_Menu::unload() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when handling a mouse event on the main menu.
+ */
 void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
     ALLEGRO_SYSTEM_MOUSE_CURSOR cursor = ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT;
     
@@ -64,10 +87,10 @@ void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
         ev.type == ALLEGRO_EVENT_MOUSE_AXES
     ) {
         mouse_on_story_start_button =
-            ev.mouse.x >= STORY_X &&
-            ev.mouse.x <= STORY_X + STORY_W &&
-            ev.mouse.y >= STORY_Y - STORY_H * 0.5 &&
-            ev.mouse.y <= STORY_Y + STORY_H * 0.5;
+            ev.mouse.x >= MAIN_MENU_STORY_X &&
+            ev.mouse.x <= MAIN_MENU_STORY_X + MAIN_MENU_STORY_W &&
+            ev.mouse.y >= MAIN_MENU_STORY_Y - MAIN_MENU_STORY_H * 0.5 &&
+            ev.mouse.y <= MAIN_MENU_STORY_Y + MAIN_MENU_STORY_H * 0.5;
         mouse_on_prev_chapter_button =
             ev.mouse.x >= PREV_BUTTON_X &&
             ev.mouse.x <= PREV_BUTTON_X + PREV_BUTTON_W &&
@@ -149,11 +172,17 @@ void Main_Menu::handle_mouse(ALLEGRO_EVENT ev) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run each timer tick on the main menu.
+ */
 void Main_Menu::do_logic() {
 
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when drawing the screen on the main menu.
+ */
 void Main_Menu::do_drawing() {
     al_clear_to_color(al_map_rgb(0, 128, 0));
     
@@ -164,7 +193,7 @@ void Main_Menu::do_drawing() {
         TEAM_1 : TEAM_2;
         
     game->draw_judd(
-        JUDD_PIVOT_X, JUDD_PIVOT_Y, JUDD_SCALE,
+        JUDD_PIVOT_X, JUDD_PIVOT_Y, MAIN_MENU_JUDD_SCALE,
         winner == TEAM_2, ink_colors[winner]
     );
     
@@ -196,9 +225,9 @@ void Main_Menu::do_drawing() {
     if(mouse_on_story_start_button) {
         al_draw_tinted_bitmap(
             game->bmp_splash, ink_colors[winner],
-            (STORY_X + STORY_W * 0.5) -
+            (MAIN_MENU_STORY_X + MAIN_MENU_STORY_W * 0.5) -
             (al_get_bitmap_width(game->bmp_splash) * 0.5),
-            STORY_Y -
+            MAIN_MENU_STORY_Y -
             (al_get_bitmap_height(game->bmp_splash) * 0.5),
             0
         );
@@ -206,7 +235,7 @@ void Main_Menu::do_drawing() {
     
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
-        STORY_X, STORY_Y, 0, "STORY MODE"
+        MAIN_MENU_STORY_X, MAIN_MENU_STORY_Y, 0, "STORY MODE"
     );
     
     draw_shadowed_text(
@@ -330,20 +359,26 @@ void Main_Menu::do_drawing() {
     
     draw_shadowed_text(
         game->font, al_map_rgb(255, 255, 255),
-        DISCLAIMER_X, DISCLAIMER_1_Y, ALLEGRO_ALIGN_CENTER,
-        DISCLAIMER_1_TEXT, DISCLAIMER_SCALE
+        DISCLAIMER_X, DISCLAIMER_Y, ALLEGRO_ALIGN_CENTER,
+        DISCLAIMER_TEXT, DISCLAIMER_SCALE
     );
-    draw_shadowed_text(
-        game->font, al_map_rgb(255, 255, 255),
-        DISCLAIMER_X, DISCLAIMER_2_Y, ALLEGRO_ALIGN_CENTER,
-        DISCLAIMER_2_TEXT, DISCLAIMER_SCALE
-    );
+    
+    if(game->cant_save && (int) (floor(game->time_spent * 2)) % 2 == 0) {
+        draw_shadowed_text(
+            game->font, al_map_rgb(255, 192, 192),
+            SAVE_WARNING_X, SAVE_WARNING_Y, ALLEGRO_ALIGN_CENTER,
+            SAVE_WARNING_TEXT, SAVE_WARNING_SCALE
+        );
+    }
     
     
     al_flip_display();
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Returns the English name of a difficulty, given its ID.
+ */
 string Main_Menu::get_difficulty_name(const int difficulty_number) {
     if(difficulty_number == DIFFICULTY_BEGINNER) {
         return "Beginner";

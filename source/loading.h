@@ -4,6 +4,10 @@
 #include "game_state.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Loading screen game state.
+ * This is the brief moment between the main menu and the action.
+ */
 class Loading : public Game_State {
 private:
 
@@ -15,7 +19,8 @@ public:
     virtual void do_drawing();
     virtual void unload();
     
-    Loading(Game* game);
+    explicit Loading(Game* game);
+    ~Loading();
 };
 
 

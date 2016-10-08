@@ -6,7 +6,9 @@
 
 using namespace std;
 
-
+/* ----------------------------------------------------------------------------
+ * Constructs a blotch generator.
+ */
 Blotch_Generator::Blotch_Generator() :
     team(0),
     min_blotch_size(0),
@@ -17,6 +19,12 @@ Blotch_Generator::Blotch_Generator() :
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Generates a single blotch.
+ * This returns a vector of points relative to an origin (0, 0)
+ * that make up the blotch. Its size is dependent on the blotch
+ * generator's data.
+ */
 vector<Point> Blotch_Generator::generate_blotch() {
     struct Point_Info {
         Point p;
@@ -111,6 +119,11 @@ vector<Point> Blotch_Generator::generate_blotch() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Chooses random points on the grid to start the blotches on.
+ * It will not choose spots that are already the respective ink color.
+ * It can choose repeated points.
+ */
 vector<Point> Blotch_Generator::pick_starting_points(
     Chapter* chapter, const size_t amount
 ) {
@@ -163,6 +176,11 @@ vector<Point> Blotch_Generator::pick_starting_points(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Starts the inking process. It generates a number of blotches, picked
+ * randomly between the minimum and maximum amount. Each blotch's size is
+ * random between the minimum and maximum sizes.
+ */
 void Blotch_Generator::ink(Chapter* chapter) {
     size_t n_blotches = randomi(min_blotches, max_blotches);
     if(n_blotches == 0) return;

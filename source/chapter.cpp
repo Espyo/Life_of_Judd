@@ -7,15 +7,25 @@
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs a chapter.
+ */
 Chapter::Chapter() :
+    chapter_data(nullptr),
     width(0),
     height(0),
-    result_bmp(nullptr) {
+    spawn_dist(0),
+    arena_bmp(nullptr),
+    background_bmp(nullptr),
+    result_bmp(nullptr)  {
     
     
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Loads a chapter into memory.
+ */
 void Chapter::load(
     ALLEGRO_BITMAP* arena_bmp, ALLEGRO_BITMAP* data_bmp, ALLEGRO_BITMAP* bg_bmp
 ) {
@@ -36,6 +46,10 @@ void Chapter::load(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Generates some data for the chapter to work with, based on the
+ * chapter data database.
+ */
 void Chapter::generate_data() {
     ink_colors[0] = chapter_data->ink_colors[0];
     ink_colors[1] = chapter_data->ink_colors[1];
@@ -61,6 +75,9 @@ void Chapter::generate_data() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Gets some grid and spawn info from the data image of the arena.
+ */
 void Chapter::get_data_from_bmp(ALLEGRO_BITMAP* data_bmp) {
     width = al_get_bitmap_width(data_bmp);
     height = al_get_bitmap_height(data_bmp);
@@ -116,6 +133,12 @@ void Chapter::get_data_from_bmp(ALLEGRO_BITMAP* data_bmp) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Does the actual Turf War match.
+ * Every iteration, Inklings ink the floor under them and move a bit.
+ * Their movement is based on how aggressive they are.
+ * They occasionally respawn, too.
+ */
 void Chapter::do_match() {
     for(size_t it = 0; it < chapter_data->n_simulation_iterations; ++it) {
         for(unsigned char i = 0; i < N_INKLINGS; ++i) {
@@ -155,6 +178,11 @@ void Chapter::do_match() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Calculates the percentages of turf that belong to team A, team B,
+ * and neither. Places them on real_percentages.
+ * These values range from 0 to 100.
+ */
 void Chapter::calculate_real_percentages() {
     unsigned long totals[3];
     for(size_t t = 0; t < 3; ++t) {
@@ -181,6 +209,9 @@ void Chapter::calculate_real_percentages() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Renders the final match result onto the result_bmp bitmap.
+ */
 void Chapter::render() {
     ALLEGRO_BITMAP* old_target_bitmap = al_get_target_bitmap();
     al_set_target_bitmap(result_bmp);
@@ -193,7 +224,7 @@ void Chapter::render() {
             ALLEGRO_COLOR c;
             unsigned char team = grid[x][y].team;
             if(team == TEAM_NONE) {
-                c = {0.0, 0.0, 0.0, 0.0};
+                c = al_map_rgba(0, 0, 0, 0);
             } else {
                 c = ink_colors[team];
             }
@@ -207,10 +238,16 @@ void Chapter::render() {
 }
 
 
-void Chapter::ink(const Point where, const float radius, const size_t team) {
+/* ----------------------------------------------------------------------------
+ * Marks a circle on the arena as belonging to a team (or unclaimed).
+ * where:  Central point of the circle.
+ * radius: Radius of the circle.
+ * team:   Team ID.
+ */
+void Chapter::ink(const Point &where, const float radius, const size_t team) {
     for(int dx = -radius; dx <= radius; ++dx) {
         for(int dy = -radius; dy <= radius; ++dy) {
-            if(sqrt(dx * dx + dy * dy) <= radius) {
+            if(sqrt((float) (dx * dx + dy * dy)) <= radius) {
                 ink(where + Point(dx, dy), team);
             }
         }
@@ -218,14 +255,25 @@ void Chapter::ink(const Point where, const float radius, const size_t team) {
 }
 
 
-void Chapter::ink(const Point where, const size_t team) {
+/* ----------------------------------------------------------------------------
+ * Marks a specific grid cell as belonging to a team (or unclaimed).
+ * where: Grid position.
+ * team:  Team ID.
+ */
+void Chapter::ink(const Point &where, const size_t team) {
     if(is_valid(where, true)) {
         grid[floor(where.x)][floor(where.y)].ink(team);
     }
 }
 
 
-bool Chapter::is_valid(const Point where, const bool for_inking) {
+/* ----------------------------------------------------------------------------
+ * Checks whether a given cell is valid for movement or inking.
+ * where:      Grid position.
+ * for_inking: If true, checks if inking is possible.
+ *   Else, checks if movement is possible.
+ */
+bool Chapter::is_valid(const Point &where, const bool for_inking) {
     if(
         where.x < 0 || where.x >= width ||
         where.y < 0 || where.y >= height ||

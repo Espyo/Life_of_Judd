@@ -3,6 +3,9 @@
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs a loading screen game state.
+ */
 Loading::Loading(Game* game) :
     Game_State(game) {
     
@@ -10,6 +13,16 @@ Loading::Loading(Game* game) :
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Destroys a loading screen game state.
+ */
+Loading::~Loading() {
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Code to run when entering the loading screen.
+ */
 void Loading::load() {
     al_clear_to_color(al_map_rgb(0, 0, 0));
     al_draw_tinted_bitmap(
@@ -49,21 +62,33 @@ void Loading::load() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when leaving the loading screen.
+ */
 void Loading::unload() {
 
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run to handle mouse events on the loading screen.
+ */
 void Loading::handle_mouse(ALLEGRO_EVENT ev) {
 
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run on each timer tick on the loading screen.
+ */
 void Loading::do_logic() {
 
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when drawing the loading screen each frame.
+ */
 void Loading::do_drawing() {
 
 }

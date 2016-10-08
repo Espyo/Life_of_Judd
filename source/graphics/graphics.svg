@@ -24,18 +24,6 @@
      id="defs4">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient4458">
-      <stop
-         style="stop-color:#36cc22;stop-opacity:1;"
-         offset="0"
-         id="stop4460" />
-      <stop
-         style="stop-color:#36cc22;stop-opacity:0;"
-         offset="1"
-         id="stop4462" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
        id="picker">
       <stop
          style="stop-color:#000000;stop-opacity:1"
@@ -230,27 +218,6 @@
        y2="642.36218"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       gradientTransform="translate(0,-924.36218)"
-       inkscape:collect="always"
-       xlink:href="#button-fill"
-       id="linearGradient4146-2"
-       x1="64"
-       y1="924.36218"
-       x2="64"
-       y2="1052.3622"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       gradientTransform="translate(0,-924.36218)"
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4154-9"
-       x1="107"
-       y1="945.36218"
-       x2="21"
-       y2="1031.3622"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="reflect" />
-    <linearGradient
        inkscape:collect="always"
        xlink:href="#button-fill"
        id="linearGradient4551"
@@ -369,16 +336,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#button-icon-fill"
-       id="linearGradient4432"
-       x1="429"
-       y1="437.36221"
-       x2="429"
-       y2="403.36221"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-3.9897342,0)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
        id="linearGradient4440"
        x1="429"
        y1="437.36221"
@@ -438,36 +395,6 @@
        gradientTransform="translate(0.2071626,-1.8225203)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient4458"
-       id="linearGradient4470"
-       x1="415.29736"
-       y1="420.36221"
-       x2="441.18115"
-       y2="420.36221"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-3.9897342,0)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
-       id="linearGradient4482"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-4.0291729,-1.8200789)"
-       x1="429"
-       y1="437.36221"
-       x2="429"
-       y2="403.36221" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4458"
-       id="linearGradient4484"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-4.0291729,-1.8200789)"
-       x1="415.29736"
-       y1="420.36221"
-       x2="441.18115"
-       y2="420.36221" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#button-icon-fill"
        id="linearGradient4504"
        gradientUnits="userSpaceOnUse"
@@ -509,26 +436,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#button-icon-fill"
-       id="linearGradient4534"
-       x1="425.41714"
-       y1="437.36221"
-       x2="425.41714"
-       y2="403.36221"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(3.7900154,-1.8225203)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4542"
-       x1="506.20999"
-       y1="409.18472"
-       x2="481.20999"
-       y2="439.18472"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(3.7900154,-1.8225203)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
        id="linearGradient4456-8"
        x1="427.56168"
        y1="437.36221"
@@ -546,26 +453,6 @@
        y2="439.18472"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(201.64548,-1.8225581)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
-       id="linearGradient4572"
-       x1="427.56168"
-       y1="437.36221"
-       x2="427.56168"
-       y2="403.36221"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(1.645481,-1.8225203)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4580"
-       x1="483.35452"
-       y1="404.18472"
-       x2="473.35452"
-       y2="439.18472"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(1.645481,-1.8225203)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#button-icon-fill"
@@ -589,26 +476,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#button-icon-fill"
-       id="linearGradient4610"
-       x1="429"
-       y1="437.36221"
-       x2="429"
-       y2="403.36221"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.2071626,-1.8225203)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4618"
-       x1="474.79285"
-       y1="404.18472"
-       x2="439.79285"
-       y2="439.18472"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.2071626,-1.8225203)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
        id="linearGradient4504-6"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(200.02829,-1.8201181)"
@@ -626,37 +493,6 @@
        y1="409.18228"
        x2="414.97171"
        y2="434.18228" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-icon-fill"
-       id="linearGradient4648"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.0282917,-1.8200789)"
-       x1="429.17886"
-       y1="437.35977"
-       x2="429.17886"
-       y2="403.35977" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4656"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.0282917,-1.8200789)"
-       x1="439.97171"
-       y1="409.18228"
-       x2="414.97171"
-       y2="434.18228" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#button-border"
-       id="linearGradient4811"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="reflect"
-       x1="565"
-       y1="757.36218"
-       x2="460"
-       y2="797.36218"
-       gradientTransform="matrix(1,0,0,1.4,-46,-60.944848)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -666,7 +502,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="601.20992"
+     inkscape:cx="537.20992"
      inkscape:cy="611.93478"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"

@@ -11,6 +11,9 @@
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs the game's data.
+ */
 Game::Game() :
     running(true),
     display(nullptr),
@@ -18,7 +21,8 @@ Game::Game() :
     timer(nullptr),
     state_mgr(),
     chapter_to_load(0),
-    free_play_difficulty(DIFFICULTY_BEGINNER) {
+    free_play_difficulty(DIFFICULTY_BEGINNER),
+    cant_save(false) {
     
     srand(time(NULL));
     
@@ -40,7 +44,7 @@ Game::Game() :
     al_set_window_title(display, GAME_TITLE.c_str());
     
     al_set_new_bitmap_flags(
-        ALLEGRO_MIN_LINEAR | ALLEGRO_MIN_LINEAR
+        ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR
     );
     
     font =
@@ -89,6 +93,8 @@ Game::Game() :
             load_png_or_jpg(GRAPHICS_FOLDER + "/arenas/" + i2s(a) + "_bg");
     }
     
+    al_set_display_icon(display, bmp_difficulty_icon[DIFFICULTY_INTERMEDIATE]);
+    
     all_chapter_data = get_chapters();
     
     for(size_t c = 0; c < all_chapter_data.size(); ++c) {
@@ -96,6 +102,9 @@ Game::Game() :
     }
     
     load_save_data();
+    if(!save_save_data()) {
+        cant_save = true;
+    }
     
 #define register_color(r1, g1, b1, r2, g2, b2) \
     all_ink_colors.push_back( \
@@ -127,6 +136,62 @@ Game::Game() :
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Destroys the game data.
+ */
+Game::~Game() {
+
+    for(size_t a = 0; a < N_ARENAS; ++a) {
+        al_destroy_bitmap(bmp_arena_data[a]);
+        al_destroy_bitmap(bmp_arena[a]);
+        al_destroy_bitmap(bmp_arena_bg[a]);
+    }
+    
+    al_destroy_bitmap(bmp_button_r_unselected);
+    al_destroy_bitmap(bmp_button_r_selected);
+    al_destroy_bitmap(bmp_button_l_unselected);
+    al_destroy_bitmap(bmp_button_l_selected);
+    al_destroy_bitmap(bmp_button_k_unselected);
+    al_destroy_bitmap(bmp_button_k_selected);
+    al_destroy_bitmap(bmp_button_s_unselected);
+    al_destroy_bitmap(bmp_button_s_selected);
+    al_destroy_bitmap(bmp_picker_b);
+    al_destroy_bitmap(bmp_picker_i);
+    al_destroy_bitmap(bmp_picker_e);
+    al_destroy_bitmap(bmp_ink_effect);
+    al_destroy_bitmap(bmp_checkerboard);
+    al_destroy_bitmap(bmp_splash);
+    al_destroy_bitmap(bmp_logo);
+    al_destroy_bitmap(bmp_title_background);
+    al_destroy_bitmap(bmp_judd_r);
+    al_destroy_bitmap(bmp_judd_l);
+    al_destroy_bitmap(bmp_flag_r);
+    al_destroy_bitmap(bmp_flag_l);
+    al_destroy_bitmap(bmp_stamp_fail);
+    al_destroy_bitmap(bmp_stamp_pass);
+    al_destroy_bitmap(bmp_difficulty_icon[0]);
+    al_destroy_bitmap(bmp_difficulty_icon[1]);
+    al_destroy_bitmap(bmp_difficulty_icon[2]);
+    
+    al_destroy_font(big_font);
+    al_destroy_font(font);
+    
+    al_destroy_event_queue(queue);
+    al_destroy_timer(timer);
+    al_destroy_display(display);
+    
+    al_shutdown_ttf_addon();
+    al_shutdown_font_addon();
+    al_shutdown_primitives_addon();
+    al_shutdown_image_addon();
+    al_uninstall_mouse();
+    al_uninstall_system();
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Runs the main game loop.
+ */
 void Game::loop() {
     al_start_timer(timer);
     
@@ -155,6 +220,13 @@ void Game::loop() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Draws Judd holding a flag onto the screen, in a custom way.
+ * pivot_*:    Drawing pivot. This is the middle of his paws.
+ * scale:      Scale the drawing by this much.
+ * right:      True if facing the right. False to flip.
+ * flag_color: Color of the flag.
+ */
 void Game::draw_judd(
     const float pivot_x, const float pivot_y, const float scale,
     const bool right, const ALLEGRO_COLOR flag_color
@@ -192,6 +264,9 @@ void Game::draw_judd(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Loads the player's save data, if possible.
+ */
 void Game::load_save_data() {
     ALLEGRO_FILE* file = al_fopen(SAVE_FILE_NAME.c_str(), "rb");
     if(!file) return;
@@ -211,14 +286,19 @@ void Game::load_save_data() {
 }
 
 
-void Game::save_save_data() {
+/* ----------------------------------------------------------------------------
+ * Saves the player's save data, if possible.
+ * Returns false if an error occurred.
+ */
+bool Game::save_save_data() {
     ALLEGRO_FILE* file = al_fopen(SAVE_FILE_NAME.c_str(), "wb");
-    if(!file) return;
+    if(!file) return false;
     
     for(size_t c = 0; c < all_chapter_data.size(); ++c) {
         unsigned char byte = high_scores[c];
-        al_fwrite(file, &byte, 1);
+        if(al_fwrite(file, &byte, 1) == 0) return false;
     }
     
     al_fclose(file);
+    return true;
 }

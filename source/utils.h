@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <string>
+#include <vector>
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
@@ -20,12 +21,13 @@ void draw_shadowed_text(
 );
 string f2s(const float f);
 string i2s(const long long i);
-ALLEGRO_BITMAP* load_png_or_jpg(const string path);
+ALLEGRO_BITMAP* load_png_or_jpg(const string &path);
 float randomf(float min, float max);
 int randomi(int min, int max);
+float roundf(const float n);
 string rp(
-    const string s1, const string s2,
-    const string s3 = "", const string s4 = ""
+    const string &s1, const string &s2,
+    const string &s3 = "", const string &s4 = ""
 );
 vector<string> split(
     string text, const string &del = " ", const bool inc_empty = false,

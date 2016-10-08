@@ -2,6 +2,9 @@
 #define INCLUDED_POINT_H
 
 
+/* ----------------------------------------------------------------------------
+ * A simple point class. Has data for X and Y coordinates, as floats.
+ */
 struct Point {
     float x;
     float y;

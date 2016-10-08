@@ -4,6 +4,11 @@
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Darkens an Allegro color.
+ * color: Base color.
+ * ratio: The color's components are multiplied by this much.
+ */
 ALLEGRO_COLOR darken_color(ALLEGRO_COLOR color, const float ratio) {
     color.r *= ratio;
     color.g *= ratio;
@@ -12,16 +17,27 @@ ALLEGRO_COLOR darken_color(ALLEGRO_COLOR color, const float ratio) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Draws text with a shadow.
+ * Lines are separated with a \n character.
+ * font:       Font to use.
+ * color:      Text color.
+ * x, y:       Pivot point coordinates.
+ * flags:      Allegro flags.
+ * text:       Text to draw.
+ * scale:      Scale the text by this much.
+ * top_valign: If true, align to the top. If false, align to the center.
+ */
 void draw_shadowed_text(
     ALLEGRO_FONT* font, ALLEGRO_COLOR color,
-    const int x, const int cy, const int flags, const string &text,
+    const int x, const int y, const int flags, const string &text,
     const float scale, const bool top_valign
 ) {
     vector<string> lines = split(text, "\n");
     int fh = al_get_font_line_height(font);
     int total_height = lines.size() * fh + (lines.size() - 1);
     int top =
-        top_valign ? cy : cy - total_height * 0.5 * scale;
+        top_valign ? y : y - total_height * 0.5 * scale;
         
     ALLEGRO_TRANSFORM transform;
     al_identity_transform(&transform);
@@ -46,6 +62,9 @@ void draw_shadowed_text(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Converts a float to a string, with 1 decimal place.
+ */
 string f2s(const float f) {
     std::stringstream s;
     s << std::fixed << ::setprecision(1) << f;
@@ -53,12 +72,19 @@ string f2s(const float f) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Converts an integer to a string.
+ */
 string i2s(const long long i) {
     return to_string(i);
 }
 
 
-ALLEGRO_BITMAP* load_png_or_jpg(const string path) {
+/* ----------------------------------------------------------------------------
+ * Loads an image given a file name, without extension.
+ * If a PNG with that name exists, it loads that. Otherwise it tries with a JPG.
+ */
+ALLEGRO_BITMAP* load_png_or_jpg(const string &path) {
     ALLEGRO_BITMAP* b =
         al_load_bitmap((path + ".png").c_str());
     if(b) return b;
@@ -86,9 +112,21 @@ int randomi(int min, int max) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Rounds a floating point number to its nearest integer.
+ */
+float roundf(const float n) {
+    return n >= 0.0f ? floor(n + 0.5) : ceil(n - 0.5f);
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Randomly picks between the given strings.
+ * An empty string will not be picked from.
+ */
 string rp(
-    const string s1, const string s2,
-    const string s3, const string s4
+    const string &s1, const string &s2,
+    const string &s3, const string &s4
 ) {
     size_t n_strings = s3.empty() ? 2 : s4.empty() ? 3 : 4;
     
@@ -105,8 +143,8 @@ string rp(
  * text:        The string to split.
  * del:         The delimiter. Default is space.
  * inc_empty:   If true, include empty substrings on the vector.
-   * i.e. if two delimiters come together in a row,
-   * keep an empty substring between.
+ *   i.e. if two delimiters come together in a row,
+ *   keep an empty substring between.
  * inc_del:     If true, include the delimiters on the vector as a substring.
  */
 vector<string> split(

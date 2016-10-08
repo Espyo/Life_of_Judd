@@ -1,13 +1,21 @@
+#define _USE_MATH_DEFINES
 #include <algorithm>
+#include <math.h>
 
 #include "chapter.h"
 #include "inkling.h"
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs an Inkling.
+ * chapter:   Pointer to the chapter it belongs to.
+ * start_pos: Inkling's starting position.
+ * team:      Team ID.
+ */
 Inkling::Inkling(
     Chapter* chapter,
-    const Point start_pos,
+    const Point &start_pos,
     const unsigned char team
 ) :
     chapter(chapter),
@@ -22,11 +30,19 @@ Inkling::Inkling(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Inks the grown below the Inkling.
+ */
 void Inkling::ink() {
     chapter->ink(pos, ink_radius, team);
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Checks to see if it should respawn.
+ * Respawn chance depends on proximity to the opponent spawn point,
+ * and the respawn_chance variable.
+ */
 void Inkling::check_respawn() {
     Point dif =
         team == 0 ?
@@ -43,6 +59,9 @@ void Inkling::check_respawn() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Moves the Inkling for one iteration.
+ */
 void Inkling::move() {
     Point new_pos = pos;
     

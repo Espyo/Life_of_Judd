@@ -9,6 +9,9 @@
 #include "game_state.h"
 
 
+/* ----------------------------------------------------------------------------
+ * The structure in charge of the game's data, assets, etc.
+ */
 struct Game {
     bool running;
     float time_spent;
@@ -55,11 +58,13 @@ struct Game {
     vector<Chapter_Data> all_chapter_data;
     vector<pair<ALLEGRO_COLOR, ALLEGRO_COLOR> > all_ink_colors;
     vector<unsigned char> high_scores;
+    bool cant_save;
     
     Game();
+    ~Game();
     void loop();
     void load_save_data();
-    void save_save_data();
+    bool save_save_data();
     void draw_judd(
         const float pivot_x, const float pivot_y, const float scale,
         const bool right, const ALLEGRO_COLOR flag_color

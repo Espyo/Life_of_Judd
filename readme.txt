@@ -1,10 +1,15 @@
 A Day in the Life of Judd
 
-You take on the role of Inkopolis's Judd, the cat that judges Turf War matches.
+You take on the role of Inkopolis's Judd, the cat that judges Splatoon Turf War matches.
 You'll be shown an overhead view of an inked arena, and your task is to decide which team covered the most turf.
 It's not as simple as that, though! Deciding the exact percentages, thinking about how much turf went uninked,
 figuring out if that blotch is green ink or just foliage, and even avoiding biases are all normal occurrences for
 a day in the life of Judd.
+
+
+Contact me!: andreluis.g.silva@gmail.com
+GitHub repository: https://github.com/Espyo/Life_of_Judd
+Latest version: https://github.com/Espyo/Life_of_Judd/releases
 
 
 ===============
@@ -29,9 +34,9 @@ Game modes
     Story
         Complete a series of chapters that represent cherry-picked days of Judd's life.
         Each one tasks you with judging a specific Turf War match, with some sort of underlying story or theme.
-        You must get at least a certain score in order to complete a chapter.
+        You must score at least 95 points in order to complete a chapter.
         Although you can replay chapters, the ink coverage is always random, so don't rely on trial and error.
-        Your highest scores get saved.
+        Your highest scores get saved, even after you close the game.
     Free play
         You're given randomly-generated inked arenas, and judge them at your heart's content, with no compromise.
 
@@ -49,9 +54,9 @@ Playing
     At the top of the screen, you get the overhead view of the arena.
     At the bottom, you have some way of making your decision.
         On beginner difficulty, you have two buttons, one for each team. The one you choose becomes highlighted.
-        On intermediate difficulty, you have a draggable slider. The total percentage each team covered is also shown.
+        On intermediate difficulty, you have a slider you can drag. The total percentage each team inked is also shown.
         On expert difficulty, you get the same as intermediate, plus a slider for the percentage of unclaimed area.
-    After deciding, press the Okay button on the right side of the screen.
+    After deciding, press the OK button on the right side of the screen.
     Once you do, you're shown your given values, the real percentages, and your score.
     You get scored based on how accurately you estimated, on a scale from 0 to 100 points.
 
@@ -59,10 +64,10 @@ Playing
 ===============
 2) Tips
 ===============
+- On expert difficulty, start with the uninked percentage. It's easier, and sets up the inked percentages better.
 - Use the mouse wheel if you want to fine-tune your decision, when your mouse cursor is over a slider.
 - Click the mouse button at any time after you've confirmed your decisions in order to skip to the final results.
-- While a chapter's script text is being written out gradually, click the mouse button to skip that.
-- On expert difficulty, start with the uninked percentage. It's easier, and sets up the inked percentages better.
+- While a chapter's script text is being written out gradually, click the mouse button to skip to the full text.
 - Upset about getting poor scores? Keep trying! The randomly-generated ink will make easier patterns eventually.
 
 
@@ -78,8 +83,21 @@ Why can't I see the game window?
     Right-click the game's window on the task bar (the exact method depends on the operative system),
     choose move, and press any arrow key on the keyboard. That should fix it.
 
+The game's telling me it's unable to save. What happened?
+    If you haven't already, extract the zip file into a folder.
+    Then, make sure that folder and/or the save.bin file don't require permissions you don't have.
+    Otherwise, you can continue playing like normal. It just won't be able to save your progress for you to
+    come back to after you quit.
+
+I can't hear any sound, and the keyboard doesn't work!
+    This game doesn't have sound, nor does it use the keyboard.
+
+The game's starting to run slow after playing it for hours.
+    I found that there's a memory leak in the game. Sorry. I'll hopefully fix it in the future.
+    If you experience this, please restart the game.
+
 I crunched the numbers on the results screen, and they're slightly off. What gives?
-    Rounding errors. Decimal values are complicated... But the error will never be big enough to matter.
+    Rounding errors. Decimal values are complicated... But the error will never be big enough to matter, so don't worry.
     In addition, if you get 99 points, close to 100, it's automatically turned into 100 for the sake of fairness.
     Finally, if the real scores reveal that both teams got the same percentage, the values are
     slightly skewered in your favor, since one team always has to be the winner.
@@ -91,7 +109,7 @@ On intermediate difficulty, if Judd is only meant to compare the two teams,
 why are the percentages based on the whole arena, and where does the uninked percentage come from?
     http://tvtropes.org/pmwiki/pmwiki.php/Main/GameplayAndStorySegregation
     For the sake of gameplay and scoring, it makes more sense to use the percentages compared to the entire arena.
-    For the sake of convenience, the uninked percentage is also shown.
+    And for the sake of convenience, the uninked percentage is also shown.
     Unfortunately, this doesn't make much sense for the plot.
     I've got no better way to do this. If you have any ideas, send them my way!
 
@@ -128,7 +146,7 @@ What is the font used in this game?
 First, get the source, of course.
 Under Linux...
     Install Allegro 5 on your system using the instructions here https://wiki.allegro.cc/index.php?title=Getting_Started
-    On a terminal, go to the source's folder and write "make".
+    On a terminal, go to the game's folder and write "make".
     If you get linker errors
         Edit the "makefile" file and follow the instructions.
         Write "make clean" and then "make" once more.
@@ -143,7 +161,7 @@ Under Windows...
 5) Credits
 ===============
 Pretty much everything:
-    André 'Espyo' Silva [andreluis (dot) g (another dot) silva (at) gmail]
+    André 'Espyo' Silva
 Support and beta-testing:
     My friends at Pikipedia and Pikmin Fanon
     My friends at Brawl Snapshots
@@ -155,7 +173,7 @@ The idea was that I'd make a simple game based on the simple judging mechanic, i
 ...I overestimated my abilities. Still, I manage to complete it in a month or so, so I'm still pleased!
 Initially, it was just going to have free mode. But I figured that'd be super boring, so I added a story mode.
 It was meant to have around 5 to 10 chapters, but it ended up with 30 as my imagination went wild!
-I think the extra development time was well worth it.
+I think the extra development time was well worth it. What do you think?
 
 
 ===============

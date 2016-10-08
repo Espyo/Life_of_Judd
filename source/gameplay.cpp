@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <math.h>
 
 #include <allegro5/allegro_primitives.h>
@@ -7,23 +8,47 @@
 #include "utils.h"
 
 
+/* ----------------------------------------------------------------------------
+ * Constructs a gameplay game state.
+ */
 Gameplay::Gameplay(Game* game) :
     Game_State(game),
     difficulty(DIFFICULTY_BEGINNER),
     sub_state(SUB_STATE_STORY_WRITING),
     next_state_timer(0),
+    mouse_on_skip_button(false),
     mouse_on_back_button(false),
     mouse_on_ok_button(false),
     chosen_team(TEAM_NONE),
     picker_team_x(0),
     mouse_down_on_team_picker(false),
     picker_unclaimed_x(0),
-    mouse_down_on_unclaimed_picker(false) {
+    mouse_down_on_unclaimed_picker(false),
+    show_arena(false),
+    show_ink(false),
+    dev_text(false),
+    player_score(0),
+    cur_message_char(0),
+    cur_message_char_timer(0),
+    cur_message_block(0),
+    judd_end_y(0),
+    judd_timer(0),
+    analysis_darken_opacity(0) {
     
     
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Destroys a gameplay game state.
+ */
+Gameplay::~Gameplay() {
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Code to run when switching to the main gameplay.
+ */
 void Gameplay::load() {
     next_state_timer = 0;
     mouse_on_back_button = false;
@@ -78,6 +103,9 @@ void Gameplay::load() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run to handle mouse events.
+ */
 void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
 
     if(
@@ -415,7 +443,7 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
     ) {
         //DEBUG - Uncomment this to re-ink the chapter on RMB click.
-        //TODO
+        /*
         for(size_t x = 0; x < game->cur_chapter.width; ++x) {
             for(size_t y = 0; y < game->cur_chapter.height; ++y) {
                 game->cur_chapter.grid[x][y].team = TEAM_NONE;
@@ -430,12 +458,15 @@ void Gameplay::handle_mouse(ALLEGRO_EVENT ev) {
         game->cur_chapter.do_match();
         game->cur_chapter.calculate_real_percentages();
         game->cur_chapter.render();
-        
+        */
     }
     
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run on each timer tick.
+ */
 void Gameplay::do_logic() {
     for(size_t c = 0; c < confetti.size(); ) {
         if(confetti[c].tick()) {
@@ -498,6 +529,9 @@ void Gameplay::do_logic() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when drawing to the screen.
+ */
 void Gameplay::do_drawing() {
     al_clear_to_color(al_map_rgb(0, 0, 0));
     
@@ -545,12 +579,12 @@ void Gameplay::do_drawing() {
         } else {
             text_color = al_map_rgb(255, 255, 255);
             text_align = ALLEGRO_ALIGN_LEFT;
-            text_x = STORY_X;
+            text_x = STORY_SCRIPT_X;
         }
         
         draw_shadowed_text(
             game->font, text_color,
-            text_x, STORY_Y, text_align,
+            text_x, STORY_SCRIPT_Y, text_align,
             cur_message.substr(0, cur_message_char + 1),
             STORY_SCALE, true
         );
@@ -952,6 +986,9 @@ void Gameplay::do_drawing() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Code to run when leaving the main gameplay state.
+ */
 void Gameplay::unload() {
     al_set_system_mouse_cursor(
         game->display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT
@@ -959,6 +996,16 @@ void Gameplay::unload() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Draws a rectangle with a texture on it. This texture can be offset
+ * with time.
+ * x, y:             Top-left coordinates of the rectangle.
+ * w, h:             Rectangle dimensions.
+ * bmp:              Texture bitmap.
+ * color:            Texture tint.
+ * movement_pattern:
+ *   0 = static. 1 = moves down with time. 2 = moves left with time.
+ */
 void Gameplay::draw_textured_rectangle(
     const int x, const int y, const int w, const int h,
     ALLEGRO_BITMAP* bmp, ALLEGRO_COLOR color,
@@ -1004,6 +1051,19 @@ void Gameplay::draw_textured_rectangle(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Updates the X coordinate of a picker's division,
+ * based on the player's mouse action.
+ * var:                  Pointer to the picker division's X coordinate.
+ * mouse_value:          Value of the action applied to the mouse.
+ *   If the action is a scroll wheel, this is the scroll delta.
+ *   If it's a mouse click, this is the screen X coordinate.
+ * bar_x:                X of the picker bar's left side.
+ * bar_w:                Width of the picker's bar.
+ * update_chosen_team:   If true, update the chosen_team variable accordingly.
+ * mouse_value_is_delta: If true, the mouse value is a scroll wheel delta.
+ *   If false, a mouse click screen X coordinate.
+ */
 void Gameplay::update_picker_x(
     int* var, const int mouse_value,
     const int bar_x, const int bar_w, const bool update_chosen_team,
@@ -1032,6 +1092,9 @@ void Gameplay::update_picker_x(
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Calculates the player's chosen percentages, based on the pickers.
+ */
 void Gameplay::calculate_player_percentages() {
     if(difficulty == DIFFICULTY_BEGINNER) {
         return;
@@ -1063,6 +1126,9 @@ void Gameplay::calculate_player_percentages() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Calculates the player's final score.
+ */
 void Gameplay::calculate_player_score() {
     //If the ink percentages would appear the same to the player,
     //skewer them in the player's favor, since there can be no ties.
@@ -1173,7 +1239,7 @@ void Gameplay::calculate_player_score() {
     
     player_score = (player_score - 50) * 2.0;
     player_score = max(0.0f, player_score);
-    player_score = round(player_score);
+    player_score = roundf(player_score);
     
     if(player_score == 0) {
         committee_comment =
@@ -1255,6 +1321,9 @@ void Gameplay::calculate_player_score() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Advances the chapter's story by one block of text.
+ */
 void Gameplay::advance_story() {
     if(
         cur_message_block <
@@ -1286,12 +1355,21 @@ void Gameplay::advance_story() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Returns a number, eased with a "hop" function.
+ * This number is 0 at the starting point, and 1 at the finishing point.
+ * Since this is a hop, it goes above 1 at some points.
+ * n: Point to ease.
+ */
 float Gameplay::ease_hop(const float n) {
     //From http://i.stack.imgur.com/vqA2E.jpg
     return n * (n * (4 * n - 9) + 6);
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Advances a confetto's logic by one timer tick.
+ */
 bool Gameplay::Confetto::tick() {
     pos += speed * (1.0 / GAME_FPS);
     angle += rotation_speed * 1.0 / GAME_FPS;
@@ -1302,6 +1380,9 @@ bool Gameplay::Confetto::tick() {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Draws a confetto on the screen.
+ */
 void Gameplay::Confetto::draw() {
     ALLEGRO_TRANSFORM transform;
     al_identity_transform(&transform);

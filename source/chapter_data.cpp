@@ -3,6 +3,10 @@
 #include "game.h"
 #include "utils.h"
 
+
+/* ----------------------------------------------------------------------------
+ * Constructs a chapter data info struct.
+ */
 Chapter_Data::Chapter_Data() :
     arena_nr(0),
     difficulty(DIFFICULTY_BEGINNER),
@@ -12,6 +16,9 @@ Chapter_Data::Chapter_Data() :
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Generates random chapter data. Used for free play.
+ */
 Chapter_Data generate_random_chapter_data(Game* game) {
     Chapter_Data data;
     data.arena_nr = randomi(0, N_ARENAS - 1);
@@ -44,6 +51,9 @@ Chapter_Data generate_random_chapter_data(Game* game) {
 }
 
 
+/* ----------------------------------------------------------------------------
+ * Generates and returns chapter data for all story mode chapters.
+ */
 vector<Chapter_Data> get_chapters() {
     vector<Chapter_Data> v;
     
